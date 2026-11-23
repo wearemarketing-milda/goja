@@ -653,3 +653,18 @@ details.is-draft summary{background:#fff4c2}
 .hero-offer:is(:hover,:focus-visible) .hero-offer-notes{border-color:#fcfbf866}
 .hero-offer:is(:hover,:focus-visible) .hero-offer-pay{color:var(--white)}
 .hero-offer:is(:hover,:focus-visible) .hero-offer-pay:before{background-color:var(--blue)}
+
+/* ---------- Kainoraštis: paslaugų grupių turinys ---------- */
+.price-catalog.has-toc{display:grid;grid-template-columns:240px minmax(0,1fr);gap:56px;align-items:start}
+.price-catalog.has-toc{--col-cat:220px}
+.price-toc-inner{position:sticky;top:24px}
+.price-toc-label{display:block;font-size:13px;font-weight:500;letter-spacing:.075em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.price-toc-select{display:none}
+.price-toc-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.price-toc-list a{display:block;padding:13px 0 13px 14px;border-bottom:1px solid var(--line);border-left:2px solid transparent;font-size:var(--p-small);line-height:1.4;color:var(--blue);transition:color .2s,border-color .2s}
+.price-toc-list a:hover{color:var(--clay)}
+.price-toc-list a.is-active{color:var(--clay);border-left-color:var(--clay);font-weight:500}
+.price-group{scroll-margin-top:160px}
+@media(max-width:1250px){.price-catalog.has-toc{grid-template-columns:210px minmax(0,1fr);gap:40px;--col-cat:170px}}
+@media(max-width:1050px){.price-catalog.has-toc{grid-template-columns:1fr;gap:0;--col-cat:180px}.price-toc{margin-bottom:28px}.price-toc-inner{position:static}.price-toc-list{display:none}.price-toc-select{display:block}.price-toc-label{text-transform:none;letter-spacing:0;font-size:16px;color:var(--blue);margin-bottom:9px}}
+@media(max-width:760px){.price-catalog.has-toc{--col-cat:0px}}

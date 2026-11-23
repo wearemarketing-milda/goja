@@ -369,3 +369,36 @@ document.querySelectorAll('[data-slider]').forEach(slider => {
   call.classList.add('is-hidden');
   new IntersectionObserver(([e]) => call.classList.toggle('is-hidden', e.isIntersecting || e.boundingClientRect.top > 0)).observe(heroActions);
 })();
+
+// Kainoraštis: grupių turinys (kompiuteryje sąrašas, telefone pasirinkimas) – nuslenka iki grupės ir ją atidaro.
+(() => {
+  const catalog = document.querySelector('.price-catalog.has-toc');
+  if (!catalog) return;
+  const links = [...catalog.querySelectorAll('[data-price-toc]')];
+  const select = catalog.querySelector('.price-toc-select');
+  const sticky = catalog.querySelector('.price-sticky');
+  const groups = [...catalog.querySelectorAll('.price-group')];
+  const offset = () => (sticky && getComputedStyle(sticky).position === 'sticky' ? sticky.offsetHeight : 0) + 16;
+  const go = id => {
+    const g = document.getElementById(id);
+    if (!g) return;
+    const search = document.querySelector('#price-search');
+    if (search && search.value) { search.value = ''; search.dispatchEvent(new Event('input')); }
+    g.open = true;
+    const smooth = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+    scrollTo({ top: g.getBoundingClientRect().top + scrollY - offset(), behavior: smooth ? 'smooth' : 'auto' });
+    history.replaceState(null, '', '#' + id);
+  };
+  links.forEach(a => a.addEventListener('click', e => { e.preventDefault(); go(a.getAttribute('href').slice(1)); }));
+  select?.addEventListener('change', () => { if (select.value) go(select.value); });
+  const mark = () => {
+    const line = offset() + 24;
+    let current = null;
+    groups.forEach(g => { if (!g.hidden && g.getBoundingClientRect().top <= line) current = g; });
+    links.forEach(a => a.classList.toggle('is-active', !!current && a.getAttribute('href') === '#' + current.id));
+    if (select && current && document.activeElement !== select) select.value = current.id;
+  };
+  addEventListener('scroll', mark, { passive: true });
+  mark();
+  if (location.hash.startsWith('#kainos-')) setTimeout(() => go(location.hash.slice(1)), 100);
+})();
