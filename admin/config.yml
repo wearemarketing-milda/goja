@@ -940,7 +940,7 @@ collections:
           widget: string
           required: false
           hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
-        label: Telefonas
+        label: Telefonas (po mygtuku)
         name: phone
       - widget: object
         collapsed: false
@@ -955,7 +955,7 @@ collections:
           widget: string
           required: false
           hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
-        label: El. paštas
+        label: El. paštas (po mygtuku)
         name: email
       - label: Adreso pavadinimas
         name: address_label
@@ -993,11 +993,6 @@ collections:
         - label: Laikas
           name: time
           widget: string
-      - label: Kontaktų pavadinimas
-        name: contacts_label
-        widget: string
-        required: false
-        default: Kontaktai
       - label: Erdvių nuotraukos
         name: images
         widget: list

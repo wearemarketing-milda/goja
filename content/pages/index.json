@@ -127,7 +127,7 @@
       "type": "clinic_contact",
       "hidden": false,
       "anchor": "kontaktai",
-      "eyebrow": "MŪSŲ ERDVĖS IR REGISTRACIJA",
+      "eyebrow": "",
       "title": "Susitarkime dėl Jūsų vizito.",
       "text": "Registruokitės arba paskambinkite – aptarsime Jums patogų laiką.",
       "button": {
@@ -163,7 +163,6 @@
           "time": "Pagal registraciją"
         }
       ],
-      "contacts_label": "Kontaktai",
       "images": [
         {
           "src": "/assets/clinic-waiting-1440.webp",
