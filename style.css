@@ -668,3 +668,4 @@ details.is-draft summary{background:#fff4c2}
 @media(max-width:1250px){.price-catalog.has-toc{grid-template-columns:210px minmax(0,1fr);gap:40px;--col-cat:170px}}
 @media(max-width:1050px){.price-catalog.has-toc{grid-template-columns:1fr;gap:0;--col-cat:180px}.price-toc{margin-bottom:28px}.price-toc-inner{position:static}.price-toc-list{display:none}.price-toc-select{display:block}.price-toc-label{text-transform:none;letter-spacing:0;font-size:16px;color:var(--blue);margin-bottom:9px}}
 @media(max-width:760px){.price-catalog.has-toc{--col-cat:0px}}
+.price-catalog.has-toc>.price-toc{align-self:stretch}
