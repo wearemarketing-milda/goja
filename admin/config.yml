@@ -206,12 +206,18 @@ collections:
           hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
         label: Antras mygtukas (pvz. telefonas)
         name: phone
-      - label: Fono video (MP4)
+      - label: Fono video – kompiuteriui (horizontalus MP4)
         name: video
         widget: file
         required: false
         choose_url: true
-        hint: 'Rekomenduojama: MP4 (H.264), 1920×1080, be garso, iki ~8 MB, 10–20 s. Jei tuščia – rodoma nuotrauka.'
+        hint: 'Rekomenduojama: MP4 (H.264), 1920×1080, be garso, iki ~5 MB, 10–20 s.'
+      - label: Fono video – telefonui (vertikalus MP4)
+        name: video_mobile
+        widget: file
+        required: false
+        choose_url: true
+        hint: 'Rekomenduojama: 720×1280 arba 1080×1920, be garso, iki ~3 MB. Jei tuščia – naudojamas kompiuterio video.'
       - widget: object
         collapsed: false
         required: false
@@ -226,8 +232,23 @@ collections:
           widget: string
           required: false
           hint: Trumpai aprašykite, kas nuotraukoje (svarbu SEO ir prieinamumui).
-        label: Nuotrauka (rodoma, kol kraunasi video, arba vietoj jo)
+        label: Nuotrauka – kompiuteriui (rodoma, kol kraunasi video)
         name: image
+      - label: Nuotrauka – telefonui (vertikali)
+        name: image_mobile
+        widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Nuotrauka
+          name: src
+          widget: image
+          required: false
+          choose_url: true
+        - label: Alternatyvus tekstas (alt)
+          name: alt
+          widget: string
+          required: false
       - label: Rodyti pasiūlymo kortelę
         name: show_offer
         widget: boolean

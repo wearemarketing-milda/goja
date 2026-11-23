@@ -165,11 +165,24 @@ if (registrationForm) {
   });
 }
 
-// Hero video: nerodomas judesys, jei lankytojas to nepageidauja; sustabdomas, kai nematomas.
+// Hero video: kompiuteryje horizontalus, telefone vertikalus. Kol video kraunasi, matoma nuotrauka;
+// video neįkeliamas, jei lankytojas nepageidauja judesio arba taupo duomenis.
 (() => {
   const video = document.querySelector('.hero-video');
   if (!video) return;
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { video.removeAttribute('autoplay'); video.pause(); return; }
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || navigator.connection?.saveData) return;
+  const mobile = matchMedia('(max-width: 760px)');
+  const pick = () => (mobile.matches ? video.dataset.srcMobile : video.dataset.src);
+  const load = () => {
+    const src = pick();
+    if (!src || video.getAttribute('src') === src) return;
+    video.classList.remove('is-playing');
+    video.src = src;
+    video.play().catch(() => {});
+  };
+  video.addEventListener('playing', () => video.classList.add('is-playing'));
+  mobile.addEventListener?.('change', load);
+  load();
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(([e]) => { if (e.isIntersecting) video.play().catch(() => {}); else video.pause(); }).observe(video);
   }

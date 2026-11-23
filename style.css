@@ -155,10 +155,13 @@ img.reveal{transition:opacity var(--reveal-duration) var(--ease-out),transform 1
 .button.ghost:hover{background:var(--white);color:var(--blue);border-color:var(--white)}
 .hero-full{position:relative;display:flex;align-items:flex-end;min-height:100vh;min-height:100svh;padding:190px var(--gutter) 64px;background:var(--blue);color:var(--white);overflow:hidden}
 .hero-media{position:absolute;inset:0;z-index:0}
-.hero-media>img,.hero-media>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.hero-media>picture{position:absolute;inset:0}
+.hero-media img,.hero-media>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.hero-media>video{opacity:0;transition:opacity 1s ease}
+.hero-media>video.is-playing{opacity:1}
 .hero-media:before,.hero-media:after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none}
-.hero-media:before{background:linear-gradient(90deg,#2f3e51b8 0%,#2f3e5166 36%,#2f3e5114 70%,#2f3e5100 100%)}
-.hero-media:after{background:linear-gradient(180deg,#2f3e5180 0%,#2f3e5100 24%,#2f3e5100 42%,#2f3e519e 100%)}
+.hero-media:before{background:linear-gradient(90deg,#2f3e51d1 0%,#2f3e5185 38%,#2f3e5129 72%,#2f3e510d 100%)}
+.hero-media:after{background:linear-gradient(180deg,#2f3e5199 0%,#2f3e5100 26%,#2f3e5100 40%,#2f3e51b3 100%)}
 .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.55fr);gap:56px;align-items:end;width:100%}
 .hero-full .hero-copy{padding:0;max-width:780px}
 .hero-full .eyebrow{color:var(--cream);font-size:13px;letter-spacing:.075em;margin-bottom:22px}
@@ -175,7 +178,7 @@ img.reveal{transition:opacity var(--reveal-duration) var(--ease-out),transform 1
 .hero-offer-price{font-family:Marcellus,serif;font-size:54px;line-height:1;letter-spacing:-.03em}
 .hero-offer-title{font-size:18px;font-weight:500;line-height:1.4}
 .hero-offer-note{border-top:1px dashed #fcfbf84d;padding-top:14px;font-size:15px;line-height:1.5;color:#f2ede1cc}
-.hero-media>img,.hero-media>video{animation:goja-settle 1.6s var(--ease-out) backwards}
+.hero-media>picture img{animation:goja-settle 1.6s var(--ease-out) backwards}
 .hero-offer{animation:goja-rise .9s var(--ease-out) .45s backwards}
 .hero-actions{animation:goja-rise .85s var(--ease-out) .32s backwards}
 /* Headeris virš hero */
@@ -199,4 +202,5 @@ body.header-overlay>header .button.small:hover{background:transparent;color:var(
 }
 @media(max-width:1050px){.hero-full{padding-top:230px}.hero-inner{grid-template-columns:1fr;gap:40px}.hero-offer{justify-self:start}}
 @media(max-width:760px){.hero-full{min-height:92svh;padding:150px var(--gutter) 40px}.hero-full h1{font-size:clamp(40px,10vw,56px)}.hero-full .intro{font-size:18px}.hero-actions .button{flex:1 1 auto;justify-content:center}.hero-offer{max-width:none;padding:22px}.hero-offer-price{font-size:44px}}
-@media(prefers-reduced-motion:reduce){.hero-media>img,.hero-media>video,.hero-offer,.hero-actions{animation:none!important}}
+@media(prefers-reduced-motion:reduce){.hero-media img,.hero-offer,.hero-actions{animation:none!important}}
+@media(max-width:760px){.hero-full .hero-media:before{background:linear-gradient(180deg,#2f3e5126 0%,#2f3e5133 40%,#2f3e51bf 100%)}}

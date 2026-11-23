@@ -1,7 +1,6 @@
 {%- set offer = b.offerItem -%}
-<section class="hero-full"><div class="hero-media" aria-hidden="true">
-{%- if b.video -%}<video class="hero-video" autoplay muted loop playsinline preload="auto"{% if b.image.src %} poster="{{ b.image.src }}"{% endif %}><source src="{{ b.video }}" type="{{ 'video/webm' if b.video.endsWith('.webm') else 'video/mp4' }}"></video>
-{%- else -%}{% image b.image, { priority: true, sizes: "100vw" } %}{%- endif -%}
+<section class="hero-full"><div class="hero-media" aria-hidden="true"><picture>{% if b.image_mobile.src %}<source media="(max-width: 760px)" srcset="{{ b.image_mobile.src }}">{% endif %}{% image b.image, { priority: true, sizes: "100vw" } %}</picture>
+{%- if b.video or b.video_mobile %}<video class="hero-video" muted loop playsinline preload="none" data-src="{{ b.video or b.video_mobile }}" data-src-mobile="{{ b.video_mobile or b.video }}"></video>{% endif -%}
 </div><div class="hero-inner"><div class="hero-copy">{% if b.eyebrow %}<p class="eyebrow">{{ b.eyebrow }}</p>{% endif %}<h1>{{ b.title }}</h1>{% if b.intro %}<p class="intro">{{ b.intro }}</p>{% endif %}
 <div class="hero-actions">{% if b.button.text %}<a class="button light" href="{{ b.button.url }}">{{ b.button.text }}</a>{% endif %}{% if b.phone.text %}<a class="button ghost" href="{{ b.phone.url }}">{{ b.phone.text }}</a>{% endif %}</div></div>
 {%- if offer -%}

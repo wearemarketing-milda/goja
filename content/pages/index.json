@@ -34,10 +34,15 @@
         "text": "+370 611 80077",
         "url": "tel:+37061180077"
       },
-      "video": "",
+      "video": "/assets/video/hero-desktop.mp4",
+      "video_mobile": "/assets/video/hero-mobile.mp4",
       "image": {
-        "src": "/assets/clinic-exterior-1440.webp",
-        "alt": "GOJA klinikos pastatas su originalia GOJA iškaba Mažeikiuose"
+        "src": "/assets/hero-desktop.webp",
+        "alt": "GOJA klinikos odontologinė kėdė"
+      },
+      "image_mobile": {
+        "src": "/assets/hero-mobile.webp",
+        "alt": "GOJA klinikos odontologinė kėdė"
       },
       "show_offer": true,
       "offer": "",
