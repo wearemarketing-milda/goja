@@ -88,8 +88,8 @@ if (registrationForm) {
   const selectedService = new URLSearchParams(location.search).get('paslauga');
   if ([...select.options].some(o => o.value === selectedService)) select.value = selectedService;
   const requestedOffer = new URLSearchParams(location.search).get('pasiulymas');
-  if (requestedOffer === 'vieno-danties-1100' && select.value === 'dantu-implantacija') {
-    registrationForm.elements.message.value = 'Domina specialus vieno danties implantacijos pasiūlymas – 1 100 €. ';
+  if (requestedOffer === 'vieno-danties-1100' && ['dantu-implantacija', 'nemokama-implantacijos-konsultacija'].includes(select.value)) {
+    select.value = 'nemokama-implantacijos-konsultacija';
   }
   let pending = false;
   let attempt = null;

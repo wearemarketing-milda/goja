@@ -80,12 +80,3 @@ header{min-height:126px;padding-top:31px;padding-bottom:31px;gap:36px}.logo{widt
 .offer-page-hero h1{max-width:none;font-size:clamp(36px,4.5vw,72px)}.offer-title-price{white-space:nowrap}
 @media(min-width:1051px){.offer-page-hero h1{white-space:nowrap}}
 @media(max-width:600px){.offer-page-hero h1{font-size:clamp(36px,8vw,43px)}}
-
-/* Temporary text wordmarks: official logo files were not included in the supplied archive. */
-.logo-wordmark{display:inline-block;color:var(--blue);font-family:'Inter Tight',sans-serif;font-size:42px;font-weight:800;letter-spacing:.12em;line-height:1}
-.footer-wordmark{display:inline-block;color:var(--cream);font-family:'Inter Tight',sans-serif;font-size:48px;font-weight:800;letter-spacing:.12em;line-height:1}
-
-
-/* GOJA official brand assets */
-.logo img{display:block;width:100%;height:auto;}
-.footer-brand img{display:block;width:100%;height:auto;filter:brightness(0) invert(1);}
