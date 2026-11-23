@@ -330,3 +330,12 @@ document.querySelectorAll('[data-slider]').forEach(slider => {
   new IntersectionObserver(([e]) => { ctaVisible = e.isIntersecting || e.boundingClientRect.top > 0; update(); }).observe(cta);
   if (contact) new IntersectionObserver(([e]) => { contactVisible = e.isIntersecting; update(); }).observe(contact);
 })();
+
+// Telefone skambučio mygtukas rodomas tik tada, kai hero mygtukai nebematomi.
+(() => {
+  const call = document.querySelector('.mobile-call');
+  const heroActions = document.querySelector('.hero-full .hero-actions');
+  if (!call || !heroActions || !('IntersectionObserver' in window)) return;
+  call.classList.add('is-hidden');
+  new IntersectionObserver(([e]) => call.classList.toggle('is-hidden', e.isIntersecting || e.boundingClientRect.top > 0)).observe(heroActions);
+})();

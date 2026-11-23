@@ -569,3 +569,19 @@ details.is-draft summary{background:#fff4c2}
 .home-service-catalog.no-photos .home-service-copy{padding-top:0}
 .care-planning details{will-change:height}
 .specialist-actions .text-link{gap:20px!important}.specialist-actions .text-link span{font-size:20px;line-height:1}
+
+/* Telefone: vienas skambučio mygtukas su ikona (rodomas, kai hero mygtukai išslenka iš ekrano) */
+.mobile-call{display:none}
+@media(max-width:760px){
+  body{padding-bottom:0!important}
+  .mobile-call{display:flex;align-items:center;justify-content:center;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:45;width:calc(var(--btn-line) + 2*var(--btn-pad-y) + 2px);height:calc(var(--btn-line) + 2*var(--btn-pad-y) + 2px);padding:var(--btn-pad-y);background:var(--blue);color:var(--white);border:1px solid var(--blue);box-shadow:0 6px 20px #2f3e5133;transition:background-color .2s,border-color .2s,opacity .3s,transform .3s}
+  .mobile-call:is(:hover,:focus-visible){background:var(--clay);border-color:var(--clay);color:var(--white)}
+  .mobile-call.is-hidden{opacity:0;transform:translateY(12px);pointer-events:none}
+  .hero-full{min-height:0;padding:140px var(--gutter) 32px}
+  .hero-full .eyebrow{margin-bottom:14px}
+  .hero-full h1{margin-bottom:16px}
+  .hero-actions{margin-top:24px;gap:10px}
+  .hero-inner{gap:28px}
+  .hero-offer{padding:20px;gap:10px}
+}
+@media print{.mobile-call{display:none!important}}
