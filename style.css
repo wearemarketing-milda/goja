@@ -326,7 +326,8 @@ html.drawer-open{overflow:hidden}
 /* ---------- Mygtukas paslaugos aprašyme ---------- */
 .service-content-button{margin-top:32px}
 /* ---------- Minimali poraštė ---------- */
-footer.footer-minimal{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:44px var(--gutter)}
+footer.footer-minimal{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;padding:44px var(--gutter) 25px}
+footer.footer-minimal .footer-bottom{flex:1 0 100%;margin-top:12px}
 footer.footer-minimal .footer-brand{width:170px;margin:0}
 footer.footer-minimal .footer-social{margin:0}
-@media(max-width:760px){footer.footer-minimal{padding:34px var(--gutter)}footer.footer-minimal .footer-brand{width:140px}}
+@media(max-width:760px){footer.footer-minimal{padding:34px var(--gutter) 25px}footer.footer-minimal .footer-brand{width:140px}}

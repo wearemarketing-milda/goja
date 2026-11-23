@@ -1983,7 +1983,6 @@ collections:
     - label: Autorių teisės
       name: copyright
       widget: string
-      hint: Šiuo metu poraštėje nerodoma (minimali poraštė).
     - widget: object
       collapsed: false
       required: false
@@ -1999,11 +1998,9 @@ collections:
         hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
       label: Privatumo politikos nuoroda
       name: privacy_link
-      hint: Šiuo metu poraštėje nerodoma (minimali poraštė).
     - label: „Į viršų“ tekstas
       name: back_to_top
       widget: string
-      hint: Šiuo metu poraštėje nerodoma (minimali poraštė).
     - label: 'Mobilus: skambučio mygtukas'
       name: mobile_call_text
       widget: string
