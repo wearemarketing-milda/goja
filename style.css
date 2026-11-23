@@ -80,3 +80,32 @@ header{min-height:126px;padding-top:31px;padding-bottom:31px;gap:36px}.logo{widt
 .offer-page-hero h1{max-width:none;font-size:clamp(36px,4.5vw,72px)}.offer-title-price{white-space:nowrap}
 @media(min-width:1051px){.offer-page-hero h1{white-space:nowrap}}
 @media(max-width:600px){.offer-page-hero h1{font-size:clamp(36px,8vw,43px)}}
+/* ---------- Mikro animacijos ---------- */
+:root{--ease-out:cubic-bezier(.2,.7,.2,1);--reveal-distance:26px;--reveal-duration:.75s}
+/* Slinkimo animacija (klasę prideda app.js tik elementams žemiau ekrano) */
+.reveal{opacity:0;transform:translate3d(0,var(--reveal-distance),0);transition:opacity var(--reveal-duration) var(--ease-out),transform var(--reveal-duration) var(--ease-out);transition-delay:var(--reveal-delay,0ms);will-change:opacity,transform}
+.reveal.visible{opacity:1;transform:none}
+figure.reveal img,img.reveal,.reveal>.portrait img,.reveal>.home-service-photo img,.reveal>.service-card-photo img,.reveal.implant-doctor-portrait img{transform:scale(1.06);transition:transform 1.3s var(--ease-out);transition-delay:var(--reveal-delay,0ms)}
+figure.reveal.visible img,img.reveal.visible,.reveal.visible>.portrait img,.reveal.visible>.home-service-photo img,.reveal.visible>.service-card-photo img,.reveal.visible.implant-doctor-portrait img{transform:none}
+img.reveal{transition:opacity var(--reveal-duration) var(--ease-out),transform 1.3s var(--ease-out)}
+/* Puslapio viršaus įžanga (be JS, kad nemirksėtų) */
+@keyframes goja-rise{from{opacity:0;transform:translate3d(0,22px,0)}to{opacity:1;transform:none}}
+@keyframes goja-fade{from{opacity:0}to{opacity:1}}
+@keyframes goja-settle{from{opacity:0;transform:scale(1.07)}to{opacity:1;transform:none}}
+.hero-copy>*,.page-top>*,.page-intro-grid>div>*,.service-hero-grid>div>*,.offer-page-hero>*{animation:goja-rise .85s var(--ease-out) backwards}
+.hero-copy>:nth-child(2),.page-top>:nth-child(2),.page-intro-grid>div>:nth-child(2),.service-hero-grid>div>:nth-child(2),.offer-page-hero>:nth-child(2){animation-delay:.08s}
+.hero-copy>:nth-child(3),.page-top>:nth-child(3),.page-intro-grid>div>:nth-child(3),.service-hero-grid>div>:nth-child(3),.offer-page-hero>:nth-child(3){animation-delay:.16s}
+.hero-copy>:nth-child(4),.page-intro-grid>div>:nth-child(4),.service-hero-grid>div>:nth-child(4),.offer-page-hero>:nth-child(4){animation-delay:.24s}
+.hero-copy>:nth-child(n+5),.service-hero-grid>div>:nth-child(n+5),.offer-page-hero>:nth-child(n+5){animation-delay:.32s}
+.page-top>.page-intro-grid{animation:none}
+.hero-photo>img,.service-hero-grid>img,.page-intro-photo{animation:goja-settle 1.4s var(--ease-out) .1s backwards}
+.visit-strip{animation:goja-fade .9s ease .35s backwards}
+/* Užvedimo efektai */
+.home-service-photo img,.service-card-photo img,.portrait img{transition:transform .7s var(--ease-out)}
+.home-service-card:hover .home-service-photo img,.service-card:hover .service-card-photo img{transform:scale(1.045)}
+.team-grid article:hover .portrait img{transform:scale(1.03)}
+.card-link,.text-link{transition:border-color .25s,gap .35s var(--ease-out)}
+.home-service-card:hover .card-link,.service-card:hover .card-link,.text-link:hover{gap:44px}
+.button{transition:background .2s,color .2s,border-color .2s,transform .25s var(--ease-out)}
+.button:active{transform:translateY(1px)}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal img{opacity:1!important;transform:none!important}.hero-copy>*,.page-top>*,.page-intro-grid>div>*,.service-hero-grid>div>*,.offer-page-hero>*,.hero-photo>img,.service-hero-grid>img,.page-intro-photo,.visit-strip{animation:none!important}.home-service-card:hover .home-service-photo img,.service-card:hover .service-card-photo img,.team-grid article:hover .portrait img{transform:none}}

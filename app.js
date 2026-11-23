@@ -40,16 +40,46 @@ nav?.querySelectorAll('a').forEach(a => {
   const path = new URL(a.href).pathname.replace(/\/$/, '');
   if (path === currentPath) a.setAttribute('aria-current', 'page');
 });
-if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+// Mikro animacijos: turinys švelniai išnyra slenkant puslapį.
+// Elementai, kurie jau matomi užsikrovus, nepaslepiami (kad nemirksėtų);
+// grupių vaikai (kortelės, komanda, žingsniai...) atsiranda paeiliui.
+(() => {
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const SINGLE = [
+    '.section-heading', '.service-content > div', '.treatment-guidance > h2', '.process > .eyebrow', '.process > h2',
+    '.page-cta > div', '.approach-grid > div', '.approach-grid > figure', '.home-about > figure', '.home-about > div',
+    '.home-clinic > div', '.home-clinic > figure', '.home-services > .text-link', '.contact-grid > div', '.contact-photo > img', '.contact-photo > div',
+    '.registration > div', '.registration > form', '.price-tools', '.price-group', '.price-notes',
+    '.implant-offer-summary', '.implant-offer-inclusions', '.implant-doctor-portrait', '.implant-doctor-copy',
+    '.services-index .service-card', '.related-links', '.goja-pp > *',
+  ];
+  const GROUPS = [
+    '.home-service-catalog', '.team-grid', '.steps', '.guidance-columns', '.clinic-gallery-grid',
+    '.treatment-list', '.care-planning', '.visit-strip', '.prose', '.contact-details', '.implant-offer-inclusions ul',
+  ];
+  const vh = window.innerHeight;
+  const inView = el => { const r = el.getBoundingClientRect(); return r.top < vh * 0.92 && r.bottom > 0; };
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
     });
-  }, { threshold: .08 });
-  document.querySelectorAll('.section-heading,.approach-grid,.principles,.contact-grid,.team-grid').forEach(el => {
-    el.classList.add('reveal'); observer.observe(el);
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+  const prepare = (el, delay) => {
+    if (el.closest('.hero, .page-top, .service-hero, .offer-page-hero') || el.classList.contains('reveal')) return;
+    if (inView(el)) return;
+    el.classList.add('reveal');
+    if (delay) el.style.setProperty('--reveal-delay', `${delay}ms`);
+    observer.observe(el);
+  };
+  document.querySelectorAll(GROUPS.join(',')).forEach(group => {
+    [...group.children].forEach((child, i) => prepare(child, Math.min(i, 6) * 90));
+    group.dataset.revealGroup = '';
   });
-}
+  document.querySelectorAll(SINGLE.join(',')).forEach(el => {
+    if (el.hasAttribute('data-reveal-group')) return;
+    prepare(el, 0);
+  });
+})();
 const priceSearch = document.querySelector('#price-search');
 function normalizeSearch(text) {
   return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
