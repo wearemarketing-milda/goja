@@ -1,4 +1,5 @@
 node_modules/
+_site/
 public/
 _backup_local/
 .vercel/

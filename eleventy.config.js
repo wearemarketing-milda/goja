@@ -1,4 +1,4 @@
-// Eleventy: generuoja svetainę iš content/ (CMS turinys) į public/ (tai, ką publikuoja Vercel).
+// Eleventy: generuoja svetainę iš content/ (CMS turinys) į _site/ (tai, ką publikuoja Vercel).
 const fs = require('fs');
 const path = require('path');
 const sizeOf = require('image-size');
@@ -57,7 +57,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('isExternal', (u) => /^https?:/.test(u || ''));
 
   return {
-    dir: { input: 'src', includes: '_includes', data: '_data', output: 'public' },
+    dir: { input: 'src', includes: '_includes', data: '_data', output: '_site' },
     templateFormats: ['njk'],
     htmlTemplateEngine: 'njk',
   };

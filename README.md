@@ -5,7 +5,7 @@ Statinė svetainė su turinio valdymo sistema (CMS), veikiančia WordPress princ
 - **Administravimas:** https://gojaklinika.lt/admin ([Sveltia CMS](https://github.com/sveltia/sveltia-cms))
 - **Turinys:** `content/` (JSON failai, juos redaguoja CMS)
 - **Šablonai:** `src/` ([Eleventy](https://www.11ty.dev/))
-- **Publikavimas:** kiekvienas CMS išsaugojimas yra commit'as į `main`, o Vercel per ~1 min. sugeneruoja ir paskelbia svetainę (`npm run build` → `public/`)
+- **Publikavimas:** kiekvienas CMS išsaugojimas yra commit'as į `main`, o Vercel per ~1 min. sugeneruoja ir paskelbia svetainę (`npm run build` → `_site/`)
 
 ## CMS skyriai
 
@@ -40,7 +40,7 @@ Redaguoti gali tik tie GitHub vartotojai, kurie turi rašymo teisę į repozitor
 ```bash
 npm install
 npm start        # http://localhost:8080
-npm run build    # sugeneruoja public/
+npm run build    # sugeneruoja _site/
 ```
 
 Naujas turinio bloko tipas: šablonas `src/_includes/blocks/<tipas>.njk` + laukai `admin/config.yml` (Puslapiai → Turinio blokai → types).
