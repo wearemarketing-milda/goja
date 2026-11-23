@@ -669,3 +669,12 @@ details.is-draft summary{background:#fff4c2}
 @media(max-width:1050px){.price-catalog.has-toc{grid-template-columns:1fr;gap:0;--col-cat:180px}.price-toc{margin-bottom:28px}.price-toc-inner{position:static}.price-toc-list{display:none}.price-toc-select{display:block}.price-toc-label{text-transform:none;letter-spacing:0;font-size:16px;color:var(--blue);margin-bottom:9px}}
 @media(max-width:760px){.price-catalog.has-toc{--col-cat:0px}}
 .price-catalog.has-toc>.price-toc{align-self:stretch}
+
+/* Kainoraštis: be kategorijos stulpelio, hover tik tekstas */
+.price-catalog,.price-catalog.has-toc{--col-cat:0px}
+.price-colhead{grid-template-columns:minmax(0,1fr) var(--col-price)!important}
+.price-row:hover,.price-row:focus-within{background:none!important}
+.price-row td.price-value{text-align:right}
+/* Išskleidžiamieji laukai: vienodi tarpai aplink chevroną */
+select{-webkit-appearance:none;appearance:none;padding-right:48px!important;background:var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%232F3E51' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 20px center/12px 8px}
+@media(max-width:760px){.price-catalog,.price-catalog.has-toc{--col-price:132px}.price-row td.price-value{white-space:nowrap;font-size:15px}}
