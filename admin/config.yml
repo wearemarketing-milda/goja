@@ -479,6 +479,54 @@ collections:
           hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
         label: Nuoroda po kortelėmis
         name: link
+    - label: Kitos paslaugos (slider'is)
+      name: related_services
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Virš antraštės (mažos raidės)
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Antraštė
+        name: title
+        widget: string
+        default: Kitos odontologijos paslaugos
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Mygtukas viršuje dešinėje
+        name: link
+      - label: Kortelės nuorodos tekstas
+        name: card_link_text
+        widget: string
+        default: Plačiau apie paslaugą
+      - label: Kieno dukteriniai puslapiai rodomi
+        name: parent
+        widget: relation
+        collection: pages
+        value_field: slug
+        search_fields:
+        - nav_label
+        display_fields:
+        - nav_label
+        default: paslaugos
+        hint: Rodomi šio puslapio dukteriniai puslapiai, išskyrus tą, kuriame esate.
     - label: Paslaugos aprašymas (tekstas)
       name: service_content
       summary: '{{fields.title}}'

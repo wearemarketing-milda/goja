@@ -296,3 +296,29 @@ html.drawer-open{overflow:hidden}
 .specialist-drawer-copy>p:not(.eyebrow){font-size:18px}
 @media(max-width:760px){.specialist-drawer-portrait{height:320px}.specialist-drawer-copy{padding:28px 24px 40px}.specialist-drawer-copy h2{font-size:34px}.specialist-profile h1{font-size:40px}}
 @media(prefers-reduced-motion:reduce){.specialist-drawer[open],.specialist-drawer[open]::backdrop{animation:none}}
+/* ---------- Komandos kortelės rodyklė ---------- */
+.team-card-name{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.team-card:is(:hover,:focus-visible) .mega-arrow{transform:translateX(5px)}
+/* ---------- Aktyvus meniu punktas ---------- */
+.submenu.mega a[aria-current=page]{text-decoration:none}
+.mega-item[aria-current=page] strong{color:var(--clay)}
+.mega-item[aria-current=page]{cursor:default}
+.nav-services:has(.submenu a[aria-current=page])>.nav-parent{text-decoration:underline;text-decoration-color:var(--clay);text-underline-offset:7px;text-decoration-thickness:2px}
+/* ---------- Kitos paslaugos: slider'is ---------- */
+.related-services{border-top:1px solid var(--line);overflow:hidden}
+.related-services-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:42px}
+.related-services-head h2{max-width:640px}
+.related-services-head .button{flex-shrink:0}
+.services-slider-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 64px)/3);gap:32px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;cursor:grab;-webkit-overflow-scrolling:touch;user-select:none}
+.services-slider-track::-webkit-scrollbar{display:none}
+.services-slider-track>*{scroll-snap-align:start}
+.services-slider-track.is-dragging{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}
+.services-slider-track.is-dragging a{pointer-events:none}
+.services-slider-track img{-webkit-user-drag:none;pointer-events:none}
+.services-slider-nav{display:flex;justify-content:flex-end;gap:12px;margin-top:32px}
+.services-slider.is-static .services-slider-nav{display:none}
+.slider-arrow{width:52px;height:52px;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--blue);font-size:22px;line-height:1;display:inline-flex;align-items:center;justify-content:center;transition:background .2s,color .2s,border-color .2s,opacity .2s}
+.slider-arrow:is(:hover,:focus-visible):not(:disabled){background:var(--clay);border-color:var(--clay);color:var(--white)}
+.slider-arrow:disabled{opacity:.35;cursor:default}
+@media(max-width:1050px){.services-slider-track{grid-auto-columns:calc((100% - 32px)/2)}}
+@media(max-width:760px){.related-services-head{flex-direction:column;align-items:flex-start;gap:22px}.services-slider-track{grid-auto-columns:82%;gap:18px}.services-slider-nav{margin-top:24px}}

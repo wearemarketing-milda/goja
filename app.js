@@ -40,6 +40,7 @@ document.addEventListener('keydown', e => {
 });
 const currentPath = location.pathname.replace(/\/$/, '');
 nav?.querySelectorAll('a:not(.nav-parent)').forEach(a => {
+  if ((a.getAttribute('href') || '').startsWith('#')) return;
   const path = new URL(a.href).pathname.replace(/\/$/, '');
   if (path === currentPath) a.setAttribute('aria-current', 'page');
 });
@@ -217,3 +218,49 @@ document.querySelectorAll('a[href="#kontaktai"]').forEach(a => a.addEventListene
     d.addEventListener('close', () => document.documentElement.classList.remove('drawer-open'));
   });
 })();
+
+// Paslaugų slider'is: tempiamas pele ar pirštu, valdomas rodyklėmis.
+document.querySelectorAll('[data-slider]').forEach(slider => {
+  const track = slider.querySelector('[data-slider-track]');
+  const prev = slider.querySelector('[data-slider-prev]');
+  const next = slider.querySelector('[data-slider-next]');
+  if (!track) return;
+  const step = () => {
+    const card = track.firstElementChild;
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    return card ? card.getBoundingClientRect().width + gap : track.clientWidth;
+  };
+  const update = () => {
+    const max = track.scrollWidth - track.clientWidth - 2;
+    if (prev) prev.disabled = track.scrollLeft <= 2;
+    if (next) next.disabled = track.scrollLeft >= max;
+    slider.classList.toggle('is-static', max <= 0);
+  };
+  prev?.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+  next?.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+  track.addEventListener('scroll', update, { passive: true });
+  addEventListener('resize', update);
+  update();
+  // Tempimas pele (lietimui naudojamas natūralus slinkimas)
+  let startX = 0, startLeft = 0, moved = false, down = false;
+  track.addEventListener('pointerdown', e => {
+    if (e.pointerType !== 'mouse' || e.button !== 0) return;
+    down = true; moved = false; startX = e.clientX; startLeft = track.scrollLeft;
+  });
+  addEventListener('pointermove', e => {
+    if (!down) return;
+    const dx = e.clientX - startX;
+    if (!moved && Math.abs(dx) > 5) { moved = true; track.classList.add('is-dragging'); }
+    if (moved) { e.preventDefault(); track.scrollLeft = startLeft - dx; }
+  });
+  addEventListener('pointerup', () => {
+    if (!down) return;
+    down = false;
+    if (moved) {
+      track.classList.remove('is-dragging');
+      const s = step(); track.scrollTo({ left: Math.round(track.scrollLeft / s) * s, behavior: 'smooth' });
+    }
+  });
+  track.addEventListener('click', e => { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } }, true);
+  track.addEventListener('dragstart', e => e.preventDefault());
+});

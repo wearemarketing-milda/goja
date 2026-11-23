@@ -70,6 +70,18 @@
       "specialists": []
     },
     {
+      "type": "related_services",
+      "hidden": false,
+      "eyebrow": "",
+      "title": "Kitos odontologijos paslaugos",
+      "link": {
+        "text": "Visos odontologijos paslaugos",
+        "url": "/paslaugos"
+      },
+      "card_link_text": "Plačiau apie paslaugą",
+      "parent": "paslaugos"
+    },
+    {
       "type": "global_contact",
       "hidden": false
     },
