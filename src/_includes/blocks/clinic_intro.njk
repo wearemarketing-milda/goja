@@ -1,0 +1,1 @@
+<section class="home-clinic section"><div>{% if b.eyebrow %}<p class="eyebrow">{{ b.eyebrow }}</p>{% endif %}<h2>{{ b.title }}</h2>{% if b.text %}<p>{{ b.text }}</p>{% endif %}{% if b.link.text %}<a class="text-link" href="{{ b.link.url }}">{{ b.link.text }}</a>{% endif %}</div>{% for im in b.images %}<figure>{% image im %}</figure>{% endfor %}</section>

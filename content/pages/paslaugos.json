@@ -1,0 +1,58 @@
+{
+  "title": "Odontologijos paslaugos Mažeikiuose",
+  "slug": "paslaugos",
+  "published": true,
+  "parent": "",
+  "nav_label": "Paslaugos",
+  "menu_label": "",
+  "show_in_menu": true,
+  "menu_order": 20,
+  "meta_title": "Odontologijos paslaugos Mažeikiuose | GOJA klinika",
+  "meta_description": "Odontologijos paslaugos visai šeimai Mažeikiuose: burnos higiena, dantų gydymas, vaikų odontologija, estetinis plombavimas, protezavimas ir implantacija.",
+  "og_image": "",
+  "noindex": false,
+  "sitemap": true,
+  "card_title": "",
+  "card_text": "",
+  "card_image": {
+    "src": "",
+    "alt": ""
+  },
+  "card_uncropped": false,
+  "blocks": [
+    {
+      "type": "page_top",
+      "title": "Odontologijos paslaugos Mažeikiuose",
+      "lead": "Odontologinė priežiūra visai šeimai – nuo profilaktikos iki dantų atkūrimo.",
+      "image": {
+        "src": "",
+        "alt": ""
+      }
+    },
+    {
+      "type": "service_cards",
+      "variant": "index",
+      "parent": "paslaugos",
+      "eyebrow": "",
+      "title": "",
+      "text": "",
+      "link": {
+        "text": "",
+        "url": ""
+      },
+      "card_link_text": "Plačiau apie paslaugą"
+    },
+    {
+      "type": "cta",
+      "title": "Registracija vizitui",
+      "button": {
+        "text": "Registruotis konsultacijai",
+        "url": "/registracija"
+      },
+      "phone": {
+        "text": "+370 611 80077",
+        "url": "tel:+37061180077"
+      }
+    }
+  ]
+}

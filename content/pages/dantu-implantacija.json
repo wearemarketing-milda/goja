@@ -1,0 +1,132 @@
+{
+  "title": "Dantų implantacija Mažeikiuose",
+  "slug": "dantu-implantacija",
+  "published": true,
+  "parent": "paslaugos",
+  "nav_label": "Dantų implantacija",
+  "menu_label": "",
+  "show_in_menu": true,
+  "menu_order": 80,
+  "meta_title": "Dantų implantacija Mažeikiuose | GOJA klinika",
+  "meta_description": "Dantų implantacija Mažeikiuose. Vieno danties implantacijos pasiūlymas – 1 100 €, nemokama konsultacija. Sužinokite, kas įeina į kainą.",
+  "og_image": "",
+  "noindex": false,
+  "sitemap": true,
+  "card_title": "",
+  "card_text": "Prarastų dantų atkūrimas pagal individualų gydymo planą.",
+  "card_image": {
+    "src": "/assets/implant-structure.webp",
+    "alt": "Danties implanto sandaros iliustracija"
+  },
+  "card_uncropped": true,
+  "blocks": [
+    {
+      "type": "service_hero",
+      "eyebrow": "DANTŲ IMPLANTACIJA",
+      "title": "Dantų implantacija Mažeikiuose",
+      "lead": "Prarastų dantų atkūrimas nuo išsamios diagnostikos iki protezavimo ir priežiūros.",
+      "intro": "Implantacijas GOJA klinikoje atlieka [burnos chirurgas, gydytojas odontologas ortopedas Tomas Janeliūnas](#tomas-janeliunas).",
+      "button": {
+        "text": "Registruotis konsultacijai",
+        "url": "/registracija?paslauga=dantu-implantacija"
+      },
+      "offer_link": {
+        "text": "Specialus pasiūlymas: 1 100 €",
+        "url": "#specialus-pasiulymas"
+      },
+      "image": {
+        "src": "/assets/implant-structure.webp",
+        "alt": "Danties implanto sandaros iliustracija"
+      },
+      "image_uncropped": true
+    },
+    {
+      "type": "offer_box",
+      "anchor": "specialus-pasiulymas",
+      "eyebrow": "SPECIALUS PASIŪLYMAS",
+      "title": "Vieno danties implantacija",
+      "price": "1 100",
+      "currency": "€",
+      "button": {
+        "text": "Registruotis nemokamai konsultacijai",
+        "url": "/registracija?paslauga=nemokama-implantacijos-konsultacija&pasiulymas=vieno-danties-1100"
+      },
+      "inclusions_title": "Į kainą įeina:",
+      "inclusions": [
+        "Panoraminė dantų nuotrauka",
+        "Danties šalinimas, jei reikalingas",
+        "Momentinė implantacija – implantas įsriegiamas iškart po šalinimo",
+        "Gijimo galvutė",
+        "Danties vainikėlis"
+      ]
+    },
+    {
+      "type": "doctor",
+      "specialist": "tomas-janeliunas",
+      "eyebrow": "IMPLANTACIJAS ATLIEKANTIS GYDYTOJAS",
+      "button": {
+        "text": "Registruotis implantacijos konsultacijai",
+        "url": "/registracija?paslauga=dantu-implantacija"
+      }
+    },
+    {
+      "type": "service_content",
+      "eyebrow": "INDIVIDUALUS POŽIŪRIS",
+      "title": "Prarastų dantų atkūrimas implantais",
+      "body": "Implantacija yra šiuolaikinis sprendimas atkurti prarastus dantis, kai svarbus tiek estetinis rezultatas, tiek ilgalaikis stabilumas. Klinikoje naudojame „Megagen“ dantų implantų sistemas. Jų tinkamumas ir gydymo eiga aptariami individualiai.\n\nPrieš implantaciją atliekama išsami diagnostika ir paruošiamas individualus gydymo planas, kuriame pacientas mato visus etapus: nuo konsultacijos ir chirurginės dalies iki galutinio protezavimo bei tolesnės priežiūros.",
+      "links_text": "Po implantacijos gydymo planas tęsiamas [protezavimu ant implantų](/dantu-protezavimas). Atskirų procedūrų įkainius ir specialaus pasiūlymo apimtį palyginkite su [klinikoje taikomomis kainomis](/kainos)."
+    },
+    {
+      "type": "guidance",
+      "title": "Dantų implantacija ir kramtymo funkcijos atkūrimas",
+      "columns": [
+        {
+          "title": "Prarasto danties atkūrimo paskirtis",
+          "body": "Danties netekimas gali apsunkinti kramtymą, keisti kalbėjimą ar šypsenos išvaizdą. Implantas įsriegiamas į žandikaulio kaulą ir tampa atrama atkuriamam danties vainikėliui. Implantai taip pat gali padėti atkurti kelis dantis ar visą dantų lanką.\n\nImplantacija yra viena iš atkūrimo galimybių. Konsultacijoje aptariama jos nauda, rizika ir alternatyvos, įskaitant [tiltinius ar išimamus protezus](/dantu-protezavimas)."
+        },
+        {
+          "title": "Individualus planas ir priežiūra po gydymo",
+          "body": "Tinkamumas implantacijai vertinamas pagal burnos ir bendrą sveikatos būklę. Gijimui reikia laiko, o gydymo etapai bei terminai gali skirtis. Ne kiekvienu atveju implantą galima įsriegti iš karto po danties pašalinimo.\n\nPo implantacijos svarbi kasdienė implanto ir aplinkinių dantų higiena bei reguliarios patikros. Tai padeda prižiūrėti atkurtą dantį ir aplinkinius audinius. GOJA klinikoje tinkamumą implantacijai konsultacijos metu įvertina burnos chirurgas [Tomas Janeliūnas](#tomas-janeliunas)."
+        }
+      ]
+    },
+    {
+      "type": "treatment_list",
+      "eyebrow": "",
+      "title": "Gydymo galimybės",
+      "items": [
+        "Implantologo konsultacija",
+        "Individualaus gydymo plano sudarymas",
+        "Megagen implantų sistema",
+        "Vieno ar kelių dantų atkūrimas",
+        "Viso žandikaulio atkūrimas ant implantų",
+        "Protezavimas ant implantų"
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Registracija vizitui",
+      "button": {
+        "text": "Registruotis konsultacijai",
+        "url": "/registracija?paslauga=dantu-implantacija"
+      },
+      "phone": {
+        "text": "+370 611 80077",
+        "url": "tel:+37061180077"
+      }
+    },
+    {
+      "type": "related_links",
+      "links": [
+        {
+          "text": "Visos odontologijos paslaugos",
+          "url": "/paslaugos"
+        },
+        {
+          "text": "Paslaugų kainoraštis",
+          "url": "/kainos"
+        }
+      ]
+    }
+  ]
+}

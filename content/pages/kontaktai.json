@@ -1,0 +1,92 @@
+{
+  "title": "GOJA klinikos kontaktai Mažeikiuose",
+  "slug": "kontaktai",
+  "published": true,
+  "parent": "",
+  "nav_label": "Kontaktai",
+  "menu_label": "",
+  "show_in_menu": true,
+  "menu_order": 110,
+  "meta_title": "Kontaktai – odontologijos klinika Mažeikiuose | GOJA klinika",
+  "meta_description": "GOJA klinikos kontaktai: M. Daukšos g. 19, Mažeikiai. Telefonas +370 611 80077, info@gojaklinika.lt. Darbo laikas, registracija ir žemėlapis.",
+  "og_image": "",
+  "noindex": false,
+  "sitemap": true,
+  "card_title": "",
+  "card_text": "",
+  "card_image": {
+    "src": "",
+    "alt": ""
+  },
+  "card_uncropped": false,
+  "blocks": [
+    {
+      "type": "page_top",
+      "title": "GOJA klinikos kontaktai Mažeikiuose",
+      "lead": "M. Daukšos g. 19, Mažeikiai. Susisiekite Jums patogiausiu būdu.",
+      "image": {
+        "src": "",
+        "alt": ""
+      }
+    },
+    {
+      "type": "contact_photo",
+      "image": {
+        "src": "/assets/clinic-arrival-1440.webp",
+        "alt": "GOJA klinikos pastatas M. Daukšos gatvėje Mažeikiuose"
+      },
+      "eyebrow": "MUS RASITE",
+      "title": "M. Daukšos g. 19 Mažeikiai",
+      "link": {
+        "text": "Atverti maršrutą žemėlapyje",
+        "url": "https://www.google.com/maps/search/?api=1&query=M.+Dauk%C5%A1os+19+Ma%C5%BEeikiai"
+      }
+    },
+    {
+      "type": "contact",
+      "anchor": "kontaktai",
+      "eyebrow": "",
+      "title": "Registracija vizitui",
+      "text": "Registruokitės konsultacijai internetu arba paskambinkite. Lauksime Jūsų GOJA klinikoje.",
+      "button": {
+        "text": "Registruotis vizitui",
+        "url": "/registracija"
+      },
+      "button_light": false,
+      "phone": {
+        "text": "+370 611 80077",
+        "url": "tel:+37061180077"
+      },
+      "email": {
+        "text": "info@gojaklinika.lt",
+        "url": "mailto:info@gojaklinika.lt"
+      },
+      "photo": {
+        "src": "/assets/clinic-waiting-1440.webp",
+        "alt": "GOJA klinikos laukiamasis"
+      },
+      "address_label": "MUS RASITE",
+      "address_lines": "M. Daukšos g. 19\nMažeikiai",
+      "label_style": "eyebrow",
+      "map_link": {
+        "text": "Rodyti žemėlapyje",
+        "url": "https://www.google.com/maps/search/?api=1&query=M.+Dauk%C5%A1os+19+Ma%C5%BEeikiai"
+      },
+      "hours_label": "DARBO LAIKAS",
+      "hours": [
+        {
+          "day": "Pirmadienis–ketvirtadienis",
+          "time": "8:00–19:00"
+        },
+        {
+          "day": "Penktadienis",
+          "time": "8:00–18:00"
+        },
+        {
+          "day": "Šeštadienis",
+          "time": "Pagal registraciją"
+        }
+      ]
+    }
+  ]
+}

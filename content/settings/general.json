@@ -1,0 +1,37 @@
+{
+  "site_name": "GOJA klinika",
+  "site_url": "https://gojaklinika.lt",
+  "logo": "/assets/brand-horizontal-blue.png",
+  "logo_alt": "GOJA klinika",
+  "logo_footer": "/assets/brand-vertical-white.png",
+  "og_image": "/assets/clinic-exterior-1440.webp",
+  "og_image_alt": "GOJA klinika Mažeikiuose",
+  "phone": "+370 611 80077",
+  "phone_link": "+37061180077",
+  "email": "info@gojaklinika.lt",
+  "street": "M. Daukšos g. 19",
+  "city": "Mažeikiai",
+  "postal_code": "LT-89234",
+  "country": "LT",
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=M.+Dauk%C5%A1os+19+Ma%C5%BEeikiai",
+  "instagram": "https://www.instagram.com/goja_klinika/",
+  "facebook": "https://www.facebook.com/people/Goja-Klinika/61591470214313/",
+  "opening_hours": [
+    { "days": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "08:00", "closes": "19:00" },
+    { "days": ["Friday"], "opens": "08:00", "closes": "18:00" }
+  ],
+  "header_button": { "text": "Registruotis", "url": "/registracija" },
+  "footer_links": [
+    { "text": "Paslaugos", "url": "/paslaugos", "new_tab": false },
+    { "text": "Apie kliniką", "url": "/apie-mus", "new_tab": false },
+    { "text": "Kontaktai", "url": "/kontaktai", "new_tab": false },
+    { "text": "Instagram", "url": "https://www.instagram.com/goja_klinika/", "new_tab": true },
+    { "text": "Facebook", "url": "https://www.facebook.com/people/Goja-Klinika/61591470214313/", "new_tab": true }
+  ],
+  "copyright": "© 2026 GOJA klinika",
+  "privacy_link": { "text": "Privatumo politika", "url": "/privatumo-politika" },
+  "back_to_top": "Į viršų ↑",
+  "mobile_call_text": "Skambinti",
+  "mobile_register": { "text": "Registruotis", "url": "/registracija" },
+  "mobile_register_form_text": "Pildyti formą"
+}

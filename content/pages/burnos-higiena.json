@@ -1,0 +1,121 @@
+{
+  "title": "Burnos higiena Mažeikiuose",
+  "slug": "burnos-higiena",
+  "published": true,
+  "parent": "paslaugos",
+  "nav_label": "Burnos higiena",
+  "menu_label": "",
+  "show_in_menu": true,
+  "menu_order": 30,
+  "meta_title": "Burnos higiena Mažeikiuose | GOJA klinika",
+  "meta_description": "Profesionali burnos higiena Mažeikiuose: apnašų ir akmenų šalinimas, poliravimas, individualios rekomendacijos. Registracija GOJA klinikoje.",
+  "og_image": "",
+  "noindex": false,
+  "sitemap": true,
+  "card_title": "",
+  "card_text": "Apnašų ir akmenų šalinimas, poliravimas ir individualios priežiūros rekomendacijos.",
+  "card_image": {
+    "src": "/assets/hygiene.webp",
+    "alt": "Profesionalios burnos higienos procedūra"
+  },
+  "card_uncropped": false,
+  "blocks": [
+    {
+      "type": "service_hero",
+      "eyebrow": "BURNOS HIGIENA",
+      "title": "Burnos higiena Mažeikiuose",
+      "lead": "Apnašų ir akmenų šalinimas, poliravimas ir individualios priežiūros rekomendacijos.",
+      "intro": "",
+      "button": {
+        "text": "Registruotis konsultacijai",
+        "url": "/registracija?paslauga=burnos-higiena"
+      },
+      "offer_link": {
+        "text": "",
+        "url": ""
+      },
+      "image": {
+        "src": "/assets/hygiene.webp",
+        "alt": "Profesionalios burnos higienos procedūra"
+      },
+      "image_uncropped": false
+    },
+    {
+      "type": "service_content",
+      "eyebrow": "INDIVIDUALUS POŽIŪRIS",
+      "title": "Profesionali burnos higiena ir individuali priežiūra",
+      "body": "Burnos higiena yra profilaktikos pagrindas. Reguliariai atliekama, ji padeda ankstyvoje stadijoje sustabdyti dantenų ligas, sumažinti ėduonies riziką ir išvengti sudėtingesnio gydymo ateityje.\n\nProcedūros metu pašaliname minkštas ir kietas apnašas, dantų akmenis, pigmentines dėmes, įvertiname dantenų būklę ir parodome, kurios sritys reikalauja daugiau dėmesio kasdienėje priežiūroje. Po vizito gausite individualias rekomendacijas, o esant poreikiui - ilgalaikę higienos programą su aiškiu vizitų grafiku.",
+      "links_text": "Burnos higienos ir kitų procedūrų kainas rasite [GOJA klinikos kainoraštyje](/kainos). Prireikus dantų gydymo, aptarsime [terapinės odontologijos](/terapine-odontologija) galimybes."
+    },
+    {
+      "type": "guidance",
+      "title": "Burnos higienos svarba dantenų sveikatai",
+      "columns": [
+        {
+          "title": "Apnašų kontrolė ir dantenų priežiūra",
+          "body": "Dantų apnašos kaupiasi kasdien, o jų nepašalinus gali prasidėti dantenų uždegimas. Profesionali burnos higiena padeda pašalinti apnašas ir dantų akmenis, tačiau nepakeičia kasdienio dantų valymo bei tarpdančių priežiūros.\n\nVizito metu svarbu ne tik nuvalyti dantų paviršius, bet ir įvertinti dantenas. Pagal jų būklę bei apnašų kaupimąsi parenkamas individualus tolesnių apsilankymų dažnis."
+        },
+        {
+          "title": "Požymiai, kuriuos verta įvertinti",
+          "body": "Kraujuojančios, paraudusios ar patinusios dantenos ir nuolatinis nemalonus burnos kvapas yra priežastys kreiptis į odontologą. Vien higienos procedūros gali nepakakti, jei dantenų liga pažengusi – tuomet aptariamas papildomas gydymas.\n\nDantenų būklę verta tikrinti ir tuomet, kai neskauda. Laiku pastebėti pokyčiai leidžia pradėti tinkamą priežiūrą ir stebėti jos rezultatą."
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "eyebrow": "KAIP VYKSTA VIZITAS",
+      "title": "Žingsnis po žingsnio.",
+      "steps": [
+        {
+          "title": "Įvertinimas",
+          "text": "Apžiūra ir dantenų būklės įvertinimas."
+        },
+        {
+          "title": "Apnašų šalinimas",
+          "text": "Minkštų ir kietų apnašų, akmenų bei pigmentinių dėmių šalinimas."
+        },
+        {
+          "title": "Poliravimas",
+          "text": "Dantų paviršių poliravimas."
+        },
+        {
+          "title": "Rekomendacijos",
+          "text": "Individualios kasdienės burnos priežiūros instrukcijos."
+        }
+      ]
+    },
+    {
+      "type": "team",
+      "variant": "service",
+      "anchor": "",
+      "title": "Gydytojai ir specialistai",
+      "text": "Susipažinkite su GOJA klinikos komanda.",
+      "specialists": []
+    },
+    {
+      "type": "cta",
+      "title": "Registracija vizitui",
+      "button": {
+        "text": "Registruotis konsultacijai",
+        "url": "/registracija?paslauga=burnos-higiena"
+      },
+      "phone": {
+        "text": "+370 611 80077",
+        "url": "tel:+37061180077"
+      }
+    },
+    {
+      "type": "related_links",
+      "links": [
+        {
+          "text": "Visos odontologijos paslaugos",
+          "url": "/paslaugos"
+        },
+        {
+          "text": "Paslaugų kainoraštis",
+          "url": "/kainos"
+        }
+      ]
+    }
+  ]
+}

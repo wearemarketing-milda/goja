@@ -1,0 +1,51 @@
+{
+  "title": "Registracija pas odontologą Mažeikiuose",
+  "slug": "registracija",
+  "published": true,
+  "parent": "",
+  "nav_label": "Registracija",
+  "menu_label": "",
+  "show_in_menu": false,
+  "menu_order": 100,
+  "meta_title": "Registracija pas odontologą Mažeikiuose | GOJA klinika",
+  "meta_description": "Registracija į GOJA odontologijos kliniką Mažeikiuose: pasirinkite paslaugą ir susisiekite internetu arba telefonu +370 611 80077. M. Daukšos g. 19.",
+  "og_image": "",
+  "noindex": false,
+  "sitemap": true,
+  "card_title": "",
+  "card_text": "",
+  "card_image": {
+    "src": "",
+    "alt": ""
+  },
+  "card_uncropped": false,
+  "blocks": [
+    {
+      "type": "page_top",
+      "title": "Registracija pas odontologą Mažeikiuose",
+      "lead": "Registruokitės konsultacijai ir aptarkime Jums tinkamą gydymo planą.",
+      "image": {
+        "src": "/assets/clinic-waiting-1440.webp",
+        "alt": "Klinikos laukiamasis"
+      }
+    },
+    {
+      "type": "registration",
+      "eyebrow": "JUMS PATOGIU BŪDU",
+      "title": "Susitarkime dėl vizito.",
+      "text": "Užpildykite registracijos užklausą. Susisieksime per 1 darbo dieną ir suderinsime Jums patogų vizito laiką.",
+      "phone": {
+        "text": "+370 611 80077",
+        "url": "tel:+37061180077"
+      },
+      "email": {
+        "text": "info@gojaklinika.lt",
+        "url": "mailto:info@gojaklinika.lt"
+      },
+      "submit_text": "Pateikti registracijos užklausą",
+      "help_text": "* Privalomi laukai. Užklausa nėra patvirtinta vizito rezervacija.",
+      "success_title": "Ačiū, Jūsų registraciją gavome.",
+      "success_text": "Susisieksime per 1 darbo dieną."
+    }
+  ]
+}

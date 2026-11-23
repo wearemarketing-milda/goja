@@ -1,0 +1,28 @@
+{
+  "name": "Tomas Janeliūnas",
+  "slug": "tomas-janeliunas",
+  "published": true,
+  "order": 10,
+  "show_in_team": true,
+  "photo": "/assets/tomas.png",
+  "photo_alt": "Tomas Janeliūnas",
+  "card_role": "Gyd. burnos chirurgas – ortopedas",
+  "role": "Burnos chirurgas · Gydytojas odontologas ortopedas",
+  "job_title": "Burnos chirurgas, gydytojas odontologas ortopedas",
+  "portrait_alt": "Burnos chirurgas Tomas Janeliūnas",
+  "bio": "Tomas Janeliūnas specializuojasi burnos chirurgijoje ir dantų atkūrime implantais. Gydytojas atlieka pavienių dantų ir viso dantų lanko atkūrimą, taip pat momentinę implantaciją po danties pašalinimo.\n\nPrieš gydymą įvertinama Jūsų burnos būklė ir sudaromas individualus planas – nuo diagnostikos ir implantacijos iki protezavimo bei tolesnės priežiūros.",
+  "education": [
+    {
+      "year": "2007 m.",
+      "text": "Gydytojo odontologo kvalifikacija"
+    },
+    {
+      "year": "2010 m.",
+      "text": "Burnos chirurgo kvalifikacija"
+    },
+    {
+      "year": "2012 m.",
+      "text": "Gydytojo odontologo ortopedo kvalifikacija"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+<section class="approach section"{% if b.anchor %} id="{{ b.anchor }}"{% endif %}><div class="approach-grid"><div><h2>{{ b.title }}</h2>{% if b.lead %}<p class="large-text">{{ b.lead }}</p>{% endif %}{{ b.body | md | safe }}</div><figure>{% image b.image %}</figure></div></section>

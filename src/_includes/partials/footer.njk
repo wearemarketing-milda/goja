@@ -1,0 +1,5 @@
+<footer><a href="/" class="footer-brand" aria-label="{{ s.site_name }} – pradžia">{% image { src: s.logo_footer, alt: s.logo_alt }, { lazy: false } %}</a><div class="footer-contact"><a href="tel:{{ s.phone_link }}">{{ s.phone }}</a><a href="mailto:{{ s.email }}">{{ s.email }}</a><p>{{ s.street }}, {{ s.city }}</p></div><div class="footer-links">
+{%- for l in s.footer_links %}<a href="{{ l.url }}"{% if l.new_tab %} target="_blank" rel="noopener"{% endif %}>{{ l.text }}</a>{% endfor -%}
+</div><div class="footer-bottom"><span>{{ s.copyright }}</span><a href="{{ s.privacy_link.url }}">{{ s.privacy_link.text }}</a><a href="#top">{{ s.back_to_top }}</a></div></footer><nav class="mobile-actions" aria-label="Greitas susisiekimas"><a href="tel:{{ s.phone_link }}">{{ s.mobile_call_text }}</a>
+{%- if p.hasForm %}<a href="#registration-form">{{ s.mobile_register_form_text }}</a>{% else %}<a href="{{ s.mobile_register.url }}">{{ s.mobile_register.text }}</a>{% endif -%}
+</nav>

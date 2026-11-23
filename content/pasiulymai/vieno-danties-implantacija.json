@@ -1,0 +1,27 @@
+{
+  "title": "Vieno danties implantacija",
+  "slug": "vieno-danties-implantacija",
+  "published": true,
+  "order": 10,
+  "price": "1 100",
+  "currency": "€",
+  "summary": "Konsultuoja ir implantacijas atlieka burnos chirurgas, gydytojas odontologas ortopedas Tomas Janeliūnas. Konsultacija nemokama.",
+  "image": {
+    "src": "/assets/implant-structure.webp",
+    "alt": "Danties implanto sandaros iliustracija"
+  },
+  "inclusions": [
+    "Panoraminė dantų nuotrauka",
+    "Danties šalinimas, jei reikalingas",
+    "Momentinė implantacija – implantas įsriegiamas iškart po šalinimo",
+    "Gijimo galvutė",
+    "Danties vainikėlis"
+  ],
+  "button": {
+    "text": "Registruotis nemokamai konsultacijai",
+    "url": "/registracija?paslauga=nemokama-implantacijos-konsultacija&pasiulymas=vieno-danties-1100"
+  },
+  "valid_from": "",
+  "valid_until": "",
+  "body": ""
+}

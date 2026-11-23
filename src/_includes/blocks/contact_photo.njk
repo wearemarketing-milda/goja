@@ -1,0 +1,1 @@
+<section class="contact-photo section">{% image b.image %}<div>{% if b.eyebrow %}<p class="eyebrow">{{ b.eyebrow }}</p>{% endif %}<h2>{{ b.title }}</h2>{% if b.link.text %}<a class="text-link" href="{{ b.link.url }}"{% if b.link.url | isExternal %} target="_blank" rel="noopener"{% endif %}>{{ b.link.text }}</a>{% endif %}</div></section>

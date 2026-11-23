@@ -1,0 +1,1 @@
+<div class="breadcrumbs"><a href="/">Pradžia</a><span>/</span>{% for a in p.ancestors %}<a href="{{ a.url }}">{{ a.nav_label or a.title }}</a><span>/</span>{% endfor %}<span aria-current="page">{{ p.nav_label or p.title }}</span></div>

@@ -1,0 +1,83 @@
+{
+  "title": "Apie GOJA odontologijos kliniką Mažeikiuose",
+  "slug": "apie-mus",
+  "published": true,
+  "parent": "",
+  "nav_label": "Apie kliniką",
+  "menu_label": "",
+  "show_in_menu": true,
+  "menu_order": 10,
+  "meta_title": "Apie mus – odontologijos klinika Mažeikiuose | GOJA klinika",
+  "meta_description": "Susipažinkite su GOJA odontologijos klinika Mažeikiuose, gydytojais ir specialistais. Išsami diagnostika, gydymo planavimas ir priežiūra visai šeimai.",
+  "og_image": "",
+  "noindex": false,
+  "sitemap": true,
+  "card_title": "",
+  "card_text": "",
+  "card_image": {
+    "src": "",
+    "alt": ""
+  },
+  "card_uncropped": false,
+  "blocks": [
+    {
+      "type": "page_top",
+      "title": "Apie GOJA odontologijos kliniką Mažeikiuose",
+      "lead": "Šeimos odontologijos klinika Mažeikiuose. Aiškus gydymo planas, rami patirtis ir ilgalaikė priežiūra.",
+      "image": {
+        "src": "",
+        "alt": ""
+      }
+    },
+    {
+      "type": "approach",
+      "anchor": "apie",
+      "title": "Odontologinė priežiūra visai šeimai",
+      "lead": "Kiekvienas pacientas mums yra unikalus. Todėl pirmiausia išklausome, paaiškiname ir planuojame kartu.",
+      "body": "Didelį dėmesį skiriame išsamiai diagnostikai, aiškiam bendravimui ir individualiam gydymo planavimui. Prieš pradedant gydymą aptariame galimus sprendimus, etapus, terminus, kainas ir numatomus rezultatus.\n\nMūsų tikslas – ilgalaikė burnos sveikata, palaikoma reguliaria profilaktika ir aiškiu bendravimu tarp vizitų.",
+      "image": {
+        "src": "/assets/clinic-care-1440.webp",
+        "alt": "GOJA klinikos specialistės gydymo metu"
+      }
+    },
+    {
+      "type": "team",
+      "variant": "about",
+      "anchor": "komanda",
+      "title": "GOJA komanda",
+      "text": "Susipažinkite su GOJA klinikos specialistais.",
+      "specialists": []
+    },
+    {
+      "type": "gallery",
+      "title": "GOJA klinikos erdvės",
+      "text": "Susipažinkite su GOJA klinikos erdvėmis dar prieš pirmąjį vizitą.",
+      "images": [
+        {
+          "src": "/assets/clinic-waiting-1440.webp",
+          "alt": "GOJA klinikos laukiamasis"
+        },
+        {
+          "src": "/assets/clinic-light-1440.webp",
+          "alt": "GOJA klinikos kabineto apšvietimo įranga"
+        },
+        {
+          "src": "/assets/clinic-instruments-1440.webp",
+          "alt": "GOJA klinikos odontologijos įranga"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Registracija vizitui",
+      "button": {
+        "text": "Registruotis konsultacijai",
+        "url": "/registracija"
+      },
+      "phone": {
+        "text": "+370 611 80077",
+        "url": "tel:+37061180077"
+      }
+    }
+  ]
+}

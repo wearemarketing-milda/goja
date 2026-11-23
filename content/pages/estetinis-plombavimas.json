@@ -1,0 +1,110 @@
+{
+  "title": "Estetinis plombavimas Mažeikiuose",
+  "slug": "estetinis-plombavimas",
+  "published": true,
+  "parent": "paslaugos",
+  "nav_label": "Estetinis plombavimas",
+  "menu_label": "",
+  "show_in_menu": true,
+  "menu_order": 60,
+  "meta_title": "Estetinis plombavimas Mažeikiuose | GOJA klinika",
+  "meta_description": "Estetinis plombavimas Mažeikiuose: dantų formos, nuskilimų, tarpelių ir senų plombų korekcijos. Aptarkite šypsenos atkūrimą GOJA klinikoje.",
+  "og_image": "",
+  "noindex": false,
+  "sitemap": true,
+  "card_title": "",
+  "card_text": "Dantų formos, spalvos ir nedidelių defektų korekcijos.",
+  "card_image": {
+    "src": "/assets/aesthetic.webp",
+    "alt": "Estetinio plombavimo pavyzdys"
+  },
+  "card_uncropped": true,
+  "blocks": [
+    {
+      "type": "service_hero",
+      "eyebrow": "ESTETINIS PLOMBAVIMAS",
+      "title": "Estetinis plombavimas Mažeikiuose",
+      "lead": "Dantų formos, spalvos ir nedidelių defektų korekcijos.",
+      "intro": "",
+      "button": {
+        "text": "Registruotis konsultacijai",
+        "url": "/registracija?paslauga=estetinis-plombavimas"
+      },
+      "offer_link": {
+        "text": "",
+        "url": ""
+      },
+      "image": {
+        "src": "/assets/aesthetic.webp",
+        "alt": "Estetinio plombavimo pavyzdys iš klinikos svetainės"
+      },
+      "image_uncropped": true
+    },
+    {
+      "type": "service_content",
+      "eyebrow": "INDIVIDUALUS POŽIŪRIS",
+      "title": "Kada pasirenkamas estetinis plombavimas",
+      "body": "Estetinis plombavimas yra vienas paprastesnių būdų koreguoti dantų formą, spalvą ar smulkius defektus, neatliekant sudėtingesnių procedūrų. Tinka, kai reikia pataisyti nuskilusį kraštą, uždaryti tarpą tarp dantų ar pakeisti senas, pageltusias plombas.\n\nPrieš procedūrą aptariame paciento lūkesčius, įvertiname dantų būklę ir paruošiame šypsenos atkūrimo planą - kas pasiekiama vienu vizitu, o kuriais atvejais reikalingas kompleksinis sprendimas (laminatės, ortopedija ar ortodontinis nukreipimas).",
+      "links_text": "Estetinio plombavimo įkainius peržiūrėkite [kainoraštyje](/kainos). Jeigu reikalingas platesnis dantų atkūrimas, konsultacijos metu aptariamos ir [protezavimo galimybės](/dantu-protezavimas)."
+    },
+    {
+      "type": "guidance",
+      "title": "Estetinio plombavimo paskirtis ir pasirinkimas",
+      "columns": [
+        {
+          "title": "Nedidelių dantų defektų korekcija",
+          "body": "Estetiniu plombavimu galima koreguoti nuskilusį kraštą, nedidelį tarpelį ar netolygią danties formą. Danties spalvos kompozitas formuojamas taip, kad atkuriama dalis derėtų prie kitų dantų. Procedūros apimtis priklauso nuo konkretaus defekto ir Jūsų lūkesčių.\n\nKai tikslas yra vien išvaizdos pakeitimas, tai pasirenkama procedūra. Sveiko danties forma ar spalva savaime nereiškia, kad jį būtina gydyti. Konsultacija padeda įvertinti, ar norima korekcija tikslinga."
+        },
+        {
+          "title": "Sprendimas pagal dantų būklę",
+          "body": "Prieš korekciją įvertinami dantys, sąkandis ir pageidaujamas rezultatas. Nuskilusio ar pažeisto danties atkūrimo būdas parenkamas pagal pažeidimo dydį: kartais tinkamas plombavimas, kitais atvejais aptariami kiti sprendimai.\n\nAtkurtus dantis reikia prižiūrėti: valyti dantis ir tarpdančius, lankytis patikrose, vengti kietų daiktų kandimo. Kompozitas laikui bėgant gali pakeisti atspalvį ar nusidėvėti, todėl gali prireikti poliravimo, korekcijos ar atnaujinimo."
+        }
+      ]
+    },
+    {
+      "type": "treatment_list",
+      "eyebrow": "",
+      "title": "Galima koreguoti",
+      "items": [
+        "Nuskilę dantys",
+        "Tarpeliai tarp dantų",
+        "Netolygi dantų forma",
+        "Senos, estetiškai nepatrauklios plombos",
+        "Nedideli emalio pažeidimai"
+      ]
+    },
+    {
+      "type": "team",
+      "variant": "service",
+      "anchor": "",
+      "title": "Gydytojai ir specialistai",
+      "text": "Susipažinkite su GOJA klinikos komanda.",
+      "specialists": []
+    },
+    {
+      "type": "cta",
+      "title": "Registracija vizitui",
+      "button": {
+        "text": "Registruotis konsultacijai",
+        "url": "/registracija?paslauga=estetinis-plombavimas"
+      },
+      "phone": {
+        "text": "+370 611 80077",
+        "url": "tel:+37061180077"
+      }
+    },
+    {
+      "type": "related_links",
+      "links": [
+        {
+          "text": "Visos odontologijos paslaugos",
+          "url": "/paslaugos"
+        },
+        {
+          "text": "Paslaugų kainoraštis",
+          "url": "/kainos"
+        }
+      ]
+    }
+  ]
+}

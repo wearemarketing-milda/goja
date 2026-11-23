@@ -1,0 +1,172 @@
+{
+  "title": "Odontologijos klinika Mažeikiuose",
+  "slug": "index",
+  "published": true,
+  "parent": "",
+  "nav_label": "Pradžia",
+  "menu_label": "",
+  "show_in_menu": false,
+  "menu_order": 100,
+  "meta_title": "Profesionali odontologijos klinika Mažeikiuose | GOJA klinika",
+  "meta_description": "GOJA odontologijos klinika Mažeikiuose: burnos higiena, dantų gydymas, estetinis plombavimas, protezavimas ir implantacija. Registruokitės konsultacijai.",
+  "og_image": "",
+  "noindex": false,
+  "sitemap": true,
+  "card_title": "",
+  "card_text": "",
+  "card_image": {
+    "src": "",
+    "alt": ""
+  },
+  "card_uncropped": false,
+  "blocks": [
+    {
+      "type": "hero",
+      "eyebrow": "ŠEIMOS ODONTOLOGIJA",
+      "title": "Odontologijos klinika Mažeikiuose",
+      "intro": "GOJA klinikoje rūpinamės vaikų ir suaugusiųjų dantų sveikata. Prieš gydymą aptariame jo eigą ir kainą.",
+      "button": {
+        "text": "Registruotis vizitui",
+        "url": "/registracija"
+      },
+      "phone": {
+        "text": "+370 611 80077",
+        "url": "tel:+37061180077"
+      },
+      "image": {
+        "src": "/assets/clinic-exterior-1440.webp",
+        "alt": "GOJA klinikos pastatas su originalia GOJA iškaba Mažeikiuose"
+      }
+    },
+    {
+      "type": "visit_strip",
+      "items": [
+        {
+          "label": "Mus rasite",
+          "text": "M. Daukšos g. 19, Mažeikiai",
+          "url": "/kontaktai"
+        },
+        {
+          "label": "Darbo laikas",
+          "text": "I–IV 8–19 val. · V 8–18 val.",
+          "url": ""
+        },
+        {
+          "label": "Turite klausimų?",
+          "text": "Skambinkite +370 611 80077",
+          "url": "tel:+37061180077"
+        }
+      ]
+    },
+    {
+      "type": "service_cards",
+      "variant": "home",
+      "parent": "paslaugos",
+      "eyebrow": "PASLAUGOS",
+      "title": "Odontologijos paslaugos",
+      "text": "Profilaktika, dantų gydymas ir atkūrimas vienoje klinikoje. Pasirinkite paslaugą ir sužinokite daugiau.",
+      "link": {
+        "text": "Peržiūrėti paslaugų kainas",
+        "url": "/kainos"
+      },
+      "card_link_text": "Plačiau apie paslaugą"
+    },
+    {
+      "type": "planning",
+      "image": {
+        "src": "/assets/clinic-clinician-1440.webp",
+        "alt": "GOJA klinikos specialistė darbo metu"
+      },
+      "eyebrow": "GYDYMO PLANAVIMAS",
+      "title": "Aišku nuo pirmos konsultacijos.",
+      "lead": "Prieš pradėdami gydymą aptariame, ką ir kodėl siūlome.",
+      "items": [
+        {
+          "title": "Konsultacija ir būklės įvertinimas",
+          "text": "Išklausome Jūsų lūkesčius, įvertiname dantų būklę ir aptariame galimus gydymo sprendimus.",
+          "open": true
+        },
+        {
+          "title": "Gydymo planas ir kaina",
+          "text": "Paaiškiname numatomus gydymo etapus, terminus ir kainą, kad sprendimą galėtumėte priimti turėdami visą informaciją.",
+          "open": false
+        },
+        {
+          "title": "Tolesnė priežiūra",
+          "text": "Aptariame individualią burnos priežiūrą ir profilaktinius vizitus, padedančius palaikyti burnos sveikatą.",
+          "open": false
+        }
+      ],
+      "link": {
+        "text": "Registruotis konsultacijai",
+        "url": "/registracija"
+      }
+    },
+    {
+      "type": "clinic_intro",
+      "eyebrow": "MŪSŲ ERDVĖS",
+      "title": "Čia Jūsų laukiame.",
+      "text": "Mus rasite M. Daukšos gatvėje 19, Mažeikiuose.",
+      "link": {
+        "text": "Kaip atvykti",
+        "url": "/kontaktai"
+      },
+      "images": [
+        {
+          "src": "/assets/clinic-waiting-1440.webp",
+          "alt": "GOJA klinikos laukiamasis"
+        },
+        {
+          "src": "/assets/clinic-arrival-1440.webp",
+          "alt": "GOJA klinikos pastatas ir įėjimas"
+        }
+      ]
+    },
+    {
+      "type": "contact",
+      "anchor": "kontaktai",
+      "eyebrow": "REGISTRACIJA",
+      "title": "Susitarkime dėl Jūsų vizito.",
+      "text": "Registruokitės arba paskambinkite – aptarsime Jums patogų laiką.",
+      "button": {
+        "text": "Registruotis vizitui",
+        "url": "/registracija"
+      },
+      "button_light": true,
+      "phone": {
+        "text": "+370 611 80077",
+        "url": "tel:+37061180077"
+      },
+      "email": {
+        "text": "",
+        "url": ""
+      },
+      "photo": {
+        "src": "",
+        "alt": ""
+      },
+      "address_label": "",
+      "address_lines": "M. Daukšos g. 19\nMažeikiai",
+      "label_style": "heading",
+      "map_link": {
+        "text": "Rodyti žemėlapyje",
+        "url": "https://www.google.com/maps/search/?api=1&query=M.+Dauk%C5%A1os+19+Ma%C5%BEeikiai"
+      },
+      "hours_label": "Darbo laikas",
+      "hours": [
+        {
+          "day": "Pirmadienis–ketvirtadienis",
+          "time": "8:00–19:00"
+        },
+        {
+          "day": "Penktadienis",
+          "time": "8:00–18:00"
+        },
+        {
+          "day": "Šeštadienis",
+          "time": "Pagal registraciją"
+        }
+      ]
+    }
+  ]
+}

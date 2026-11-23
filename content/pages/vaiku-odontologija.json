@@ -1,0 +1,121 @@
+{
+  "title": "Vaikų odontologija Mažeikiuose",
+  "slug": "vaiku-odontologija",
+  "published": true,
+  "parent": "paslaugos",
+  "nav_label": "Vaikų odontologija",
+  "menu_label": "",
+  "show_in_menu": true,
+  "menu_order": 50,
+  "meta_title": "Vaikų odontologija Mažeikiuose | GOJA klinika",
+  "meta_description": "Vaikų odontologija Mažeikiuose: pirmasis vizitas, profilaktika, pieninių ir nuolatinių dantų gydymas. Individuali priežiūra GOJA klinikoje.",
+  "og_image": "",
+  "noindex": false,
+  "sitemap": true,
+  "card_title": "",
+  "card_text": "Pažintis su gydytoju ir priežiūra vaikui suprantamu, ramiu tempu.",
+  "card_image": {
+    "src": "/assets/children.webp",
+    "alt": "Vaiko dantų apžiūra"
+  },
+  "card_uncropped": false,
+  "blocks": [
+    {
+      "type": "service_hero",
+      "eyebrow": "VAIKŲ ODONTOLOGIJA",
+      "title": "Vaikų odontologija Mažeikiuose",
+      "lead": "Pažintis su gydytoju, profilaktika ir dantų priežiūra vaikui suprantamu, ramiu tempu.",
+      "intro": "",
+      "button": {
+        "text": "Registruotis konsultacijai",
+        "url": "/registracija?paslauga=vaiku-odontologija"
+      },
+      "offer_link": {
+        "text": "",
+        "url": ""
+      },
+      "image": {
+        "src": "/assets/children.webp",
+        "alt": "Vaiko vizitas pas odontologą"
+      },
+      "image_uncropped": false
+    },
+    {
+      "type": "service_content",
+      "eyebrow": "INDIVIDUALUS POŽIŪRIS",
+      "title": "Vaikų dantų priežiūra ir gydymas",
+      "body": "Kiekvienam vaikui sudaromas individualus profilaktikos planas pagal amžių, dantų būklę ir riziką. Vizitas vyksta ramiu tempu - vaikui ir tėvams paaiškiname, kas ir kodėl daroma.\n\nVaikų odontologijoje svarbu ne tik gydyti, bet ir formuoti įprotį reguliariai prižiūrėti burną. Pradedame nuo pirmųjų dantukų: profilaktinių patikrinimų, edukacijos tėvams ir, kai reikia, gydymo pieninių ar nuolatinių dantų.",
+      "links_text": "Vaikų profilaktikos, gydymo ir burnos higienos įkainius rasite [paslaugų kainoraštyje](/kainos). Dėl pirmojo ar profilaktinio vizito susisiekite su [GOJA klinikos registratūra](/kontaktai)."
+    },
+    {
+      "type": "guidance",
+      "title": "Vaikų dantų priežiūra nuo pirmųjų dantukų",
+      "columns": [
+        {
+          "title": "Pažintis su odontologu nelaukiant skausmo",
+          "body": "Pirmąjį vaiko apsilankymą verta planuoti išdygus pirmiesiems pieniniams dantims, nelaukiant jų skausmo. Ankstyvas vizitas padeda susipažinti su aplinka, įvertinti dantukus ir aptarti tėvams aktualius priežiūros klausimus.\n\nVaiko apžiūra ir tolimesnių vizitų dažnis parenkami individualiai. Svarbu aptarti dantų valymą su fluoro turinčia pasta, tėvų pagalbą valant ir mitybos įpročius – tai kasdienės ėduonies profilaktikos dalis."
+        },
+        {
+          "title": "Pieninių dantų gydymo svarba",
+          "body": "Pieninių dantų ėduonies nereikėtų ignoruoti vien todėl, kad šie dantys vėliau pasikeis. Pažeistas dantis gali skaudėti, o gilesnis pažeidimas gali sukelti infekciją. Gydymas parenkamas pagal vaiko amžių ir danties būklę.\n\nJei pastebėjote dėmę, ertmę ar vaikas skundžiasi danties skausmu, kreipkitės apžiūrai. Rami pažintis su gydytoju ir nuosekli profilaktika padeda formuoti įprotį rūpintis dantimis."
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "eyebrow": "KAIP VYKSTA VIZITAS",
+      "title": "Žingsnis po žingsnio.",
+      "steps": [
+        {
+          "title": "Susipažinimas",
+          "text": "Vaikas susipažįsta su gydytoja ir kabinetu. Be skubėjimo."
+        },
+        {
+          "title": "Apžiūra",
+          "text": "Ramiu tempu, paaiškinant kiekvieną žingsnį."
+        },
+        {
+          "title": "Edukacija tėvams",
+          "text": "Burnos priežiūros instrukcijos pagal vaiko amžių."
+        },
+        {
+          "title": "Planas",
+          "text": "Profilaktikos grafikas ir, jei reikia, gydymo planas."
+        }
+      ]
+    },
+    {
+      "type": "team",
+      "variant": "service",
+      "anchor": "",
+      "title": "Gydytojai ir specialistai",
+      "text": "Susipažinkite su GOJA klinikos komanda.",
+      "specialists": []
+    },
+    {
+      "type": "cta",
+      "title": "Registracija vizitui",
+      "button": {
+        "text": "Registruotis konsultacijai",
+        "url": "/registracija?paslauga=vaiku-odontologija"
+      },
+      "phone": {
+        "text": "+370 611 80077",
+        "url": "tel:+37061180077"
+      }
+    },
+    {
+      "type": "related_links",
+      "links": [
+        {
+          "text": "Visos odontologijos paslaugos",
+          "url": "/paslaugos"
+        },
+        {
+          "text": "Paslaugų kainoraštis",
+          "url": "/kainos"
+        }
+      ]
+    }
+  ]
+}

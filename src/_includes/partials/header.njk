@@ -1,0 +1,11 @@
+<header><a class="logo" href="/" aria-label="{{ s.site_name }} — pradžia">{% image { src: s.logo, alt: s.logo_alt }, { lazy: false } %}</a><nav id="nav" aria-label="Pagrindinis meniu">
+{%- for item in cms.menu -%}
+{%- if item.children.length -%}
+<div class="nav-services"><a href="{{ item.page.url }}">{{ item.page.menuText }}</a><button class="submenu-toggle" aria-label="Rodyti paslaugų meniu" aria-expanded="false" aria-controls="services-menu">⌄</button><div id="services-menu" class="submenu">
+{%- for c in item.children %}<a href="{{ c.url }}">{{ c.menuText }}</a>{% endfor -%}
+</div></div>
+{%- else -%}
+<a href="{{ item.page.url }}">{{ item.page.menuText }}</a>
+{%- endif -%}
+{%- endfor -%}
+</nav><a class="button small" href="{{ s.header_button.url }}">{{ s.header_button.text }}</a><button class="menu" aria-label="Atverti meniu" aria-expanded="false" aria-controls="nav">☰</button></header>

@@ -1,0 +1,98 @@
+{
+  "title": "Terapinė odontologija – dantų gydymas Mažeikiuose",
+  "slug": "terapine-odontologija",
+  "published": true,
+  "parent": "paslaugos",
+  "nav_label": "Terapinė odontologija",
+  "menu_label": "",
+  "show_in_menu": true,
+  "menu_order": 40,
+  "meta_title": "Terapinė odontologija – dantų gydymas Mažeikiuose | GOJA klinika",
+  "meta_description": "Dantų gydymas Mažeikiuose: ėduonies pažeistų dantų plombavimas ir atkūrimas. Konsultacija, individualus gydymo planas ir kainos GOJA klinikoje.",
+  "og_image": "",
+  "noindex": false,
+  "sitemap": true,
+  "card_title": "",
+  "card_text": "Dantų gydymas, padedantis atkurti pažeisto danties funkciją ir išvaizdą.",
+  "card_image": {
+    "src": "/assets/therapy.webp",
+    "alt": "Danties gydymo procedūra"
+  },
+  "card_uncropped": false,
+  "blocks": [
+    {
+      "type": "service_hero",
+      "eyebrow": "TERAPINĖ ODONTOLOGIJA",
+      "title": "Terapinė odontologija – dantų gydymas Mažeikiuose",
+      "lead": "Dantų gydymas, padedantis atkurti pažeisto danties funkciją ir išvaizdą.",
+      "intro": "",
+      "button": {
+        "text": "Registruotis konsultacijai",
+        "url": "/registracija?paslauga=terapine-odontologija"
+      },
+      "offer_link": {
+        "text": "",
+        "url": ""
+      },
+      "image": {
+        "src": "/assets/therapy.webp",
+        "alt": "Dantų gydymo procedūra"
+      },
+      "image_uncropped": false
+    },
+    {
+      "type": "service_content",
+      "eyebrow": "INDIVIDUALUS POŽIŪRIS",
+      "title": "Ėduonies pažeistų dantų gydymas ir atkūrimas",
+      "body": "Terapinės odontologijos tikslas - išsaugoti natūralius dantis: sustabdyti ėduonies plitimą ir atkurti pažeisto danties funkciją bei išvaizdą. Plombavimo medžiagas parenkame pagal danties būklę, atkuriamos dalies dydį ir estetinius poreikius.\n\nPrieš gydymą atliekama išsami diagnostika ir paruošiamas aiškus gydymo planas: kokie dantys gydomi, kokia tvarka, per kiek vizitų ir kokia kaina. Pacientas visą laiką žino, kokiame etape yra ir kas vyks toliau.",
+      "links_text": "Plombavimo ir kitų gydymo procedūrų įkainiai pateikti [odontologijos paslaugų kainoraštyje](/kainos). Jei svarbi ir dantų išvaizdos korekcija, konsultacijos metu galima aptarti [estetinį plombavimą](/estetinis-plombavimas)."
+    },
+    {
+      "type": "guidance",
+      "title": "Dantų gydymas padeda išsaugoti natūralų dantį",
+      "columns": [
+        {
+          "title": "Ėduonies įvertinimas iki skausmo",
+          "body": "Ankstyvas ėduonis gali nesukelti jokių pojūčių. Todėl profilaktinė apžiūra svarbi ir tada, kai danties neskauda. Pastebėjus jautrumą šalčiui, karščiui ar saldumui, pakitusią danties spalvą arba ertmę, verta registruotis įvertinimui.\n\nGydymas priklauso nuo pažeidimo gylio. Ankstyviems pakitimams kartais pakanka profilaktinių priemonių, o susidarius ertmei gali reikėti plombavimo. Ne kiekvienas pastebėtas pokytis reiškia, kad dantį iš karto būtina gręžti."
+        },
+        {
+          "title": "Pažeidimo atkūrimas ir tolesnė priežiūra",
+          "body": "Plombuojant atkuriama pažeista danties dalis. Ėduoniui pasiekus danties viduje esančią pulpą, gali prireikti šaknų kanalų gydymo; stipriai pažeisto danties kartais išsaugoti nepavyksta. Gydymo apimtis nustatoma apžiūros metu.\n\nPo gydymo svarbi kasdienė burnos higiena ir individualiai suplanuotos patikros. Plomba atkuria pažeidimą, tačiau pati savaime nepašalina naujo ėduonies atsiradimo rizikos."
+        }
+      ]
+    },
+    {
+      "type": "team",
+      "variant": "service",
+      "anchor": "",
+      "title": "Gydytojai ir specialistai",
+      "text": "Susipažinkite su GOJA klinikos komanda.",
+      "specialists": []
+    },
+    {
+      "type": "cta",
+      "title": "Registracija vizitui",
+      "button": {
+        "text": "Registruotis konsultacijai",
+        "url": "/registracija?paslauga=terapine-odontologija"
+      },
+      "phone": {
+        "text": "+370 611 80077",
+        "url": "tel:+37061180077"
+      }
+    },
+    {
+      "type": "related_links",
+      "links": [
+        {
+          "text": "Visos odontologijos paslaugos",
+          "url": "/paslaugos"
+        },
+        {
+          "text": "Paslaugų kainoraštis",
+          "url": "/kainos"
+        }
+      ]
+    }
+  ]
+}

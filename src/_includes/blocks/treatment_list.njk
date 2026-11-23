@@ -1,0 +1,1 @@
+<section class="section process">{% if b.eyebrow %}<p class="eyebrow">{{ b.eyebrow }}</p>{% endif %}<h2>{{ b.title }}</h2><ul class="treatment-list">{% for i in b.items %}<li>{{ i | mdi | safe }}</li>{% endfor %}</ul></section>

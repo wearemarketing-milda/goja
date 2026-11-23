@@ -1,0 +1,1 @@
+<section aria-labelledby="treatment-guidance-title" class="section treatment-guidance"><h2 id="treatment-guidance-title">{{ b.title }}</h2><div class="guidance-columns">{% for c in b.columns %}<article><h3>{{ c.title }}</h3>{{ c.body | md | safe }}</article>{% endfor %}</div></section>
