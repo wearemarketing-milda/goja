@@ -550,3 +550,15 @@ details.is-draft summary{background:#fff4c2}
 .specialist-drawer .specialist-offers.section{padding-top:8px}
 .specialist-drawer .specialist-offers+.specialist-services-slider.section{padding-top:8px}
 @media(max-width:760px){.specialist-page.section:has(+.specialist-offers){padding-bottom:36px}}
+
+/* ---------- Mygtukų sistema: hover keičia spalvą (be outline), kreminiame fone oranžiniai, vienas aukštis ---------- */
+.button{font-size:var(--btn-font)!important;line-height:var(--btn-line)!important;padding:var(--btn-pad-y) var(--btn-pad-x)!important;min-height:calc(var(--btn-line) + 2*var(--btn-pad-y) + 2px);box-sizing:border-box;transition:background-color .2s,border-color .2s,color .2s}
+.button>span{line-height:var(--btn-line)!important}
+/* Šviesiame fone: mėlynas -> oranžinis */
+.button:hover,.button.small:hover,header .button.small:hover{background:var(--clay)!important;border-color:var(--clay)!important;color:var(--white)!important}
+/* Kontūrinis: užpildomas mėlynai */
+.button.outline:hover{background:var(--blue)!important;border-color:var(--blue)!important;color:var(--white)!important}
+/* Kreminiame fone: oranžinis -> mėlynas */
+:is(.clinic-contact,.implant-offer,.offer-feature,.offer-box,.registration-note,.price-notes) .button:not(.outline){background:var(--clay);border-color:var(--clay);color:var(--white)}
+:is(.clinic-contact,.implant-offer,.offer-box,.registration-note,.price-notes) .button:not(.outline):hover,.offer-feature:hover .offer-feature-cta{background:var(--blue)!important;border-color:var(--blue)!important;color:var(--white)!important}
+:is(.clinic-contact,.implant-offer,.offer-box,.registration-note,.price-notes) .button.outline:hover{background:var(--clay)!important;border-color:var(--clay)!important}
