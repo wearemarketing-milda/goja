@@ -1,5 +1,5 @@
 {%- if d.offer -%}{%- set o = d.offer -%}
-<section class="section specialist-offers" aria-labelledby="{{ offersId }}"><div class="related-services-head"><h2 id="{{ offersId }}">Pasiūlymas su {{ d.firstName }}</h2><a class="button" href="/pasiulymai">Visi pasiūlymai</a></div>
+<section class="section specialist-offers" aria-label="Pasiūlymas su {{ d.firstName }}">
 <a class="offer-feature" href="{{ o.url }}"><span class="offer-feature-media">{% image o.cardImage, { sizes: "(max-width: 760px) 100vw, 55vw" } %}</span><span class="offer-feature-copy">
 {%- if o.validText %}<span class="offer-feature-valid">{{ o.validText }}</span>{% endif -%}
 <span class="offer-feature-title">{{ o.title }}{% if o.title_price %} <span class="offer-feature-price">{{ o.title_price }}</span>{% endif %}</span>

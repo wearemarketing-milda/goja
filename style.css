@@ -541,3 +541,12 @@ details.is-draft summary{background:#fff4c2}
 .specialist-drawer .offer-feature-price{font-size:44px}
 @media(max-width:900px){.offer-feature{grid-template-columns:1fr}.offer-feature-copy{padding:30px 28px 34px}}
 @media(max-width:760px){.specialist-page.section{padding-bottom:44px}.specialist-offers.section,.specialist-services-slider.section{padding-top:44px;padding-bottom:44px}.specialist-offers .related-services-head,.specialist-services-slider .related-services-head{margin-bottom:22px;gap:18px}.offer-feature-copy{padding:24px 22px 28px;gap:14px}.offer-feature-title{font-size:24px}.offer-feature-price{font-size:44px}.specialist-drawer .specialist-offers.section,.specialist-drawer .related-services.section{padding:26px 24px 30px}}
+
+/* Pasiūlymas be antraštės ir separatorių */
+.specialist-offers,.specialist-offers+.specialist-services-slider{border-top:0!important}
+.specialist-offers.section{padding-top:0}
+.specialist-offers+.specialist-services-slider.section{padding-top:0;margin-top:0}
+.specialist-page.section:has(+.specialist-offers){padding-bottom:56px}
+.specialist-drawer .specialist-offers.section{padding-top:8px}
+.specialist-drawer .specialist-offers+.specialist-services-slider.section{padding-top:8px}
+@media(max-width:760px){.specialist-page.section:has(+.specialist-offers){padding-bottom:36px}}
