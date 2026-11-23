@@ -36,5 +36,8 @@
     "url": "/registracija"
   },
   "meta_title": "Tomas Janeliūnas – burnos chirurgas Mažeikiuose | GOJA klinika",
-  "meta_description": ""
+  "meta_description": "",
+  "name_cases": {
+    "instrumental": "Tomu Janeliūnu"
+  }
 }

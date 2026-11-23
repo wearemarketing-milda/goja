@@ -220,6 +220,7 @@ document.querySelectorAll('a[href="#kontaktai"]').forEach(a => a.addEventListene
     const d = document.getElementById(`specialistas-${a.dataset.specialist}`);
     if (!d || typeof d.showModal !== 'function' || e.metaKey || e.ctrlKey || e.shiftKey) return;
     e.preventDefault(); d.showModal(); document.documentElement.classList.add('drawer-open');
+    requestAnimationFrame(() => dispatchEvent(new Event('resize')));
   }));
   document.querySelectorAll('.specialist-drawer').forEach(d => {
     d.querySelector('.specialist-drawer-close')?.addEventListener('click', () => d.close());

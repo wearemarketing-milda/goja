@@ -479,3 +479,41 @@ details.is-draft summary{background:#fff4c2}
 .form-offer{margin:0 0 24px;padding:14px 18px;background:var(--cream);border:1px solid var(--line);color:var(--blue);font-weight:500}
 .implant-offer-inclusions .check-list li{border-bottom:0}
 .implant-offer-inclusions .check-list li:last-child{border-bottom:1px solid var(--line)}
+/* ---------- Pasiūlymo hero: didelis banneris (B variantas) ---------- */
+.offer-banner{position:relative;margin-top:6px}
+.offer-banner.has-media{aspect-ratio:16/9;max-height:min(72vh,720px);width:100%;overflow:hidden;background:var(--cream);color:var(--blue)}
+.offer-banner-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:goja-settle 1.4s var(--ease-out) .05s backwards}
+.offer-banner.has-media:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#f2ede1f2 0%,#f2ede1c7 32%,#f2ede100 62%),linear-gradient(0deg,#f2ede1d9 0%,#f2ede100 45%);pointer-events:none}
+.offer-banner-copy{position:relative;z-index:1}
+.offer-banner.has-media .offer-banner-copy{position:absolute;left:0;bottom:0;max-width:640px;padding:44px 48px}
+.offer-banner-copy>*{animation:goja-rise .85s var(--ease-out) backwards}
+.offer-banner-copy>:nth-child(2){animation-delay:.1s}
+.offer-banner .eyebrow{margin-bottom:16px}
+.offer-banner h1{margin:0;line-height:1.05}
+.offer-hero-body{display:grid;grid-template-columns:minmax(0,1.3fr) auto;gap:32px 8%;align-items:start;padding-top:40px}
+.offer-hero-body .page-lead{margin:0;max-width:640px}
+.offer-hero-body .offer-valid{margin:0 0 18px}
+.offer-hero-actions{flex-direction:column;align-items:stretch;margin:0;min-width:300px}
+.offer-hero-actions .button{justify-content:center}
+.offer-free{display:flex;gap:14px;align-items:flex-start;margin-top:26px;max-width:640px}
+.offer-free-icon{flex:0 0 24px;width:24px;height:24px;margin-top:2px;border-radius:50%;background:var(--clay) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.4 6.6 11 12 5.5' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/15px no-repeat}
+.offer-free strong{display:block;font-weight:600;color:var(--blue);font-size:18px;line-height:1.4}
+.offer-free p{margin-top:6px!important;font-size:var(--p-small)!important;line-height:1.55}
+.offer-hero-body>*,.offer-page-hero>.offer-banner{animation:none}
+@media(max-width:1050px){.offer-hero-body{grid-template-columns:1fr}.offer-hero-actions{flex-direction:row;flex-wrap:wrap;min-width:0}}
+@media(max-width:760px){
+  .offer-banner.has-media{aspect-ratio:1/1;max-height:none}
+  .offer-banner.has-media:after{background:linear-gradient(0deg,#f2ede1 0%,#f2ede1e6 30%,#f2ede100 65%)}
+  .offer-banner.has-media .offer-banner-copy{padding:24px}
+  .offer-hero-body{padding-top:28px}
+  .offer-hero-actions{flex-direction:column}
+}
+/* ---------- Specialisto pasiūlymai ir paslaugų slider'is ---------- */
+.specialist-offers{border-top:1px solid var(--line)}
+.specialist-offers .related-services-head{margin-bottom:36px}
+.specialist-drawer .specialist-offers,.specialist-drawer .related-services{padding:36px 44px 44px}
+.specialist-drawer .specialist-offers .offers-grid{grid-template-columns:1fr}
+.specialist-drawer .related-services-head{flex-direction:column;align-items:flex-start;gap:16px;margin-bottom:26px}
+.specialist-drawer .related-services-head .button{display:none}
+.specialist-drawer .services-slider-track{grid-auto-columns:78%;gap:18px}
+@media(max-width:760px){.specialist-drawer .specialist-offers,.specialist-drawer .related-services{padding:28px 24px 36px}}

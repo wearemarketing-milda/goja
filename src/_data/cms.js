@@ -34,6 +34,8 @@ module.exports = () => {
     while (q && !seen.has(q.slug)) { p.ancestors.unshift(q); seen.add(q.slug); q = bySlug[q.parent]; }
   }
 
+  for (const p of pages) p.siblings = p.parent && bySlug[p.parent] ? bySlug[p.parent].children.filter((c) => c.slug !== p.slug) : [];
+
   // Navigacija: viršutinio lygio puslapiai su „Rodyti meniu“, o jų vaikai rodomi kaip submeniu.
   const menu = [
     ...pages
@@ -76,6 +78,11 @@ module.exports = () => {
     o.ctaUrl = (heroBlock && heroBlock.button && heroBlock.button.url) || '/registracija';
   }
   const offersBySlug = Object.fromEntries(offers.map((o) => [o.slug, o]));
+  // Specialistui priskirti pasiūlymai: per pasiūlymo lauką „Specialistai“ arba gydytojo bloką pasiūlymo puslapyje.
+  for (const sp of specialists) {
+    sp.firstName = sp.name_cases && sp.name_cases.instrumental ? sp.name_cases.instrumental : sp.name;
+    sp.offerList = offers.filter((o) => o.isActive && ((o.specialists || []).includes(sp.slug) || (o.blocks || []).some((b) => b.type === 'doctor' && !b.hidden && b.specialist === sp.slug)));
+  }
   const activeOffers = offers.filter((o) => o.isActive);
   const offerKeys = Object.fromEntries(offers.filter((o) => o.registration_key && o.isActive).map((o) => [o.registration_key, [o.title, o.title_price].filter(Boolean).join(' ')]));
   const inactiveOffers = offers.filter((o) => o.isExpired).sort((a, b) => (a.until < b.until ? 1 : -1));

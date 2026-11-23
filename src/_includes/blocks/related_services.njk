@@ -1,7 +1,6 @@
 {%- set parentPage = cms.bySlug[b.parent or p.parent or "paslaugos"] -%}
 {%- if parentPage and parentPage.children.length > 1 -%}
-<section class="related-services section" aria-labelledby="related-services-title"><div class="related-services-head"><div>{% if b.eyebrow %}<p class="eyebrow">{{ b.eyebrow }}</p>{% endif %}<h2 id="related-services-title">{{ b.title }}</h2></div>{% if b.link.text %}<a class="button" href="{{ b.link.url }}">{{ b.link.text }}</a>{% endif %}</div>
-<div class="services-slider" data-slider><div class="services-slider-track" data-slider-track>
-{%- for c in parentPage.children %}{% if c.slug != p.slug %}<a class="home-service-card" href="{{ c.url }}" draggable="false"><div class="home-service-photo{{ " uncropped" if c.card_uncropped }}">{% image c.card_image %}</div><div class="home-service-copy"><h3>{{ c.card_title or c.nav_label }}</h3>{% if c.card_text %}<p>{{ c.card_text }}</p>{% endif %}<span class="card-link">{{ b.card_link_text or "Plačiau apie paslaugą" }}</span></div></a>{% endif %}{% endfor -%}
-</div><div class="services-slider-nav"><button class="slider-arrow" type="button" data-slider-prev aria-label="Ankstesnės paslaugos"><span aria-hidden="true">←</span></button><button class="slider-arrow" type="button" data-slider-next aria-label="Kitos paslaugos"><span aria-hidden="true">→</span></button></div></div></section>
+{%- set sliderItems = p.siblings if (not b.parent or b.parent == p.parent) else parentPage.children -%}
+{%- set sliderTitle = b.title -%}{%- set sliderId = "related-services-title" -%}{%- set sliderEyebrow = b.eyebrow -%}{%- set sliderLink = b.link -%}{%- set sliderLinkText = b.card_link_text -%}{%- set sliderClass = "" -%}
+{% include "partials/service-slider.njk" %}
 {%- endif -%}

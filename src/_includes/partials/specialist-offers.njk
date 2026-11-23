@@ -1,0 +1,4 @@
+{%- if d.offerList and d.offerList.length -%}
+<section class="section specialist-offers" aria-labelledby="{{ offersId }}"><div class="related-services-head"><div><p class="eyebrow">SPECIALUS PASIŪLYMAS</p><h2 id="{{ offersId }}">{{ "Pasiūlymas" if d.offerList.length == 1 else "Pasiūlymai" }} su {{ d.firstName }}</h2></div><a class="button" href="/pasiulymai">Visi pasiūlymai</a></div>
+<div class="offers-grid">{% for o in d.offerList %}{% include "partials/offer-card.njk" %}{% endfor %}</div></section>
+{%- endif -%}

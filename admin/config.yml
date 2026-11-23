@@ -1724,6 +1724,17 @@ collections:
   - label: Vardas ir pavardė
     name: name
     widget: string
+  - label: Vardas ir pavardė įnagininku (su kuo?)
+    name: name_cases
+    widget: object
+    collapsed: true
+    required: false
+    fields:
+    - label: Įnagininkas
+      name: instrumental
+      widget: string
+      required: false
+      hint: Pvz. „Tomu Janeliūnu“ – naudojama antraštėje „Pasiūlymas su …“.
   - label: Nuoroda (slug)
     name: slug
     widget: string
@@ -1950,6 +1961,18 @@ collections:
     widget: string
     required: false
     hint: 'Jei registracijos nuorodoje yra ?pasiulymas=<raktas>, formoje rodoma „Registruojatės pasiūlymui: …“, o pasiūlymas nurodomas laiške.'
+  - label: Specialistai
+    name: specialists
+    widget: relation
+    collection: specialistai
+    value_field: slug
+    search_fields:
+    - name
+    display_fields:
+    - name
+    multiple: true
+    required: false
+    hint: Pasiūlymas rodomas šių specialistų profiliuose ir drawer'iuose. Specialistas, įdėtas „Gydytojo prisistatymas“ bloku, priskiriamas automatiškai.
   - label: 'SEO: Meta title'
     name: meta_title
     widget: string

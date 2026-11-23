@@ -1,8 +1,11 @@
 {%- set o = p.offer -%}{%- set t = b.title or (o.title if o else "") -%}{%- set tp = b.title_price or (o.title_price if o else "") -%}
 <section class="offer-page-hero section">{% include "partials/breadcrumbs.njk" %}
 {%- if o -%}<div class="offer-expired-notice"{% if not o.isExpired %} hidden{% endif %} role="status"><strong>{{ o.expiredText }}.</strong> <a href="/pasiulymai">Peržiūrėti aktualius pasiūlymus →</a></div>{%- endif -%}
-<div class="offer-hero-grid{% if o and o.cardImage.src %} has-media{% endif %}"><div class="offer-hero-copy">{% if b.eyebrow %}<p class="eyebrow">{{ b.eyebrow }}</p>{% endif %}<h1>{{ t }}{% if tp %} <span class="offer-title-price">{{ tp }}</span>{% endif %}</h1>
+<div class="offer-banner{% if o and o.cardImage.src %} has-media{% endif %}">
+{%- if o and o.cardImage.src %}<picture class="offer-banner-media">{% if o.image_mobile and o.image_mobile.src %}<source media="(max-width: 760px)" srcset="{{ o.image_mobile.src }}">{% endif %}{% image o.cardImage, { priority: true, sizes: "100vw" } %}</picture>{% endif -%}
+<div class="offer-banner-copy">{% if b.eyebrow %}<p class="eyebrow">{{ b.eyebrow }}</p>{% endif %}<h1>{{ t }}{% if tp %} <span class="offer-title-price">{{ tp }}</span>{% endif %}</h1></div></div>
+<div class="offer-hero-body"><div class="offer-hero-intro">
 {%- if o and o.validText %}<p class="offer-valid"><span>{{ o.validText }}</span>{% if o.until and b.show_countdown !== false and not o.isExpired %}<span class="offer-countdown" data-until="{{ o.until }}">{% if o.daysLeft == 0 %}Paskutinė diena{% else %}Liko {{ o.daysLeft }} d.{% endif %}</span>{% endif %}</p>{% endif -%}
-{% if b.lead %}<p class="page-lead">{{ b.lead }}</p>{% endif %}{% if b.box_title or b.box_text %}<div class="free-consultation"><h2>{{ b.box_title }}</h2><p>{{ b.box_text }}</p></div>{% endif %}<div class="offer-hero-actions">{% if b.button.text %}<a class="button" href="{{ b.button.url }}" data-offer-cta>{{ b.button.text }}</a>{% endif %}{% if b.phone and b.phone.text %}<a class="button outline" href="{{ b.phone.url }}">{{ b.phone.text }}</a>{% endif %}</div></div>
-{%- if o and o.cardImage.src %}<picture class="offer-hero-media">{% if o.image_mobile and o.image_mobile.src %}<source media="(max-width: 760px)" srcset="{{ o.image_mobile.src }}">{% endif %}{% image o.cardImage, { priority: true, sizes: "(max-width: 760px) 100vw, 50vw" } %}</picture>{% endif -%}
-</div></section>
+{% if b.lead %}<p class="page-lead">{{ b.lead }}</p>{% endif %}
+{%- if b.box_title or b.box_text %}<div class="offer-free"><span class="offer-free-icon" aria-hidden="true"></span><div><strong>{{ b.box_title }}</strong>{% if b.box_text %}<p>{{ b.box_text }}</p>{% endif %}</div></div>{% endif -%}
+</div><div class="offer-hero-actions">{% if b.button.text %}<a class="button" href="{{ b.button.url }}" data-offer-cta>{{ b.button.text }}</a>{% endif %}{% if b.phone and b.phone.text %}<a class="button outline" href="{{ b.phone.url }}">{{ b.phone.text }}</a>{% endif %}</div></div></section>
