@@ -72,9 +72,7 @@
         "Pasiūlymas taikomas **vieno danties** atkūrimui implantu.",
         "Konsultacija **nemokama** nepriklausomai nuo Jūsų sprendimo gydytis.",
         "Tinkamumą implantacijai konsultacijos metu įvertina burnos chirurgas Tomas Janeliūnas.",
-        "Ne kiekvienu atveju implantą galima įsriegti iš karto po danties pašalinimo – tai įvertinama individualiai.",
-        "[PAVYZDYS – patvirtinti] Į kainą neįeina papildomos procedūros, pvz. kaulo priauginimas ar sinuso dugno pakėlimas, jei jų prireiktų. Jų kainos – [kainoraštyje](/kainos).",
-        "[PAVYZDYS – patvirtinti] Pasiūlymas nesumuojamas su kitomis nuolaidomis."
+        "Ne kiekvienu atveju implantą galima įsriegti iš karto po danties pašalinimo – tai įvertinama individualiai."
       ],
       "note": "Galutinė gydymo eiga ir kaina aptariamos konsultacijos metu."
     },
@@ -130,14 +128,6 @@
         {
           "question": "Ar implantą galima įsriegti iškart po danties šalinimo?",
           "answer": "Pasiūlyme numatyta momentinė implantacija – implantas įsriegiamas iškart po šalinimo. Tačiau ne kiekvienu atveju tai įmanoma: sprendimą priima gydytojas, įvertinęs Jūsų situaciją."
-        },
-        {
-          "question": "Ar procedūra skausminga?",
-          "answer": "[PAVYZDYS – patvirtinti] Procedūra atliekama taikant vietinį nuskausminimą. Apie pojūčius po procedūros ir priežiūrą gydytojas papasakos konsultacijos metu."
-        },
-        {
-          "question": "Ar galima mokėti dalimis?",
-          "answer": "[PAVYZDYS – patvirtinti] Mokėjimo sąlygas aptarsime konsultacijos metu."
         }
       ]
     },
