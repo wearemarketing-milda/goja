@@ -53,13 +53,31 @@ module.exports = () => {
     sp.buttonText = (sp.button && sp.button.text) || 'Registruotis konsultacijai';
     sp.buttonUrl = (sp.button && sp.button.url) || '/registracija';
   }
+  // Spec. pasiūlymai: kiekvienas – atskiras įrašas su galiojimo datomis.
+  const MONTHS = ['SAU', 'VAS', 'KOV', 'BAL', 'GEG', 'BIR', 'LIE', 'RGP', 'RGS', 'SPA', 'LAP', 'GRD'];
+  const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Vilnius' }).format(new Date());
+  const day = (v) => (v ? String(v).slice(0, 10) : '');
+  const ltDate = (d) => d.replace(/-/g, '.');
   const offers = readDir('pasiulymai').filter(published).sort(byOrder('order'));
+  for (const o of offers) {
+    o.url = `/pasiulymai/${o.slug}`;
+    o.from = day(o.valid_from); o.until = day(o.valid_until);
+    o.isUpcoming = !!o.from && o.from > today;
+    o.isExpired = !!o.until && o.until < today;
+    o.isActive = !o.isUpcoming && !o.isExpired;
+    o.untilDay = o.until ? String(Number(o.until.slice(8, 10))) : '';
+    o.untilMonth = o.until ? MONTHS[Number(o.until.slice(5, 7)) - 1] : '';
+    o.validText = o.from && o.until ? `Galioja ${ltDate(o.from)}–${ltDate(o.until)}` : o.until ? `Galioja iki ${ltDate(o.until)}` : o.from ? `Galioja nuo ${ltDate(o.from)}` : '';
+    o.expiredText = o.until ? `Pasiūlymas galiojo iki ${ltDate(o.until)}` : 'Pasiūlymas nebegalioja';
+    o.cardTitle = o.card_title || o.title;
+    o.cardImage = (o.image_desktop && o.image_desktop.src) ? o.image_desktop : (o.image_mobile || { src: '', alt: '' });
+  }
   const offersBySlug = Object.fromEntries(offers.map((o) => [o.slug, o]));
-  const today = new Date().toISOString().slice(0, 10);
-  const activeOffers = offers.filter((o) => (!o.valid_from || String(o.valid_from).slice(0, 10) <= today) && (!o.valid_until || String(o.valid_until).slice(0, 10) >= today));
+  const activeOffers = offers.filter((o) => o.isActive);
+  const inactiveOffers = offers.filter((o) => o.isExpired).sort((a, b) => (a.until < b.until ? 1 : -1));
 
   // Blokų ryšiai: komandos blokas rodo pasirinktus (arba visus) specialistus, gydytojo blokas – vieną.
-  for (const p of pages) {
+  for (const p of [...pages, ...offers]) {
     for (const b of p.blocks || []) {
       if (b.type === 'team') {
         const picked = (b.specialists || []).map((x) => specialistsBySlug[x]).filter(Boolean);
@@ -125,7 +143,28 @@ module.exports = () => {
       schema: { '@context': 'https://schema.org', '@graph': graph },
     };
   });
-  const renderPages = [...pages, ...specialistPages];
+  // Pasiūlymų vidiniai puslapiai (/pasiulymai/<slug>)
+  const offersPage = bySlug['pasiulymai'];
+  const priceNumber = (t) => { const m = String(t || '').replace(/\s/g, '').match(/(\d+(?:[.,]\d+)?)/); return m ? m[1].replace(',', '.') : null; };
+  const offerPages = offers.filter((o) => !o.isUpcoming).map((o) => {
+    const url = base + o.url;
+    const name = [o.title, o.title_price].filter(Boolean).join(' ');
+    const ancestors = offersPage ? [offersPage] : [];
+    const price = priceNumber(o.title_price);
+    const graph = [clinic, website,
+      { '@type': 'WebPage', '@id': `${url}#webpage`, url, name: o.meta_title || name, description: o.meta_description || o.summary || '', inLanguage: 'lt-LT', isPartOf: { '@id': `${base}/#website` }, about: { '@id': `${base}/#clinic` } },
+      { '@type': 'BreadcrumbList', '@id': `${url}#breadcrumb`, itemListElement: [{ name: 'Pradžia', item: `${base}/` }, ...ancestors.map((a) => ({ name: a.nav_label || a.title, item: base + a.url })), { name, item: url }].map((c, i) => ({ '@type': 'ListItem', position: i + 1, ...c })) },
+      { '@type': 'Offer', '@id': `${url}#offer`, name, url, ...(price ? { price, priceCurrency: 'EUR' } : {}), ...(o.from ? { validFrom: o.from } : {}), ...(o.until ? { validThrough: o.until } : {}), availability: o.isExpired ? 'https://schema.org/Discontinued' : 'https://schema.org/InStock', seller: { '@id': `${base}/#clinic` } },
+    ];
+    const blocks = (o.blocks || []).map((b) => ({ ...b }));
+    return {
+      slug: o.slug, url: o.url, permalink: `${o.url}/index.html`, title: name, nav_label: o.cardTitle, ancestors, offer: o,
+      meta_title: o.meta_title || `${name} | ${settings.site_name}`, meta_description: o.meta_description || o.summary || '',
+      og_image: (o.image_desktop && o.image_desktop.src) || '', noindex: false, sitemap: true, blocks,
+      hasForm: false, schema: { '@context': 'https://schema.org', '@graph': graph },
+    };
+  });
+  const renderPages = [...pages, ...specialistPages, ...offerPages];
 
-  return { settings, base, pages, renderPages, bySlug, menu, specialists, specialistsBySlug, offers, activeOffers };
+  return { settings, base, pages, renderPages, bySlug, menu, specialists, specialistsBySlug, offers, activeOffers, inactiveOffers, today };
 };

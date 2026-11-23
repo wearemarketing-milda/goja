@@ -4,8 +4,8 @@
 </div><div class="hero-inner"><div class="hero-copy">{% if b.eyebrow %}<p class="eyebrow">{{ b.eyebrow }}</p>{% endif %}<h1>{{ b.title }}</h1>{% if b.intro %}<p class="intro">{{ b.intro }}</p>{% endif %}
 <div class="hero-actions">{% if b.button.text %}<a class="button light" href="{{ b.button.url }}">{{ b.button.text }}</a>{% endif %}{% if b.phone.text %}<a class="button ghost" href="{{ b.phone.url }}">{{ b.phone.text }}</a>{% endif %}</div></div>
 {%- if offer -%}
-<a class="hero-offer" href="{{ b.offer_url or '/pasiulymai' }}"><span class="hero-offer-top"><span class="hero-offer-label">{{ b.offer_label or "Specialus pasiūlymas" }}</span><span class="hero-offer-arrow" aria-hidden="true">↗</span></span>
-{%- if offer.price %}<span class="hero-offer-price">{{ offer.price }} {{ offer.currency }}</span>{% endif -%}
-<span class="hero-offer-title">{{ offer.title }}</span>{% if offer.card_note %}<span class="hero-offer-note">{{ offer.card_note }}</span>{% endif %}</a>
+<a class="hero-offer" href="{{ offer.url if offer.url else (b.offer_url or '/pasiulymai') }}"{% if offer.until %} data-valid-until="{{ offer.until }}"{% endif %}><span class="hero-offer-top"><span class="hero-offer-label">{{ b.offer_label or "Specialus pasiūlymas" }}</span><span class="hero-offer-arrow" aria-hidden="true">↗</span></span>
+{%- if offer.title_price %}<span class="hero-offer-price">{{ offer.title_price }}</span>{% endif -%}
+<span class="hero-offer-title">{{ offer.cardTitle }}</span>{% if offer.card_note %}<span class="hero-offer-note">{{ offer.card_note }}</span>{% endif %}</a>
 {%- endif -%}
 </div></section>

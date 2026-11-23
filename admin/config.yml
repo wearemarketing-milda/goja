@@ -1410,13 +1410,15 @@ collections:
         name: eyebrow
         widget: string
         required: false
-      - label: Antraštė (H1)
+      - label: Antraštė (H1) – jei tuščia, imama iš pasiūlymo
         name: title
         widget: string
+        required: false
       - label: Kaina antraštėje
         name: title_price
         widget: string
         required: false
+        hint: Jei tuščia, imama iš pasiūlymo.
       - label: Įžanga
         name: lead
         widget: text
@@ -1552,6 +1554,29 @@ collections:
         default_language: html
         output_code_only: true
         allow_language_selection: false
+    - label: Pasiūlymų archyvas (tinklelis)
+      name: offers_archive
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Rodyti pasibaigusius pasiūlymus
+        name: show_inactive
+        widget: boolean
+        default: true
+        required: false
+      - label: Pasibaigusių pasiūlymų antraštė
+        name: inactive_title
+        widget: string
+        default: Pasibaigę pasiūlymai
+        required: false
+      - label: Tekstas, kai aktyvių pasiūlymų nėra
+        name: empty_text
+        widget: text
+        required: false
 - name: specialistai
   label: Specialistai
   label_singular: Specialistas
@@ -1695,7 +1720,7 @@ collections:
 - name: pasiulymai
   label: Spec. pasiūlymai
   label_singular: Spec. pasiūlymas
-  description: Specialieji pasiūlymai. Galiojantis pasiūlymas rodomas pradžios puslapio hero kortelėje.
+  description: Kiekvienas pasiūlymas – atskiras puslapis /pasiulymai/<slug>. Pasibaigus galiojimui, pasiūlymas automatiškai pažymimas „Nebegalioja“.
   folder: content/pasiulymai
   format: json
   extension: json
@@ -1703,21 +1728,33 @@ collections:
   delete: true
   identifier_field: title
   slug: '{{fields.slug}}'
-  summary: '{{title}} — {{price}} {{currency}}'
+  summary: '{{title}} {{title_price}} — iki {{valid_until}}'
   sortable_fields:
   - order
+  - valid_until
   - title
   fields:
-  - label: Pavadinimas
+  - label: Antraštė
     name: title
     widget: string
+    hint: Pvz. „Vieno danties implantacija už“ arba „Profesionali burnos higiena“.
+  - label: Antraštės antra dalis (kaina)
+    name: title_price
+    widget: string
+    required: false
+    hint: Nebūtina. Rodoma didesniu šriftu, pvz. „1 100 €“ arba „59 EUR“.
+  - label: Trumpas pavadinimas (hero kortelei)
+    name: card_title
+    widget: string
+    required: false
+    hint: Pvz. „Vieno danties implantacija“. Jei tuščia – naudojama antraštė.
   - label: Nuoroda (slug)
     name: slug
     widget: string
     pattern:
     - ^[a-z0-9-]+$
     - Tik mažosios raidės be lietuviškų raidžių, skaičiai ir brūkšneliai
-  - label: Aktyvus
+  - label: Publikuotas
     name: published
     widget: boolean
     default: true
@@ -1727,86 +1764,1497 @@ collections:
     widget: number
     value_type: int
     default: 100
-  - label: Kaina
-    name: price
-    widget: string
-    required: false
-  - label: Valiuta
-    name: currency
-    widget: string
-    default: €
-    required: false
-  - label: Trumpas aprašymas
-    name: summary
-    widget: text
-    required: false
-  - label: Trumpas tekstas kortelėje
-    name: card_note
-    widget: string
-    required: false
-    hint: Rodomas pradžios puslapio hero kortelės apačioje.
-  - widget: object
-    collapsed: false
-    required: false
-    fields:
-    - label: Nuotrauka
-      name: src
-      widget: image
-      required: false
-      choose_url: true
-    - label: Alternatyvus tekstas (alt)
-      name: alt
-      widget: string
-      required: false
-      hint: Trumpai aprašykite, kas nuotraukoje (svarbu SEO ir prieinamumui).
-    label: Nuotrauka
-    name: image
-  - label: Kas įeina
-    name: inclusions
-    widget: list
-    required: false
-    field:
-      label: Punktas
-      name: item
-      widget: string
-  - widget: object
-    collapsed: false
-    required: false
-    fields:
-    - label: Tekstas
-      name: text
-      widget: string
-      required: false
-    - label: Nuoroda
-      name: url
-      widget: string
-      required: false
-      hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
-    label: Mygtukas
-    name: button
   - label: Galioja nuo
     name: valid_from
     widget: datetime
     time_format: false
     date_format: YYYY-MM-DD
+    format: YYYY-MM-DD
     required: false
+    hint: Iki šios datos pasiūlymas nerodomas.
   - label: Galioja iki
     name: valid_until
     widget: datetime
     time_format: false
     date_format: YYYY-MM-DD
+    format: YYYY-MM-DD
     required: false
-  - label: Aprašymas
-    name: body
-    widget: markdown
+    hint: Paskutinė galiojimo diena. Po jos pasiūlymas pažymimas „Nebegalioja“.
+  - label: Nuotrauka kompiuteriui (16:9)
+    name: image_desktop
+    widget: object
+    collapsed: false
+    hint: Rekomenduojama 1600×900 px.
+    fields:
+    - label: Nuotrauka
+      name: src
+      widget: image
+      choose_url: true
+    - label: Alternatyvus tekstas (alt)
+      name: alt
+      widget: string
+      required: false
+  - label: Nuotrauka telefonui (1:1)
+    name: image_mobile
+    widget: object
+    collapsed: false
+    hint: Rekomenduojama 800×800 px.
+    fields:
+    - label: Nuotrauka
+      name: src
+      widget: image
+      choose_url: true
+    - label: Alternatyvus tekstas (alt)
+      name: alt
+      widget: string
+      required: false
+  - label: Trumpas aprašymas
+    name: summary
+    widget: text
     required: false
-    buttons:
-    - bold
-    - italic
-    - link
-    - bulleted-list
-    editor_components: []
-    minimal: true
+  - label: Trumpas tekstas hero kortelėje
+    name: card_note
+    widget: string
+    required: false
+  - label: 'SEO: Meta title'
+    name: meta_title
+    widget: string
+    required: false
+  - label: 'SEO: Meta description'
+    name: meta_description
+    widget: text
+    required: false
+  - label: Puslapio turinio blokai
+    name: blocks
+    widget: list
+    typeKey: type
+    collapsed: true
+    add_to_top: false
+    hint: Pasiūlymo puslapio sekcijos. Rekomenduojama pradėti „Pasiūlymo viršus“ bloku.
+    types:
+    - label: Kontaktų sekcija (bendra – redaguojama Nustatymuose)
+      name: global_contact
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+    - label: Pradžios puslapio viršus (hero su video)
+      name: hero
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Virš antraštės (mažos raidės)
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Antraštė (H1)
+        name: title
+        widget: string
+      - label: Įžanga
+        name: intro
+        widget: text
+        required: false
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Mygtukas
+        name: button
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Antras mygtukas (pvz. telefonas)
+        name: phone
+      - label: Fono video – kompiuteriui (horizontalus MP4)
+        name: video
+        widget: file
+        required: false
+        choose_url: true
+        hint: 'Rekomenduojama: MP4 (H.264), 1920×1080, be garso, iki ~5 MB, 10–20 s.'
+      - label: Fono video – telefonui (vertikalus MP4)
+        name: video_mobile
+        widget: file
+        required: false
+        choose_url: true
+        hint: 'Rekomenduojama: 720×1280 arba 1080×1920, be garso, iki ~3 MB. Jei tuščia – naudojamas kompiuterio video.'
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Nuotrauka
+          name: src
+          widget: image
+          required: false
+          choose_url: true
+        - label: Alternatyvus tekstas (alt)
+          name: alt
+          widget: string
+          required: false
+          hint: Trumpai aprašykite, kas nuotraukoje (svarbu SEO ir prieinamumui).
+        label: Nuotrauka – kompiuteriui (rodoma, kol kraunasi video)
+        name: image
+      - label: Nuotrauka – telefonui (vertikali)
+        name: image_mobile
+        widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Nuotrauka
+          name: src
+          widget: image
+          required: false
+          choose_url: true
+        - label: Alternatyvus tekstas (alt)
+          name: alt
+          widget: string
+          required: false
+      - label: Rodyti pasiūlymo kortelę
+        name: show_offer
+        widget: boolean
+        default: true
+        required: false
+      - label: Pasiūlymas kortelėje
+        name: offer
+        widget: relation
+        collection: pasiulymai
+        value_field: slug
+        search_fields:
+        - title
+        display_fields:
+        - title
+        required: false
+        hint: Palikus tuščią, rodomas pirmas šiuo metu galiojantis pasiūlymas (pagal eilės numerį ir datas).
+      - label: Kortelės antraštė
+        name: offer_label
+        widget: string
+        default: Specialus pasiūlymas
+        required: false
+      - label: Kortelės nuoroda
+        name: offer_url
+        widget: string
+        default: /pasiulymai
+        required: false
+    - label: Informacijos juosta (adresas, darbo laikas)
+      name: visit_strip
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Elementai
+        name: items
+        widget: list
+        summary: '{{fields.label}}: {{fields.text}}'
+        fields:
+        - label: Pavadinimas
+          name: label
+          widget: string
+        - label: Tekstas
+          name: text
+          widget: string
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+    - label: Puslapio viršus (H1 + įžanga)
+      name: page_top
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Antraštė (H1)
+        name: title
+        widget: string
+      - label: Įžanga
+        name: lead
+        widget: text
+        required: false
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Nuotrauka
+          name: src
+          widget: image
+          required: false
+          choose_url: true
+        - label: Alternatyvus tekstas (alt)
+          name: alt
+          widget: string
+          required: false
+          hint: Trumpai aprašykite, kas nuotraukoje (svarbu SEO ir prieinamumui).
+        label: Nuotrauka (nebūtina)
+        name: image
+    - label: Paslaugos viršus (H1, mygtukai, nuotrauka)
+      name: service_hero
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Virš antraštės (mažos raidės)
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Antraštė (H1)
+        name: title
+        widget: string
+      - label: Įžanga
+        name: lead
+        widget: text
+        required: false
+      - label: Papildomas tekstas su nuoroda
+        name: intro
+        widget: string
+        required: false
+        hint: 'Nuorodos formatas: [tekstas](/adresas)'
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Mygtukas
+        name: button
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Pasiūlymo nuoroda (su rodykle ↓)
+        name: offer_link
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Nuotrauka
+          name: src
+          widget: image
+          required: false
+          choose_url: true
+        - label: Alternatyvus tekstas (alt)
+          name: alt
+          widget: string
+          required: false
+          hint: Trumpai aprašykite, kas nuotraukoje (svarbu SEO ir prieinamumui).
+        label: Nuotrauka
+        name: image
+      - label: Nuotrauka neapkarpoma
+        name: image_uncropped
+        widget: boolean
+        default: false
+        required: false
+    - label: Paslaugų kortelės (dukteriniai puslapiai)
+      name: service_cards
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Išdėstymas
+        name: variant
+        widget: select
+        options:
+        - label: Pradžios puslapio stilius
+          value: home
+        - label: Paslaugų puslapio stilius
+          value: index
+        default: home
+      - label: Kieno dukteriniai puslapiai rodomi
+        name: parent
+        widget: relation
+        collection: pages
+        value_field: slug
+        search_fields:
+        - nav_label
+        display_fields:
+        - nav_label
+        default: paslaugos
+        hint: Kortelių turinys pildomas kiekvieno dukterinio puslapio „Kortelė“ laukuose.
+      - label: Virš antraštės (mažos raidės)
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Antraštė
+        name: title
+        widget: string
+        required: false
+      - label: Tekstas
+        name: text
+        widget: text
+        required: false
+      - label: Kortelės nuorodos tekstas
+        name: card_link_text
+        widget: string
+        default: Plačiau apie paslaugą
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Nuoroda po kortelėmis
+        name: link
+    - label: Kitos paslaugos (slider'is)
+      name: related_services
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Virš antraštės (mažos raidės)
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Antraštė
+        name: title
+        widget: string
+        default: Kitos odontologijos paslaugos
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Mygtukas viršuje dešinėje
+        name: link
+      - label: Kortelės nuorodos tekstas
+        name: card_link_text
+        widget: string
+        default: Plačiau apie paslaugą
+      - label: Kieno dukteriniai puslapiai rodomi
+        name: parent
+        widget: relation
+        collection: pages
+        value_field: slug
+        search_fields:
+        - nav_label
+        display_fields:
+        - nav_label
+        default: paslaugos
+        hint: Rodomi šio puslapio dukteriniai puslapiai, išskyrus tą, kuriame esate.
+    - label: Paslaugos aprašymas (tekstas)
+      name: service_content
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Virš antraštės (mažos raidės)
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Antraštė
+        name: title
+        widget: string
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Mygtukas po antrašte
+        name: button
+      - label: Tekstas
+        name: body
+        widget: markdown
+        buttons:
+        - bold
+        - italic
+        - link
+        - bulleted-list
+        editor_components: []
+        minimal: true
+      - label: Pastraipa su nuorodomis
+        name: links_text
+        widget: text
+        required: false
+        hint: 'Nuorodos formatas: [tekstas](/adresas)'
+    - label: Dviejų stulpelių tekstas
+      name: guidance
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Antraštė
+        name: title
+        widget: string
+      - label: Stulpeliai
+        name: columns
+        widget: list
+        summary: '{{fields.title}}'
+        fields:
+        - label: Antraštė
+          name: title
+          widget: string
+        - label: Tekstas
+          name: body
+          widget: markdown
+          buttons:
+          - bold
+          - italic
+          - link
+          - bulleted-list
+          editor_components: []
+          minimal: true
+    - label: Žingsniai (01, 02, 03...)
+      name: steps
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Virš antraštės (mažos raidės)
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Antraštė
+        name: title
+        widget: string
+      - label: Žingsniai
+        name: steps
+        widget: list
+        summary: '{{fields.title}}'
+        fields:
+        - label: Antraštė
+          name: title
+          widget: string
+        - label: Tekstas
+          name: text
+          widget: text
+    - label: Sąrašas (pvz. gydymo galimybės)
+      name: treatment_list
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Virš antraštės (mažos raidės)
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Antraštė
+        name: title
+        widget: string
+      - label: Punktai
+        name: items
+        widget: list
+        field:
+          label: Punktas
+          name: item
+          widget: string
+    - label: Komanda (iš „Specialistai“)
+      name: team
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Išdėstymas
+        name: variant
+        widget: select
+        options:
+        - label: Paslaugos puslapyje
+          value: service
+        - label: Apie mus puslapyje
+          value: about
+        default: service
+      - label: Inkaras (id)
+        name: anchor
+        widget: string
+        required: false
+        hint: 'Naudojama nuorodoms į sekciją, pvz. #specialus-pasiulymas. Nekeiskite, jei nežinote, kur naudojama.'
+      - label: Antraštė
+        name: title
+        widget: string
+      - label: Tekstas
+        name: text
+        widget: string
+        required: false
+      - label: Rodomi specialistai
+        name: specialists
+        widget: relation
+        collection: specialistai
+        value_field: slug
+        search_fields:
+        - name
+        display_fields:
+        - name
+        multiple: true
+        required: false
+        hint: Palikus tuščią, rodomi visi specialistai su pažymėtu „Rodyti komandoje“.
+    - label: Kvietimas registruotis (CTA)
+      name: cta
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Antraštė
+        name: title
+        widget: string
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Mygtukas
+        name: button
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Telefono nuoroda
+        name: phone
+    - label: Susijusios nuorodos
+      name: related_links
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Nuorodos
+        name: links
+        widget: list
+        summary: '{{fields.text}}'
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+        - label: Nuoroda
+          name: url
+          widget: string
+    - label: Tekstas su nuotrauka (Apie)
+      name: approach
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Inkaras (id)
+        name: anchor
+        widget: string
+        required: false
+        hint: 'Naudojama nuorodoms į sekciją, pvz. #specialus-pasiulymas. Nekeiskite, jei nežinote, kur naudojama.'
+      - label: Antraštė
+        name: title
+        widget: string
+      - label: Paryškinta įžanga
+        name: lead
+        widget: text
+        required: false
+      - label: Tekstas
+        name: body
+        widget: markdown
+        buttons:
+        - bold
+        - italic
+        - link
+        - bulleted-list
+        editor_components: []
+        minimal: true
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Nuotrauka
+          name: src
+          widget: image
+          required: false
+          choose_url: true
+        - label: Alternatyvus tekstas (alt)
+          name: alt
+          widget: string
+          required: false
+          hint: Trumpai aprašykite, kas nuotraukoje (svarbu SEO ir prieinamumui).
+        label: Nuotrauka
+        name: image
+    - label: Nuotraukų galerija
+      name: gallery
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Antraštė
+        name: title
+        widget: string
+      - label: Tekstas
+        name: text
+        widget: string
+        required: false
+      - label: Nuotraukos
+        name: images
+        widget: list
+        summary: '{{fields.alt}}'
+        fields:
+        - label: Nuotrauka
+          name: src
+          widget: image
+          choose_url: true
+        - label: Alternatyvus tekstas (alt)
+          name: alt
+          widget: string
+          required: false
+    - label: Gydymo planavimas (išskleidžiami punktai)
+      name: planning
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Nuotrauka
+          name: src
+          widget: image
+          required: false
+          choose_url: true
+        - label: Alternatyvus tekstas (alt)
+          name: alt
+          widget: string
+          required: false
+          hint: Trumpai aprašykite, kas nuotraukoje (svarbu SEO ir prieinamumui).
+        label: Nuotrauka
+        name: image
+      - label: Virš antraštės (mažos raidės)
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Antraštė
+        name: title
+        widget: string
+      - label: Paryškinta įžanga
+        name: lead
+        widget: text
+        required: false
+      - label: Punktai
+        name: items
+        widget: list
+        summary: '{{fields.title}}'
+        fields:
+        - label: Antraštė
+          name: title
+          widget: string
+        - label: Tekstas
+          name: text
+          widget: text
+        - label: Atidarytas iš karto
+          name: open
+          widget: boolean
+          default: false
+          required: false
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Nuoroda
+        name: link
+    - label: Klinikos erdvės (tekstas + 2 nuotraukos)
+      name: clinic_intro
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Virš antraštės (mažos raidės)
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Antraštė
+        name: title
+        widget: string
+      - label: Tekstas
+        name: text
+        widget: text
+        required: false
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Nuoroda
+        name: link
+      - label: Nuotraukos
+        name: images
+        widget: list
+        summary: '{{fields.alt}}'
+        fields:
+        - label: Nuotrauka
+          name: src
+          widget: image
+          choose_url: true
+        - label: Alternatyvus tekstas (alt)
+          name: alt
+          widget: string
+          required: false
+    - label: Klinika ir kontaktai (erdvės, adresas, darbo laikas)
+      name: clinic_contact
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Inkaras (id)
+        name: anchor
+        widget: string
+        required: false
+        hint: 'Naudojama nuorodoms į sekciją, pvz. #specialus-pasiulymas. Nekeiskite, jei nežinote, kur naudojama.'
+      - label: Virš antraštės (mažos raidės)
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Antraštė
+        name: title
+        widget: string
+      - label: Tekstas
+        name: text
+        widget: text
+        required: false
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Mygtukas
+        name: button
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Telefonas (po mygtuku)
+        name: phone
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: El. paštas (po mygtuku)
+        name: email
+      - label: Adreso pavadinimas
+        name: address_label
+        widget: string
+        default: Adresas
+      - label: Adresas (kiekviena eilutė atskirai)
+        name: address_lines
+        widget: text
+        hint: Rašykite vienoje eilutėje, pvz. „M. Daukšos g. 19, Mažeikiai“.
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Nuoroda „Kaip atvykti“
+        name: map_link
+      - label: Darbo laiko pavadinimas
+        name: hours_label
+        widget: string
+      - label: Darbo laikas
+        name: hours
+        widget: list
+        summary: '{{fields.day}}: {{fields.time}}'
+        fields:
+        - label: Dienos
+          name: day
+          widget: string
+        - label: Laikas
+          name: time
+          widget: string
+      - label: Erdvių nuotraukos
+        name: images
+        widget: list
+        summary: '{{fields.alt}}'
+        fields:
+        - label: Nuotrauka
+          name: src
+          widget: image
+          choose_url: true
+        - label: Alternatyvus tekstas (alt)
+          name: alt
+          widget: string
+          required: false
+    - label: Kontaktai (adresas, darbo laikas)
+      name: contact
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Inkaras (id)
+        name: anchor
+        widget: string
+        required: false
+        hint: 'Naudojama nuorodoms į sekciją, pvz. #specialus-pasiulymas. Nekeiskite, jei nežinote, kur naudojama.'
+      - label: Virš antraštės (mažos raidės)
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Antraštė
+        name: title
+        widget: string
+      - label: Tekstas
+        name: text
+        widget: text
+        required: false
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Mygtukas
+        name: button
+      - label: Šviesus mygtukas
+        name: button_light
+        widget: boolean
+        default: false
+        required: false
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Telefonas
+        name: phone
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: El. paštas
+        name: email
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Nuotrauka
+          name: src
+          widget: image
+          required: false
+          choose_url: true
+        - label: Alternatyvus tekstas (alt)
+          name: alt
+          widget: string
+          required: false
+          hint: Trumpai aprašykite, kas nuotraukoje (svarbu SEO ir prieinamumui).
+        label: Nuotrauka (nebūtina)
+        name: photo
+      - label: Antraščių stilius
+        name: label_style
+        widget: select
+        options:
+        - label: Antraštė (H3)
+          value: heading
+        - label: Mažos raidės virš teksto
+          value: eyebrow
+        default: heading
+      - label: Adreso pavadinimas
+        name: address_label
+        widget: string
+        required: false
+      - label: Adresas (kiekviena eilutė atskirai)
+        name: address_lines
+        widget: text
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Žemėlapio nuoroda
+        name: map_link
+      - label: Darbo laiko pavadinimas
+        name: hours_label
+        widget: string
+      - label: Darbo laikas
+        name: hours
+        widget: list
+        summary: '{{fields.day}}: {{fields.time}}'
+        fields:
+        - label: Dienos
+          name: day
+          widget: string
+        - label: Laikas
+          name: time
+          widget: string
+    - label: Nuotrauka su adresu
+      name: contact_photo
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Nuotrauka
+          name: src
+          widget: image
+          required: false
+          choose_url: true
+        - label: Alternatyvus tekstas (alt)
+          name: alt
+          widget: string
+          required: false
+          hint: Trumpai aprašykite, kas nuotraukoje (svarbu SEO ir prieinamumui).
+        label: Nuotrauka
+        name: image
+      - label: Virš antraštės (mažos raidės)
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Antraštė
+        name: title
+        widget: string
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Nuoroda
+        name: link
+    - label: Kainoraštis
+      name: price_catalog
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Paieškos pavadinimas
+        name: search_label
+        widget: string
+      - label: Paieškos pavyzdys
+        name: search_placeholder
+        widget: string
+        required: false
+      - label: Informacija šalia paieškos
+        name: info
+        widget: text
+        required: false
+        hint: Nauja eilutė – du tarpai eilutės gale.
+      - label: Tekstas, kai nieko nerasta
+        name: empty_text
+        widget: string
+        hint: 'Nuorodos formatas: [tekstas](/adresas)'
+      - label: Kainų grupės
+        name: groups
+        widget: list
+        summary: '{{fields.title}}'
+        fields:
+        - label: Grupės pavadinimas
+          name: title
+          widget: string
+        - label: Išskleista iš karto
+          name: open
+          widget: boolean
+          default: true
+          required: false
+        - label: Pastabos virš lentelės
+          name: notes
+          widget: list
+          required: false
+          field:
+            label: Pastaba
+            name: note
+            widget: string
+        - label: Paslaugos
+          name: rows
+          widget: list
+          summary: '{{fields.service}} – {{fields.price}}'
+          fields:
+          - label: Paslauga
+            name: service
+            widget: string
+          - label: Kaina (€)
+            name: price
+            widget: string
+      - label: Pastabų pavadinimas
+        name: notes_title
+        widget: string
+        required: false
+      - label: Pastabos
+        name: notes
+        widget: list
+        required: false
+        field:
+          label: Pastaba
+          name: note
+          widget: text
+    - label: Registracijos forma
+      name: registration
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Virš antraštės (mažos raidės)
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Antraštė
+        name: title
+        widget: string
+      - label: Tekstas
+        name: text
+        widget: text
+        required: false
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Telefonas
+        name: phone
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: El. paštas
+        name: email
+      - label: Mygtuko tekstas
+        name: submit_text
+        widget: string
+      - label: Pagalbinis tekstas po mygtuku
+        name: help_text
+        widget: string
+      - label: Sėkmės antraštė
+        name: success_title
+        widget: string
+      - label: Sėkmės tekstas
+        name: success_text
+        widget: string
+    - label: Pasiūlymo viršus (H1 su kaina)
+      name: offer_hero
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Virš antraštės (mažos raidės)
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Antraštė (H1) – jei tuščia, imama iš pasiūlymo
+        name: title
+        widget: string
+        required: false
+      - label: Kaina antraštėje
+        name: title_price
+        widget: string
+        required: false
+        hint: Jei tuščia, imama iš pasiūlymo.
+      - label: Įžanga
+        name: lead
+        widget: text
+        required: false
+      - label: Rėmelio antraštė
+        name: box_title
+        widget: string
+        required: false
+      - label: Rėmelio tekstas
+        name: box_text
+        widget: text
+        required: false
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Mygtukas
+        name: button
+    - label: Pasiūlymo kaina ir kas įeina
+      name: offer_box
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Inkaras (id)
+        name: anchor
+        widget: string
+        required: false
+        hint: 'Naudojama nuorodoms į sekciją, pvz. #specialus-pasiulymas. Nekeiskite, jei nežinote, kur naudojama.'
+      - label: Virš antraštės (mažos raidės)
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Antraštė
+        name: title
+        widget: string
+      - label: Kaina
+        name: price
+        widget: string
+      - label: Valiuta
+        name: currency
+        widget: string
+        default: €
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Mygtukas
+        name: button
+      - label: Sąrašo antraštė
+        name: inclusions_title
+        widget: string
+      - label: Kas įeina
+        name: inclusions
+        widget: list
+        field:
+          label: Punktas
+          name: item
+          widget: string
+    - label: Gydytojo prisistatymas (iš „Specialistai“)
+      name: doctor
+      summary: '{{fields.specialist}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Specialistas
+        name: specialist
+        widget: relation
+        collection: specialistai
+        value_field: slug
+        search_fields:
+        - name
+        display_fields:
+        - name
+        hint: Vardas, pareigos, aprašymas, išsilavinimas ir nuotrauka imami iš „Specialistai“.
+      - label: Virš antraštės (mažos raidės)
+        name: eyebrow
+        widget: string
+        required: false
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Mygtukas
+        name: button
+    - label: HTML turinys (pvz. privatumo politika)
+      name: html
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: HTML
+        name: html
+        widget: code
+        default_language: html
+        output_code_only: true
+        allow_language_selection: false
+    - label: Pasiūlymų archyvas (tinklelis)
+      name: offers_archive
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Rodyti pasibaigusius pasiūlymus
+        name: show_inactive
+        widget: boolean
+        default: true
+        required: false
+      - label: Pasibaigusių pasiūlymų antraštė
+        name: inactive_title
+        widget: string
+        default: Pasibaigę pasiūlymai
+        required: false
+      - label: Tekstas, kai aktyvių pasiūlymų nėra
+        name: empty_text
+        widget: text
+        required: false
+  preview_path: /pasiulymai/{{slug}}
 - name: redirects
   label: Redirect'ai
   description: Peradresavimai iš senų adresų į naujus. Įsigalioja po publikavimo (~1 min.).

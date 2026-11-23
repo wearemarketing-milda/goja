@@ -264,3 +264,15 @@ document.querySelectorAll('[data-slider]').forEach(slider => {
   track.addEventListener('click', e => { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } }, true);
   track.addEventListener('dragstart', e => e.preventDefault());
 });
+
+// Pasiūlymų galiojimas tikrinamas ir naršyklėje – kad pasibaigęs pasiūlymas iškart taptų neaktyvus.
+(() => {
+  const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Vilnius' }).format(new Date());
+  document.querySelectorAll('.offer-card[data-valid-until]').forEach(c => { if (c.dataset.validUntil < today) c.classList.add('is-inactive'); });
+  document.querySelectorAll('.hero-offer[data-valid-until]').forEach(c => { if (c.dataset.validUntil < today) c.hidden = true; });
+  const until = document.body.dataset.offerUntil;
+  if (until && until < today) {
+    document.body.classList.add('offer-expired');
+    document.querySelectorAll('.offer-expired-notice').forEach(n => { n.hidden = false; });
+  }
+})();

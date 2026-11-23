@@ -1,0 +1,73 @@
+{
+  "title": "Vieno danties implantacija už",
+  "title_price": "1 100 €",
+  "card_title": "Vieno danties implantacija",
+  "slug": "vieno-danties-implantacija-uz-1100-eur",
+  "published": true,
+  "order": 10,
+  "valid_from": "",
+  "valid_until": "",
+  "image_desktop": {
+    "src": "/assets/uploads/vieno-danties-implantacija-16x9.webp",
+    "alt": "GOJA klinikos odontologinė kėdė"
+  },
+  "image_mobile": {
+    "src": "/assets/uploads/vieno-danties-implantacija-1x1.webp",
+    "alt": "GOJA klinikos odontologinė kėdė"
+  },
+  "summary": "Konsultuoja ir implantacijas atlieka burnos chirurgas, gydytojas odontologas ortopedas Tomas Janeliūnas. Konsultacija nemokama.",
+  "card_note": "Konsultacija nemokama – be įsipareigojimo gydytis",
+  "meta_title": "Vieno danties implantacija už 1 100 € | GOJA klinika",
+  "meta_description": "Vieno danties implantacija už 1 100 €. Konsultuoja ir implantuoja Tomas Janeliūnas. Konsultacija nemokama, net jei nuspręsite nesigydyti.",
+  "blocks": [
+    {
+      "type": "offer_hero",
+      "eyebrow": "GOJA KLINIKOS PASIŪLYMAI",
+      "title": "",
+      "title_price": "",
+      "lead": "Konsultuoja ir implantacijas atlieka burnos chirurgas, gydytojas odontologas ortopedas Tomas Janeliūnas.",
+      "box_title": "Nemokama konsultacija – be įsipareigojimo gydytis",
+      "box_text": "Konsultacija nemokama nepriklausomai nuo Jūsų sprendimo. Net jei po konsultacijos nuspręsite nesigydyti GOJA klinikoje, už konsultaciją mokėti nereikės.",
+      "button": {
+        "text": "Registruotis nemokamai konsultacijai",
+        "url": "/registracija?paslauga=nemokama-implantacijos-konsultacija&pasiulymas=vieno-danties-1100"
+      },
+      "hidden": false
+    },
+    {
+      "type": "offer_box",
+      "anchor": "specialus-pasiulymas",
+      "eyebrow": "VIENO DANTIES ATKŪRIMAS",
+      "title": "Aiški pasiūlymo kaina",
+      "price": "1 100",
+      "currency": "€",
+      "button": {
+        "text": "Registruotis nemokamai konsultacijai",
+        "url": "/registracija?paslauga=nemokama-implantacijos-konsultacija&pasiulymas=vieno-danties-1100"
+      },
+      "inclusions_title": "Į kainą įeina:",
+      "inclusions": [
+        "Panoraminė dantų nuotrauka",
+        "Danties šalinimas, jei reikalingas",
+        "Momentinė implantacija – implantas įsriegiamas iškart po šalinimo",
+        "Gijimo galvutė",
+        "Danties vainikėlis"
+      ],
+      "hidden": false
+    },
+    {
+      "type": "doctor",
+      "specialist": "tomas-janeliunas",
+      "eyebrow": "KONSULTUOJA IR IMPLANTUOJA",
+      "button": {
+        "text": "Registruotis nemokamai konsultacijai",
+        "url": "/registracija?paslauga=nemokama-implantacijos-konsultacija&pasiulymas=vieno-danties-1100"
+      },
+      "hidden": false
+    },
+    {
+      "type": "global_contact",
+      "hidden": false
+    }
+  ]
+}

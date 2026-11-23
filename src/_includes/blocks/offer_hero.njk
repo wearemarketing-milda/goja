@@ -1,1 +1,6 @@
-<section class="offer-page-hero section">{% include "partials/breadcrumbs.njk" %}{% if b.eyebrow %}<p class="eyebrow">{{ b.eyebrow }}</p>{% endif %}<h1>{{ b.title }}{% if b.title_price %} <span class="offer-title-price">{{ b.title_price }}</span>{% endif %}</h1>{% if b.lead %}<p class="page-lead">{{ b.lead }}</p>{% endif %}{% if b.box_title or b.box_text %}<div class="free-consultation"><h2>{{ b.box_title }}</h2><p>{{ b.box_text }}</p></div>{% endif %}{% if b.button.text %}<a class="button" href="{{ b.button.url }}">{{ b.button.text }}</a>{% endif %}</section>
+{%- set o = p.offer -%}{%- set t = b.title or (o.title if o else "") -%}{%- set tp = b.title_price or (o.title_price if o else "") -%}
+<section class="offer-page-hero section">{% include "partials/breadcrumbs.njk" %}
+{%- if o -%}<div class="offer-expired-notice"{% if not o.isExpired %} hidden{% endif %} role="status"><strong>{{ o.expiredText }}.</strong> <a href="/pasiulymai">Peržiūrėti aktualius pasiūlymus →</a></div>{%- endif -%}
+{% if b.eyebrow %}<p class="eyebrow">{{ b.eyebrow }}</p>{% endif %}<h1>{{ t }}{% if tp %} <span class="offer-title-price">{{ tp }}</span>{% endif %}</h1>
+{%- if o and o.validText %}<p class="offer-valid">{{ o.validText }}</p>{% endif -%}
+{% if b.lead %}<p class="page-lead">{{ b.lead }}</p>{% endif %}{% if b.box_title or b.box_text %}<div class="free-consultation"><h2>{{ b.box_title }}</h2><p>{{ b.box_text }}</p></div>{% endif %}{% if b.button.text %}<a class="button" href="{{ b.button.url }}">{{ b.button.text }}</a>{% endif %}</section>

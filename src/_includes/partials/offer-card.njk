@@ -1,0 +1,5 @@
+<a class="offer-card{% if o.isExpired %} is-inactive{% endif %}" href="{{ o.url }}"{% if o.until %} data-valid-until="{{ o.until }}"{% endif %}>
+<picture class="offer-card-media">{% if o.image_mobile and o.image_mobile.src %}<source media="(max-width: 760px)" srcset="{{ o.image_mobile.src }}">{% endif %}{% image o.cardImage, { sizes: "(max-width: 760px) 100vw, 50vw" } %}</picture>
+{%- if o.until %}<span class="offer-date" aria-label="Galioja iki {{ o.until }}"><span class="offer-date-day">{{ o.untilDay }}</span><span class="offer-date-month">{{ o.untilMonth }}</span></span>{% endif -%}
+<span class="offer-status">Nebegalioja</span>
+<span class="offer-card-copy"><span class="offer-card-title">{{ o.title }}</span>{% if o.title_price %}<span class="offer-card-price">{{ o.title_price }}</span>{% endif %}{% if o.validText %}<span class="offer-card-valid">{{ o.validText }}</span>{% endif %}</span></a>

@@ -1,0 +1,5 @@
+<section class="section offers-archive">
+{%- if cms.activeOffers.length -%}<div class="offers-grid">{% for o in cms.activeOffers %}{% include "partials/offer-card.njk" %}{% endfor %}</div>
+{%- else -%}<p class="offers-empty">{{ b.empty_text }}</p>{%- endif -%}
+{%- if b.show_inactive and cms.inactiveOffers.length -%}<h2 class="offers-inactive-title">{{ b.inactive_title or "Pasibaigę pasiūlymai" }}</h2><div class="offers-grid offers-grid-inactive">{% for o in cms.inactiveOffers %}{% include "partials/offer-card.njk" %}{% endfor %}</div>{%- endif -%}
+</section>
