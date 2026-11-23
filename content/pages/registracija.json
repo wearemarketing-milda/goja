@@ -21,19 +21,9 @@
   "card_uncropped": false,
   "blocks": [
     {
-      "type": "page_top",
-      "title": "Registracija pas odontologą Mažeikiuose",
-      "lead": "Registruokitės konsultacijai ir aptarkime Jums tinkamą gydymo planą.",
-      "image": {
-        "src": "/assets/clinic-waiting-1440.webp",
-        "alt": "Klinikos laukiamasis"
-      }
-    },
-    {
       "type": "registration",
-      "eyebrow": "JUMS PATOGIU BŪDU",
-      "title": "Susitarkime dėl vizito.",
-      "text": "Užpildykite registracijos užklausą. Susisieksime per 1 darbo dieną ir suderinsime Jums patogų vizito laiką.",
+      "title": "Registracija pas odontologą Mažeikiuose",
+      "text": "Registruokitės konsultacijai ir aptarkime Jums tinkamą gydymo planą.\n\nUžpildykite registracijos užklausą. Susisieksime per 1 darbo dieną ir suderinsime Jums patogų vizito laiką.",
       "phone": {
         "text": "+370 611 80077",
         "url": "tel:+37061180077"
@@ -45,7 +35,12 @@
       "submit_text": "Pateikti registracijos užklausą",
       "help_text": "* Privalomi laukai. Užklausa nėra patvirtinta vizito rezervacija.",
       "success_title": "Ačiū, Jūsų registraciją gavome.",
-      "success_text": "Susisieksime per 1 darbo dieną."
+      "success_text": "Susisieksime per 1 darbo dieną.",
+      "layout": "page",
+      "address_text": "M. Daukšos g. 19, Mažeikiai",
+      "address_url": "https://www.google.com/maps/search/?api=1&query=M.+Dauk%C5%A1os+19+Ma%C5%BEeikiai",
+      "popup_title": "Registracija vizitui",
+      "popup_text": "Užpildykite užklausą – susisieksime per 1 darbo dieną ir suderinsime Jums patogų laiką."
     }
   ]
 }

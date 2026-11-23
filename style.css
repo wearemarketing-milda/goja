@@ -607,3 +607,49 @@ details.is-draft summary{background:#fff4c2}
 }
 @media(max-width:760px){body>header:has(nav.open){position:fixed;top:0;left:0;right:0;z-index:60;background:var(--white)}}
 @media(max-width:760px){nav.open{top:0!important;padding-top:calc(var(--nav-top,92px) + 12px)!important;border-top:0!important;background:var(--white)}body>header:has(nav.open):after{content:"";position:fixed;left:0;right:0;top:var(--nav-top,92px);height:1px;background:var(--line);z-index:3}body>header:has(nav.open) :is(.logo,.menu){position:relative;z-index:4}}
+
+/* ---------- Registracija: formos klasės (puslapyje ir popup'e) ---------- */
+.form-error{padding:18px;border:1px solid var(--clay);background:var(--cream);font-size:17px;margin-top:24px}
+.registration-form button:disabled{opacity:.65;cursor:wait}
+.form-result{margin-top:30px;padding:28px;background:var(--cream);border:1px solid var(--line)}
+.form-result h3{font-size:30px;margin-bottom:20px}.form-result p{font-size:16px;margin-bottom:20px}
+/* Registracijos puslapis: kairėje sticky antraštė ir kontaktai, dešinėje forma */
+.registration-page.section{padding-top:28px;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:8%;align-items:start}
+.registration-page .breadcrumbs{margin-bottom:40px}
+.registration-sticky{position:sticky;top:40px}
+.registration-page h1{margin-bottom:24px}
+.registration-lead p{font-size:var(--p)}
+.registration-lead p:first-child{font-size:var(--p-lead)!important;color:var(--blue)}
+.registration-contacts{list-style:none;margin:40px 0 0;padding:0;border-top:1px solid var(--line);max-width:460px}
+.registration-contacts li{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
+.registration-contacts .eyebrow{margin:0;font-size:13px;color:var(--muted)}
+.registration-contacts a{font-size:var(--p);font-weight:500;text-align:right;transition:color .2s}
+.registration-contacts a:hover{color:var(--clay)}
+.registration-form-col{padding-top:84px}
+@media(max-width:1050px){.registration-page.section{grid-template-columns:1fr;gap:40px}.registration-sticky{position:static}.registration-form-col{padding-top:0}}
+@media(max-width:760px){.registration-page .breadcrumbs{margin-bottom:28px}.registration-contacts{margin-top:28px}}
+/* Registracijos popup */
+.registration-popup{width:min(760px,calc(100vw - 32px));max-width:none;max-height:calc(100svh - 48px);margin:auto;padding:0;border:0;background:var(--white);color:var(--blue);overflow:auto;overscroll-behavior:contain}
+.registration-popup::backdrop{background:#2f3e51a6}
+.registration-popup[open]{animation:goja-popup .35s var(--ease-out,ease)}
+@keyframes goja-popup{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.registration-popup-inner{position:relative;padding:48px 52px 44px}
+.registration-popup h2{font-size:var(--h3)!important;padding-right:40px;margin-bottom:12px}
+.registration-popup-text{font-size:var(--p-small)!important;margin-bottom:28px}
+.registration-popup-close{position:absolute;top:18px;right:20px;width:44px;height:44px;border:0;background:none;color:var(--blue);font-size:32px;line-height:1;transition:color .2s}
+.registration-popup-close:hover{color:var(--clay)}
+.registration-popup .consent{margin:22px 0}
+@media(max-width:760px){.registration-popup{width:100vw;max-height:100svh;height:100svh;margin:0}.registration-popup-inner{padding:28px 24px 36px}.registration-popup-close{top:12px;right:10px}}
+
+/* Mokėjimas dalimis */
+.hero-offer-notes{display:flex;flex-direction:column;gap:6px}
+.hero-offer-pay{display:flex;align-items:center;gap:10px;font-weight:600;color:var(--blue);font-size:var(--p-small)}
+.hero-offer-pay:before{content:'';flex:0 0 18px;width:18px;height:18px;border-radius:50%;background:var(--clay) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.4 6.6 11 12 5.5' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/11px no-repeat}
+.offer-free.offer-pay{margin-top:14px;align-items:center}
+.offer-free.offer-pay .offer-free-icon{margin-top:0}
+.offer-feature-pay{font-weight:600;color:var(--blue)}
+.hero-offer-notes{border-top:1px solid var(--line);padding-top:14px;transition:border-color .3s}
+.hero-offer-notes .hero-offer-note{border-top:0;padding-top:0}
+.hero-offer:is(:hover,:focus-visible) .hero-offer-notes{border-color:#fcfbf866}
+.hero-offer:is(:hover,:focus-visible) .hero-offer-pay{color:var(--white)}
+.hero-offer:is(:hover,:focus-visible) .hero-offer-pay:before{background-color:var(--blue)}

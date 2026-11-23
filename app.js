@@ -116,30 +116,33 @@ if (priceSearch) {
   priceSearch.addEventListener('input', filterPrices);
   filterPrices();
 }
-const registrationForm = document.querySelector('#registration-form');
-if (registrationForm) {
-  const select = registrationForm.elements.service;
-  const selectedService = new URLSearchParams(location.search).get('paslauga');
-  if ([...select.options].some(o => o.value === selectedService)) select.value = selectedService;
-  const requestedOffer = new URLSearchParams(location.search).get('pasiulymas');
-  if (requestedOffer === 'vieno-danties-1100' && ['dantu-implantacija', 'nemokama-implantacijos-konsultacija'].includes(select.value)) {
+// Registracijos formos (puslapyje ir popup'e): paslaugos ir pasiūlymo parinkimas pagal nuorodą, siuntimas.
+function prefillRegistration(form, search) {
+  const params = new URLSearchParams(search || '');
+  const select = form.elements.service;
+  const selectedService = params.get('paslauga');
+  select.value = [...select.options].some(o => o.value === selectedService) ? selectedService : '';
+  const requestedOffer = params.get('pasiulymas');
+  if (requestedOffer === 'vieno-danties-1100' && ['dantu-implantacija', 'nemokama-implantacijos-konsultacija', ''].includes(select.value)) {
     select.value = 'nemokama-implantacijos-konsultacija';
   }
-  // Atėjus iš pasiūlymo – parodom, kuriam pasiūlymui registruojamasi, ir perduodam jį laiške.
   let offerMap = {};
-  try { offerMap = JSON.parse(registrationForm.dataset.offers || '{}'); } catch {}
-  if (requestedOffer && offerMap[requestedOffer]) {
-    const note = registrationForm.querySelector('.form-offer');
-    note.textContent = `Registruojatės pasiūlymui: ${offerMap[requestedOffer]}`;
-    note.hidden = false;
-    registrationForm.elements.offer.value = offerMap[requestedOffer];
-  }
+  try { offerMap = JSON.parse(form.dataset.offers || '{}'); } catch {}
+  const note = form.querySelector('.form-offer');
+  const offer = requestedOffer && offerMap[requestedOffer];
+  note.textContent = offer ? `Registruojatės pasiūlymui: ${offer}` : '';
+  note.hidden = !offer;
+  form.elements.offer.value = offer || '';
+}
+document.querySelectorAll('.registration-form').forEach(form => {
+  if (!form.closest('dialog')) prefillRegistration(form, location.search);
+  const select = form.elements.service;
   let pending = false;
   let attempt = null;
-  registrationForm.addEventListener('submit', async e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    if (pending || !registrationForm.reportValidity()) return;
-    const fields = registrationForm.elements;
+    if (pending || !form.reportValidity()) return;
+    const fields = form.elements;
     const payload = {
       fullname: fields.fullname.value.trim(), phone: fields.phone.value.trim(),
       email: fields.email.value.trim(), service: select.value,
@@ -149,12 +152,12 @@ if (registrationForm) {
     };
     const signature = JSON.stringify(payload);
     if (!attempt || attempt.signature !== signature) attempt = { signature, requestId: crypto.randomUUID() };
-    const submit = registrationForm.querySelector('button[type="submit"]');
-    const error = document.querySelector('#form-error');
-    const result = document.querySelector('#form-result');
+    const submit = form.querySelector('button[type="submit"]');
+    const error = form.querySelector('.form-error');
+    const result = form.querySelector('.form-result');
     const originalLabel = submit.innerHTML;
     pending = true; submit.disabled = true;
-    registrationForm.setAttribute('aria-busy', 'true');
+    form.setAttribute('aria-busy', 'true');
     submit.textContent = 'Siunčiama…'; error.hidden = true; result.hidden = true;
     try {
       const response = await fetch('/api/registracija', {
@@ -164,17 +167,43 @@ if (registrationForm) {
       });
       const received = await response.json().catch(() => ({}));
       if (!response.ok || received.ok !== true) throw new Error(received.message || 'Nepavyko išsiųsti užklausos. Bandykite dar kartą arba skambinkite +370 611 80077.');
-      registrationForm.reset(); attempt = null;
+      form.reset(); attempt = null;
+      form.querySelector('.form-offer').hidden = true;
       result.hidden = false; result.focus();
     } catch (err) {
       error.textContent = err instanceof Error && err.message !== 'Failed to fetch' ? err.message : 'Nepavyko išsiųsti užklausos. Patikrinkite ryšį arba skambinkite +370 611 80077.';
       error.hidden = false;
     } finally {
       pending = false; submit.disabled = false; submit.innerHTML = originalLabel;
-      registrationForm.removeAttribute('aria-busy');
+      form.removeAttribute('aria-busy');
     }
   });
-}
+});
+
+// Registracijos popup: bet kuri nuoroda į /registracija atidaro formą popup'e (pats puslapis lieka).
+(() => {
+  const popup = document.getElementById('registracijos-popup');
+  if (!popup || typeof popup.showModal !== 'function') return;
+  const form = popup.querySelector('.registration-form');
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href]');
+    if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+    const url = new URL(a.href, location.href);
+    if (url.origin !== location.origin || url.pathname.replace(/\/$/, '') !== '/registracija' || url.hash) return;
+    e.preventDefault();
+    a.closest('dialog[open]')?.close();
+    if (typeof closeMenu === 'function') closeMenu();
+    form.querySelector('.form-result').hidden = true;
+    form.querySelector('.form-error').hidden = true;
+    prefillRegistration(form, url.search);
+    popup.showModal();
+    document.documentElement.classList.add('drawer-open');
+    popup.querySelector('input:not([type=hidden]):not([tabindex="-1"])')?.focus({ preventScroll: true });
+  });
+  popup.querySelector('.registration-popup-close').addEventListener('click', () => popup.close());
+  popup.addEventListener('click', e => { if (e.target === popup) popup.close(); });
+  popup.addEventListener('close', () => document.documentElement.classList.remove('drawer-open'));
+})();
 
 // Hero video: kompiuteryje horizontalus, telefone vertikalus. Kol video kraunasi, matoma nuotrauka;
 // video neįkeliamas, jei lankytojas nepageidauja judesio arba taupo duomenis.

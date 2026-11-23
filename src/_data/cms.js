@@ -181,5 +181,6 @@ module.exports = () => {
   });
   const renderPages = [...pages, ...specialistPages, ...offerPages];
 
-  return { settings, base, pages, renderPages, bySlug, menu, specialists, specialistsBySlug, offers, activeOffers, inactiveOffers, offerKeys, today };
+  const registrationBlock = ((bySlug.registracija && bySlug.registracija.blocks) || []).find((b) => b.type === 'registration' && !b.hidden) || null;
+  return { settings, base, pages, renderPages, bySlug, registrationBlock, menu, specialists, specialistsBySlug, offers, activeOffers, inactiveOffers, offerKeys, today };
 };

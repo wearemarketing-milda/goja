@@ -6,6 +6,6 @@
 {%- if offer -%}
 <a class="hero-offer" href="{{ offer.url if offer.url else (b.offer_url or '/pasiulymai') }}"{% if offer.until %} data-valid-until="{{ offer.until }}"{% endif %}><span class="hero-offer-top"><span class="hero-offer-label">{{ b.offer_label or "Specialus pasiūlymas" }}</span><span class="hero-offer-arrow" aria-hidden="true">↗</span></span>
 {%- if offer.title_price %}<span class="hero-offer-price">{{ offer.title_price }}</span>{% endif -%}
-<span class="hero-offer-title">{{ offer.cardTitle }}</span>{% if offer.card_note %}<span class="hero-offer-note">{{ offer.card_note }}</span>{% endif %}</a>
+<span class="hero-offer-title">{{ offer.cardTitle }}</span>{% if offer.card_note or offer.payment_note %}<span class="hero-offer-notes">{% if offer.payment_note %}<span class="hero-offer-pay">{{ offer.payment_note }}</span>{% endif %}{% if offer.card_note %}<span class="hero-offer-note">{{ offer.card_note }}</span>{% endif %}</span>{% endif %}</a>
 {%- endif -%}
 </div></section>

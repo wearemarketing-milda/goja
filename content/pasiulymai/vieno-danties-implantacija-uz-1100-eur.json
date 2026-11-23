@@ -71,6 +71,7 @@
       "items": [
         "Pasiūlymas taikomas **vieno danties** atkūrimui implantu.",
         "Konsultacija **nemokama** nepriklausomai nuo Jūsų sprendimo gydytis.",
+        "Už gydymą galima **mokėti dalimis** – sąlygas aptarsime konsultacijos metu.",
         "Tinkamumą implantacijai konsultacijos metu įvertina burnos chirurgas Tomas Janeliūnas.",
         "Ne kiekvienu atveju implantą galima įsriegti iš karto po danties pašalinimo – tai įvertinama individualiai."
       ],
@@ -136,5 +137,6 @@
       "hidden": false
     }
   ],
-  "registration_key": "vieno-danties-1100"
+  "registration_key": "vieno-danties-1100",
+  "payment_note": "Galima mokėti dalimis"
 }

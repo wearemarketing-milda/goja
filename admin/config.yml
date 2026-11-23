@@ -1365,6 +1365,17 @@ collections:
         default: false
         required: false
         hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - &id001
+        name: layout
+        label: Išdėstymas
+        widget: select
+        required: false
+        default: ''
+        options:
+        - label: Standartinis
+          value: ''
+        - label: Registracijos puslapis (H1, kontaktai, forma)
+          value: page
       - label: Virš antraštės (mažos raidės)
         name: eyebrow
         widget: string
@@ -1418,6 +1429,26 @@ collections:
       - label: Sėkmės tekstas
         name: success_text
         widget: string
+      - &id002
+        name: address_text
+        label: Adresas (puslapio išdėstyme)
+        widget: string
+        required: false
+      - &id003
+        name: address_url
+        label: Adreso nuoroda (Google Maps)
+        widget: string
+        required: false
+      - &id004
+        name: popup_title
+        label: Popup antraštė
+        widget: string
+        required: false
+      - &id005
+        name: popup_text
+        label: Popup tekstas
+        widget: text
+        required: false
     - label: Pasiūlymo viršus (H1 su kaina)
       name: offer_hero
       summary: '{{fields.title}}'
@@ -1956,6 +1987,11 @@ collections:
     name: card_note
     widget: string
     required: false
+  - name: payment_note
+    label: Mokėjimo dalimis žinutė (rodoma hero dėžutėje ir pasiūlymo puslapyje)
+    widget: string
+    required: false
+    hint: Pvz. „Galima mokėti dalimis“. Palikite tuščią, jei netaikoma.
   - label: Registracijos raktas
     name: registration_key
     widget: string
@@ -3199,6 +3235,7 @@ collections:
         default: false
         required: false
         hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - *id001
       - label: Virš antraštės (mažos raidės)
         name: eyebrow
         widget: string
@@ -3252,6 +3289,10 @@ collections:
       - label: Sėkmės tekstas
         name: success_text
         widget: string
+      - *id002
+      - *id003
+      - *id004
+      - *id005
     - label: Pasiūlymo viršus (H1 su kaina)
       name: offer_hero
       summary: '{{fields.title}}'

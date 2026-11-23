@@ -1,0 +1,6 @@
+{%- set fb = cms.registrationBlock -%}
+{%- if fb -%}{%- set fp = "popup-" -%}
+<dialog class="registration-popup" id="registracijos-popup" aria-labelledby="registracijos-popup-title"><div class="registration-popup-inner"><button class="registration-popup-close" type="button" aria-label="Uždaryti">×</button>
+<h2 id="registracijos-popup-title">{{ fb.popup_title or "Registracija vizitui" }}</h2>{% if fb.popup_text %}<p class="registration-popup-text">{{ fb.popup_text }}</p>{% endif %}
+{% include "partials/registration-form.njk" %}</div></dialog>
+{%- endif -%}
