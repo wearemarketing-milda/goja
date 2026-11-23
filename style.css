@@ -262,3 +262,37 @@ body.header-overlay>header .button.small:hover{background:var(--clay);border-col
 .footer-brand-col{display:flex;flex-direction:column;align-items:flex-start;gap:26px}
 .footer-brand-col .footer-social{margin-top:0}
 @media(max-width:760px){.footer-brand-col{grid-column:1/-1}.footer-brand-col .footer-brand{margin-bottom:0}}
+/* ---------- Specialistai: profilis ir drawer'is ---------- */
+.team-card{display:block;color:inherit}
+.team-card h3{transition:color .25s ease}
+.team-card:is(:hover,:focus-visible) h3{color:var(--clay)}
+.team-card:hover .portrait img{transform:scale(1.03)}
+.specialist-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px 32px;margin-top:32px}
+.specialist-actions .text-link{margin-top:0}
+.specialist-services{margin-top:28px}
+.specialist-services .eyebrow{display:block;margin-bottom:10px}
+.specialist-services ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.specialist-services li{border-bottom:1px solid var(--line)}
+.specialist-services a{display:flex;justify-content:space-between;align-items:center;padding:13px 0;font-size:17px;color:var(--blue)}
+.specialist-services a:after{content:'→';color:var(--clay);transition:transform .3s var(--ease-out)}
+.specialist-services a:is(:hover,:focus-visible){color:var(--clay)}
+.specialist-services a:hover:after{transform:translateX(4px)}
+.specialist-page{padding-top:28px}
+.specialist-profile{border-top:0;padding:0}
+.specialist-profile h1{font-size:clamp(42px,4.4vw,64px);margin-bottom:16px}
+html.drawer-open{overflow:hidden}
+.specialist-drawer{position:fixed;inset:0 0 0 auto;margin:0;width:min(620px,100%);max-width:100%;height:100%;max-height:100%;padding:0;border:0;background:var(--white);color:var(--blue);overflow-y:auto;overscroll-behavior:contain}
+.specialist-drawer::backdrop{background:#2f3e5199;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
+.specialist-drawer[open]{animation:drawer-in .5s var(--ease-out)}
+.specialist-drawer[open]::backdrop{animation:goja-fade .35s ease}
+@keyframes drawer-in{from{transform:translateX(100%)}to{transform:none}}
+.specialist-drawer-inner{position:relative}
+.specialist-drawer-close{position:absolute;top:18px;right:18px;z-index:2;width:46px;height:46px;border:1px solid var(--line);border-radius:50%;background:var(--white);color:var(--blue);font-size:26px;line-height:1;transition:background .2s,color .2s,border-color .2s}
+.specialist-drawer-close:is(:hover,:focus-visible){background:var(--clay);border-color:var(--clay);color:var(--white)}
+.specialist-drawer-portrait{background:var(--cream);height:400px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.specialist-drawer-portrait img{width:100%;height:100%;object-fit:contain;object-position:center bottom}
+.specialist-drawer-copy{padding:36px 44px 52px}
+.specialist-drawer-copy h2{font-size:42px;margin-bottom:12px}
+.specialist-drawer-copy>p:not(.eyebrow){font-size:18px}
+@media(max-width:760px){.specialist-drawer-portrait{height:320px}.specialist-drawer-copy{padding:28px 24px 40px}.specialist-drawer-copy h2{font-size:34px}.specialist-profile h1{font-size:40px}}
+@media(prefers-reduced-motion:reduce){.specialist-drawer[open],.specialist-drawer[open]::backdrop{animation:none}}

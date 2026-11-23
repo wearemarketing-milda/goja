@@ -41,7 +41,7 @@
   },
   "mega_cta": {
     "text": "Nesate iki galo tikri? Pasikalbėkime.",
-    "url": "/kontaktai",
+    "url": "#kontaktai",
     "image": "/assets/clinic-care-720.webp"
   },
   "footer_links": [
@@ -57,7 +57,7 @@
     },
     {
       "text": "Kontaktai",
-      "url": "/kontaktai",
+      "url": "#kontaktai",
       "new_tab": false
     }
   ],
@@ -121,5 +121,12 @@
         "alt": "GOJA klinikos pastatas ir įėjimas"
       }
     ]
-  }
+  },
+  "menu_extra": [
+    {
+      "text": "Kontaktai",
+      "url": "#kontaktai",
+      "order": 110
+    }
+  ]
 }

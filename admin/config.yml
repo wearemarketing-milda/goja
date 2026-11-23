@@ -1519,6 +1519,12 @@ collections:
     widget: boolean
     default: true
     required: false
+  - label: Atskiras profilio puslapis
+    name: landing_page
+    widget: boolean
+    default: true
+    required: false
+    hint: Sukuria puslapį gojaklinika.lt/specialistai/<slug>, randamą paieškos sistemose, ir drawer'į paspaudus kortelę.
   - label: Rodyti komandoje
     name: show_in_team
     widget: boolean
@@ -1555,6 +1561,10 @@ collections:
     name: portrait_alt
     widget: string
     required: false
+  - label: Virš vardo (mažos raidės)
+    name: eyebrow
+    widget: string
+    required: false
   - label: Aprašymas
     name: bio
     widget: markdown
@@ -1579,6 +1589,46 @@ collections:
     - label: Kvalifikacija
       name: text
       widget: string
+  - label: Teikiamos paslaugos
+    name: services
+    widget: relation
+    collection: pages
+    value_field: slug
+    search_fields:
+    - nav_label
+    - title
+    display_fields:
+    - nav_label
+    multiple: true
+    required: false
+    hint: Rodomos profilyje kaip nuorodos į paslaugų puslapius.
+  - widget: object
+    collapsed: false
+    required: false
+    fields:
+    - label: Tekstas
+      name: text
+      widget: string
+      required: false
+    - label: Nuoroda
+      name: url
+      widget: string
+      required: false
+      hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+    label: Mygtukas (profilyje ir drawer'yje)
+    name: button
+  - label: 'SEO: Meta title'
+    name: meta_title
+    widget: string
+    required: false
+    hint: 'Jei tuščia: „Vardas Pavardė – pareigos | GOJA klinika“.'
+  - label: 'SEO: Meta description'
+    name: meta_description
+    widget: text
+    required: false
+    hint: Jei tuščia – imama aprašymo pradžia.
+  description: Gydytojai ir specialistai. Kiekvienas gauna profilio puslapį /specialistai/<slug> ir drawer'į komandos sekcijose. Tušti laukai nerodomi.
+  preview_path: /specialistai/{{slug}}
 - name: pasiulymai
   label: Spec. pasiūlymai
   label_singular: Spec. pasiūlymas
@@ -1817,6 +1867,24 @@ collections:
         name: closes
         widget: string
         hint: '19:00'
+    - label: Papildomi meniu punktai
+      name: menu_extra
+      widget: list
+      required: false
+      summary: '{{fields.text}} → {{fields.url}}'
+      hint: 'Meniu nuorodos, kurios nėra puslapiai, pvz. „Kontaktai“ → #kontaktai (kontaktų sekcija to paties puslapio apačioje).'
+      fields:
+      - label: Tekstas
+        name: text
+        widget: string
+      - label: Nuoroda
+        name: url
+        widget: string
+      - label: Eilės numeris
+        name: order
+        widget: number
+        value_type: int
+        default: 100
     - widget: object
       collapsed: false
       required: false

@@ -199,3 +199,21 @@ if (registrationForm) {
     }));
   });
 })();
+
+// Nuorodos į #kontaktai: jei šiame puslapyje kontaktų sekcijos nėra – į pradžios puslapio kontaktus.
+document.querySelectorAll('a[href="#kontaktai"]').forEach(a => a.addEventListener('click', e => {
+  if (!document.getElementById('kontaktai')) { e.preventDefault(); location.href = '/#kontaktai'; }
+}));
+// Specialisto drawer'is: paspaudus kortelę atsidaro šone; be JS – nuoroda į profilio puslapį.
+(() => {
+  document.querySelectorAll('[data-specialist]').forEach(a => a.addEventListener('click', e => {
+    const d = document.getElementById(`specialistas-${a.dataset.specialist}`);
+    if (!d || typeof d.showModal !== 'function' || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault(); d.showModal(); document.documentElement.classList.add('drawer-open');
+  }));
+  document.querySelectorAll('.specialist-drawer').forEach(d => {
+    d.querySelector('.specialist-drawer-close')?.addEventListener('click', () => d.close());
+    d.addEventListener('click', e => { if (e.target === d) d.close(); });
+    d.addEventListener('close', () => document.documentElement.classList.remove('drawer-open'));
+  });
+})();

@@ -2,14 +2,16 @@
   "name": "Tomas Janeliūnas",
   "slug": "tomas-janeliunas",
   "published": true,
-  "order": 10,
+  "landing_page": true,
   "show_in_team": true,
+  "order": 10,
   "photo": "/assets/tomas.png",
   "photo_alt": "Tomas Janeliūnas",
   "card_role": "Gyd. burnos chirurgas – ortopedas",
   "role": "Burnos chirurgas · Gydytojas odontologas ortopedas",
   "job_title": "Burnos chirurgas, gydytojas odontologas ortopedas",
   "portrait_alt": "Burnos chirurgas Tomas Janeliūnas",
+  "eyebrow": "",
   "bio": "Tomas Janeliūnas specializuojasi burnos chirurgijoje ir dantų atkūrime implantais. Gydytojas atlieka pavienių dantų ir viso dantų lanko atkūrimą, taip pat momentinę implantaciją po danties pašalinimo.\n\nPrieš gydymą įvertinama Jūsų burnos būklė ir sudaromas individualus planas – nuo diagnostikos ir implantacijos iki protezavimo bei tolesnės priežiūros.",
   "education": [
     {
@@ -24,5 +26,15 @@
       "year": "2012 m.",
       "text": "Gydytojo odontologo ortopedo kvalifikacija"
     }
-  ]
+  ],
+  "services": [
+    "dantu-implantacija",
+    "dantu-protezavimas"
+  ],
+  "button": {
+    "text": "Registruotis konsultacijai",
+    "url": "/registracija"
+  },
+  "meta_title": "Tomas Janeliūnas – burnos chirurgas Mažeikiuose | GOJA klinika",
+  "meta_description": ""
 }

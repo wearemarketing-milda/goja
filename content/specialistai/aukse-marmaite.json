@@ -2,14 +2,23 @@
   "name": "Auksė Marmaitė",
   "slug": "aukse-marmaite",
   "published": true,
-  "order": 20,
+  "landing_page": true,
   "show_in_team": true,
+  "order": 20,
   "photo": "/assets/aukse.png",
   "photo_alt": "Auksė Marmaitė",
   "card_role": "Gydytoja odontologė",
   "role": "",
   "job_title": "",
   "portrait_alt": "",
+  "eyebrow": "",
   "bio": "",
-  "education": []
+  "education": [],
+  "services": [],
+  "button": {
+    "text": "Registruotis konsultacijai",
+    "url": "/registracija"
+  },
+  "meta_title": "",
+  "meta_description": ""
 }

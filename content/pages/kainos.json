@@ -34,7 +34,7 @@
       "search_label": "Ieškoti paslaugos",
       "search_placeholder": "Pvz., konsultacija, higiena…",
       "info": "Kainos nurodytos eurais (EUR).  \nGalutinė kaina tikslinama konsultacijos metu.",
-      "empty_text": "Pagal šią paiešką paslaugų neradome. Pabandykite kitą žodį arba [susisiekite su mumis](/kontaktai).",
+      "empty_text": "Pagal šią paiešką paslaugų neradome. Pabandykite kitą žodį arba [susisiekite su mumis](#kontaktai).",
       "groups": [
         {
           "title": "Pirminės paslaugos",

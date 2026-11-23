@@ -61,6 +61,10 @@
         "text": "Registruotis nemokamai konsultacijai",
         "url": "/registracija?paslauga=nemokama-implantacijos-konsultacija&pasiulymas=vieno-danties-1100"
       }
+    },
+    {
+      "type": "global_contact",
+      "hidden": false
     }
   ]
 }

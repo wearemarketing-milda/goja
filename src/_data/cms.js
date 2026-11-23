@@ -35,13 +35,24 @@ module.exports = () => {
   }
 
   // Navigacija: viršutinio lygio puslapiai su „Rodyti meniu“, o jų vaikai rodomi kaip submeniu.
-  const menu = pages
-    .filter((p) => p.show_in_menu && !(p.parent && bySlug[p.parent] && bySlug[p.parent].show_in_menu))
-    .sort(byOrder('menu_order'))
-    .map((p) => ({ page: p, children: p.children.filter((c) => c.show_in_menu) }));
+  const menu = [
+    ...pages
+      .filter((p) => p.show_in_menu && !(p.parent && bySlug[p.parent] && bySlug[p.parent].show_in_menu))
+      .map((p) => ({ order: p.menu_order ?? 100, page: p, children: p.children.filter((c) => c.show_in_menu) })),
+    // Papildomi meniu punktai iš Nustatymų (pvz. „Kontaktai“ → #kontaktai)
+    ...(settings.menu_extra || []).map((m) => ({ order: m.order ?? 100, page: { url: m.url, menuText: m.text }, children: [] })),
+  ].sort((a, b) => a.order - b.order);
 
   const specialists = readDir('specialistai').filter(published).sort(byOrder('order'));
   const specialistsBySlug = Object.fromEntries(specialists.map((s) => [s.slug, s]));
+  for (const sp of specialists) {
+    sp.hasPage = sp.landing_page !== false;
+    sp.url = `/specialistai/${sp.slug}`;
+    sp.roleText = sp.role || sp.card_role || '';
+    sp.serviceLinks = (sp.services || []).map((x) => bySlug[x]).filter(Boolean);
+    sp.buttonText = (sp.button && sp.button.text) || 'Registruotis konsultacijai';
+    sp.buttonUrl = (sp.button && sp.button.url) || '/registracija';
+  }
   const offers = readDir('pasiulymai').filter(published).sort(byOrder('order'));
   const offersBySlug = Object.fromEntries(offers.map((o) => [o.slug, o]));
   const today = new Date().toISOString().slice(0, 10);
@@ -93,5 +104,28 @@ module.exports = () => {
     p.schema = { '@context': 'https://schema.org', '@graph': graph };
   }
 
-  return { settings, base, pages, bySlug, menu, specialists, specialistsBySlug, offers, activeOffers };
+  // Specialistų landing puslapiai (/specialistai/<slug>)
+  const plain = (t) => String(t || '').replace(/\[([^\]]*)\]\([^)]*\)/g, '$1').replace(/[*_`#>]/g, '').replace(/\s+/g, ' ').trim();
+  const clip = (t, n) => (t.length <= n ? t : t.slice(0, t.lastIndexOf(' ', n - 1)).replace(/[,.;:–-]+$/, '') + '…');
+  const about = bySlug['apie-mus'];
+  const specialistPages = specialists.filter((sp) => sp.hasPage).map((sp) => {
+    const url = base + sp.url;
+    const desc = sp.meta_description || clip(plain(sp.bio) || `${sp.name} – ${sp.roleText} GOJA odontologijos klinikoje Mažeikiuose. Registruokitės konsultacijai.`, 155);
+    const ancestors = about ? [about] : [];
+    const graph = [clinic, website,
+      { '@type': 'ProfilePage', '@id': `${url}#webpage`, url, name: sp.meta_title || `${sp.name} | ${settings.site_name}`, description: desc, inLanguage: 'lt-LT', isPartOf: { '@id': `${base}/#website` }, mainEntity: { '@id': `${base}/#${sp.slug}` } },
+      { '@type': 'BreadcrumbList', '@id': `${url}#breadcrumb`, itemListElement: [{ name: 'Pradžia', item: `${base}/` }, ...ancestors.map((a) => ({ name: a.nav_label || a.title, item: base + a.url })), { name: sp.name, item: url }].map((c, i) => ({ '@type': 'ListItem', position: i + 1, ...c })) },
+      { '@type': 'Person', '@id': `${base}/#${sp.slug}`, name: sp.name, jobTitle: sp.job_title || sp.roleText, image: abs(sp.photo), url, worksFor: { '@id': `${base}/#clinic` }, ...(plain(sp.bio) ? { description: clip(plain(sp.bio), 300) } : {}) },
+    ];
+    return {
+      slug: sp.slug, url: sp.url, permalink: `${sp.url}/index.html`, title: sp.name, nav_label: sp.name, ancestors,
+      meta_title: sp.meta_title || `${sp.name} – ${sp.card_role || sp.roleText || 'specialistas'} | ${settings.site_name}`,
+      meta_description: desc, og_image: sp.photo, noindex: false, sitemap: true,
+      blocks: [{ type: 'specialist_profile', person: sp }, { type: 'global_contact', hidden: false }],
+      schema: { '@context': 'https://schema.org', '@graph': graph },
+    };
+  });
+  const renderPages = [...pages, ...specialistPages];
+
+  return { settings, base, pages, renderPages, bySlug, menu, specialists, specialistsBySlug, offers, activeOffers };
 };

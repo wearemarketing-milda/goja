@@ -1,0 +1,6 @@
+{%- if d.eyebrow %}<p class="eyebrow">{{ d.eyebrow }}</p>{% endif -%}
+{%- if headingTag == "h1" %}<h1 id="{{ headingId }}">{{ d.name }}</h1>{% else %}<h2 id="{{ headingId }}">{{ d.name }}</h2>{% endif -%}
+{%- if d.roleText %}<p class="implant-doctor-role">{{ d.roleText }}</p>{% endif -%}
+{{ d.bio | md | safe }}
+{%- if d.education and d.education.length %}<dl class="implant-doctor-education">{% for e in d.education %}<div><dt>{{ e.year }}</dt><dd>{{ e.text }}</dd></div>{% endfor %}</dl>{% endif -%}
+{%- if d.serviceLinks.length %}<div class="specialist-services"><span class="eyebrow">Teikiamos paslaugos</span><ul>{% for sv in d.serviceLinks %}<li><a href="{{ sv.url }}">{{ sv.nav_label or sv.title }}</a></li>{% endfor %}</ul></div>{% endif -%}
