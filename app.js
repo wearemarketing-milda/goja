@@ -124,6 +124,15 @@ if (registrationForm) {
   if (requestedOffer === 'vieno-danties-1100' && ['dantu-implantacija', 'nemokama-implantacijos-konsultacija'].includes(select.value)) {
     select.value = 'nemokama-implantacijos-konsultacija';
   }
+  // Atėjus iš pasiūlymo – parodom, kuriam pasiūlymui registruojamasi, ir perduodam jį laiške.
+  let offerMap = {};
+  try { offerMap = JSON.parse(registrationForm.dataset.offers || '{}'); } catch {}
+  if (requestedOffer && offerMap[requestedOffer]) {
+    const note = registrationForm.querySelector('.form-offer');
+    note.textContent = `Registruojatės pasiūlymui: ${offerMap[requestedOffer]}`;
+    note.hidden = false;
+    registrationForm.elements.offer.value = offerMap[requestedOffer];
+  }
   let pending = false;
   let attempt = null;
   registrationForm.addEventListener('submit', async e => {
@@ -135,6 +144,7 @@ if (registrationForm) {
       email: fields.email.value.trim(), service: select.value,
       message: fields.message.value.trim(), consent: fields.consent.checked,
       website: fields.website.value,
+      offer: fields.offer ? fields.offer.value : '',
     };
     const signature = JSON.stringify(payload);
     if (!attempt || attempt.signature !== signature) attempt = { signature, requestId: crypto.randomUUID() };
@@ -274,4 +284,28 @@ document.querySelectorAll('[data-slider]').forEach(slider => {
     document.body.classList.add('offer-expired');
     document.querySelectorAll('.offer-expired-notice').forEach(n => { n.hidden = false; });
   }
+})();
+
+// Pasiūlymo puslapis: likusių dienų skaičius ir lipnus registracijos mygtukas telefone.
+(() => {
+  const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Vilnius' }).format(new Date());
+  document.querySelectorAll('.offer-countdown[data-until]').forEach(el => {
+    const days = Math.round((Date.parse(el.dataset.until) - Date.parse(today)) / 86400000);
+    if (days < 0) el.remove(); else el.textContent = days === 0 ? 'Paskutinė diena' : `Liko ${days} d.`;
+  });
+  const sticky = document.querySelector('[data-offer-sticky]');
+  const cta = document.querySelector('[data-offer-cta]');
+  if (!sticky || !cta || !('IntersectionObserver' in window)) return;
+  if (document.body.classList.contains('offer-expired')) { sticky.remove(); return; }
+  const contact = document.getElementById('kontaktai');
+  let ctaVisible = true, contactVisible = false;
+  const update = () => {
+    const show = !ctaVisible && !contactVisible;
+    sticky.classList.toggle('is-visible', show);
+    sticky.setAttribute('aria-hidden', String(!show));
+    sticky.querySelector('a').tabIndex = show ? 0 : -1;
+    document.body.classList.toggle('has-sticky-cta', show);
+  };
+  new IntersectionObserver(([e]) => { ctaVisible = e.isIntersecting || e.boundingClientRect.top > 0; update(); }).observe(cta);
+  if (contact) new IntersectionObserver(([e]) => { contactVisible = e.isIntersecting; update(); }).observe(contact);
 })();

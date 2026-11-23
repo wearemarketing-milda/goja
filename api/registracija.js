@@ -41,6 +41,7 @@ module.exports = async (req, res) => {
   const email = clean(body.email, 150);
   const service = SERVICES[body.service] || 'Nepasirinkta';
   const message = clean(body.message, 1500);
+  const offer = clean(body.offer, 200);
 
   if (!fullname || !/^[+0-9() \-]{6,25}$/.test(phone)) {
     return res.status(400).json({ ok: false, message: 'Įveskite vardą ir teisingą telefono numerį.' });
@@ -71,6 +72,7 @@ module.exports = async (req, res) => {
     ['Telefonas', phone],
     ['El. paštas', email || '–'],
     ['Paslauga', service],
+    ...(offer ? [['Pasiūlymas', offer]] : []),
     ['Komentaras', message || '–'],
   ];
   const text = rows.map(([k, v]) => `${k}: ${v}`).join('\n') + `\n\nUžklausos ID: ${clean(body.requestId, 64)}`;
@@ -83,7 +85,7 @@ module.exports = async (req, res) => {
       from: `"GOJA svetainė" <${SMTP_USER}>`,
       to: process.env.MAIL_TO || 'info@gojaklinika.lt',
       replyTo: email || undefined,
-      subject: `Registracija: ${service} – ${fullname}`,
+      subject: `Registracija: ${offer || service} – ${fullname}`,
       text,
       html,
     });

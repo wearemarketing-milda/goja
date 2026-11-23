@@ -1,0 +1,5 @@
+{%- set o = p.offer -%}
+<section class="section offer-terms" aria-labelledby="offer-terms-title"><div class="offer-terms-head">{% if b.eyebrow %}<p class="eyebrow">{{ b.eyebrow }}</p>{% endif %}<h2 id="offer-terms-title">{{ b.title }}</h2>{% if b.note %}<p>{{ b.note }}</p>{% endif %}</div>
+<ul class="offer-terms-list">{% if b.show_validity !== false and o and o.validText %}<li class="offer-terms-validity"><strong>{{ o.validText }}</strong>{% if o.isExpired %} – pasiūlymas nebegalioja{% endif %}</li>{% endif %}
+{%- for i in b.items %}<li{% if i.startsWith("[PAVYZDYS") %} class="is-draft"{% endif %}>{{ i | mdi | safe }}</li>{% endfor -%}
+</ul></section>

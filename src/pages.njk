@@ -19,4 +19,5 @@ eleventyComputed:
 {%- endfor -%}
 </main>
 {%- include "partials/footer.njk" -%}
+{%- if p.offer and not p.offer.isExpired %}{% include "partials/offer-sticky.njk" %}{% endif -%}
 </body></html>

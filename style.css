@@ -435,3 +435,47 @@ main :is(p.page-lead,p.large-text,.hero-full p.intro){font-size:var(--p-lead)!im
 @media(max-width:1050px){.offer-hero-grid.has-media{grid-template-columns:1fr;gap:36px}.offer-hero-media{order:-1}}
 @media(max-width:760px){.offer-hero-media img{aspect-ratio:1/1}}
 @media(prefers-reduced-motion:reduce){.offer-hero-media img,.offer-hero-copy>*{animation:none}}
+/* ---------- Pasiūlymo puslapis: konversijai ---------- */
+.offer-valid{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.offer-countdown{display:inline-flex;align-items:center;padding:5px 12px;border-radius:999px;background:var(--clay);color:var(--white);font-size:13px;font-weight:500;letter-spacing:.03em}
+.offer-hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:6px}
+.button.outline{background:transparent;color:var(--blue);border-color:var(--blue)}
+.button.outline:hover{background:var(--blue);color:var(--white)}
+/* Kas įeina – su varnelėmis */
+.check-list{list-style:none;padding:0;margin:0}
+.check-list li{position:relative;padding:16px 0 16px 38px!important;border-top:1px solid var(--line)}
+.check-list li:last-child{border-bottom:1px solid var(--line)}
+.check-list li:before{content:'';position:absolute;left:0;top:17px;width:22px;height:22px;border-radius:50%;background:var(--clay) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.4 6.6 11 12 5.5' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
+.check-list li::marker{content:''}
+.implant-offer.no-price .implant-offer-summary .implant-offer-text{margin:18px 0 30px;max-width:420px}
+/* Sąlygos */
+.offer-terms{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:8%;border-top:1px solid var(--line)}
+.offer-terms-head>p:not(.eyebrow){margin-top:20px;max-width:380px}
+.offer-terms-list{list-style:none;margin:0;padding:0;counter-reset:term}
+.offer-terms-list li{position:relative;padding:18px 0 18px 44px;border-top:1px solid var(--line);font-size:18px;line-height:1.6;color:var(--blue)}
+.offer-terms-list li:last-child{border-bottom:1px solid var(--line)}
+.offer-terms-list li:before{counter-increment:term;content:counter(term,decimal-leading-zero);position:absolute;left:0;top:20px;font-size:14px;color:var(--clay);font-weight:500}
+.offer-terms-list li a{text-decoration:underline;text-underline-offset:4px}
+.offer-terms-validity strong{font-weight:600}
+/* Juodraščio žymė (tik peržiūrai – prieš publikuojant patvirtinti tekstą) */
+.is-draft{background:#fff4c2}
+details.is-draft summary{background:#fff4c2}
+/* DUK */
+.faq-section{border-top:1px solid var(--line)}
+.faq-section .faq h2{margin-bottom:30px}
+.faq details>p,.faq details>ul{max-width:750px;margin-top:16px}
+/* Lipnus mygtukas telefone */
+.offer-sticky-cta{display:none}
+@media(max-width:760px){
+  .offer-sticky-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:45;padding:12px var(--gutter) calc(12px + env(safe-area-inset-bottom,0px));background:var(--white);border-top:1px solid var(--line);box-shadow:0 -8px 20px #2f3e5114;transform:translateY(110%);transition:transform .35s var(--ease-out)}
+  .offer-sticky-cta.is-visible{transform:none}
+  .offer-sticky-cta .button{width:100%;justify-content:center}
+  body.has-sticky-cta footer{padding-bottom:100px}
+  .offer-terms{grid-template-columns:1fr;gap:28px}
+  .offer-terms-list li{font-size:16px;padding-left:38px}
+  .offer-hero-actions .button{flex:1 1 auto;justify-content:center}
+}
+/* Registracijos forma: pasiūlymo žymė */
+.form-offer{margin:0 0 24px;padding:14px 18px;background:var(--cream);border:1px solid var(--line);color:var(--blue);font-weight:500}
+.implant-offer-inclusions .check-list li{border-bottom:0}
+.implant-offer-inclusions .check-list li:last-child{border-bottom:1px solid var(--line)}

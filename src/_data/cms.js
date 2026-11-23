@@ -71,9 +71,13 @@ module.exports = () => {
     o.expiredText = o.until ? `Pasiūlymas galiojo iki ${ltDate(o.until)}` : 'Pasiūlymas nebegalioja';
     o.cardTitle = o.card_title || o.title;
     o.cardImage = (o.image_desktop && o.image_desktop.src) ? o.image_desktop : (o.image_mobile || { src: '', alt: '' });
+    o.daysLeft = o.until ? Math.round((Date.parse(o.until) - Date.parse(today)) / 86400000) : null;
+    const heroBlock = (o.blocks || []).find((b) => b.type === 'offer_hero');
+    o.ctaUrl = (heroBlock && heroBlock.button && heroBlock.button.url) || '/registracija';
   }
   const offersBySlug = Object.fromEntries(offers.map((o) => [o.slug, o]));
   const activeOffers = offers.filter((o) => o.isActive);
+  const offerKeys = Object.fromEntries(offers.filter((o) => o.registration_key && o.isActive).map((o) => [o.registration_key, [o.title, o.title_price].filter(Boolean).join(' ')]));
   const inactiveOffers = offers.filter((o) => o.isExpired).sort((a, b) => (a.until < b.until ? 1 : -1));
 
   // Blokų ryšiai: komandos blokas rodo pasirinktus (arba visus) specialistus, gydytojo blokas – vieną.
@@ -157,6 +161,8 @@ module.exports = () => {
       { '@type': 'Offer', '@id': `${url}#offer`, name, url, ...(price ? { price, priceCurrency: 'EUR' } : {}), ...(o.from ? { validFrom: o.from } : {}), ...(o.until ? { validThrough: o.until } : {}), availability: o.isExpired ? 'https://schema.org/Discontinued' : 'https://schema.org/InStock', seller: { '@id': `${base}/#clinic` } },
     ];
     const blocks = (o.blocks || []).map((b) => ({ ...b }));
+    const faqItems = blocks.filter((b) => b.type === 'faq' && !b.hidden).flatMap((b) => b.items || []).filter((x) => x.question && x.answer && !/\[PAVYZDYS/.test(x.answer));
+    if (faqItems.length) graph.push({ '@type': 'FAQPage', '@id': `${url}#faq`, mainEntity: faqItems.map((x) => ({ '@type': 'Question', name: x.question, acceptedAnswer: { '@type': 'Answer', text: plain(x.answer) } })) });
     return {
       slug: o.slug, url: o.url, permalink: `${o.url}/index.html`, title: name, nav_label: o.cardTitle, ancestors, offer: o,
       meta_title: o.meta_title || `${name} | ${settings.site_name}`, meta_description: o.meta_description || o.summary || '',
@@ -166,5 +172,5 @@ module.exports = () => {
   });
   const renderPages = [...pages, ...specialistPages, ...offerPages];
 
-  return { settings, base, pages, renderPages, bySlug, menu, specialists, specialistsBySlug, offers, activeOffers, inactiveOffers, today };
+  return { settings, base, pages, renderPages, bySlug, menu, specialists, specialistsBySlug, offers, activeOffers, inactiveOffers, offerKeys, today };
 };

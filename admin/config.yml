@@ -1468,6 +1468,26 @@ collections:
           hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
         label: Mygtukas
         name: button
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Antras mygtukas (pvz. telefonas)
+        name: phone
+      - label: Rodyti „Liko X d.“
+        name: show_countdown
+        widget: boolean
+        default: true
+        required: false
     - label: Pasiūlymo kaina ir kas įeina
       name: offer_box
       summary: '{{fields.title}}'
@@ -1490,6 +1510,11 @@ collections:
       - label: Antraštė
         name: title
         widget: string
+      - label: Rodyti kainą
+        name: show_price
+        widget: boolean
+        default: true
+        required: false
       - label: Kaina
         name: price
         widget: string
@@ -1497,6 +1522,10 @@ collections:
         name: currency
         widget: string
         default: €
+      - label: Tekstas
+        name: text
+        widget: text
+        required: false
       - widget: object
         collapsed: false
         required: false
@@ -1545,6 +1574,11 @@ collections:
       - label: Virš antraštės (mažos raidės)
         name: eyebrow
         widget: string
+        required: false
+      - label: Trumpa versija (be išsilavinimo, tik pirma aprašymo pastraipa)
+        name: compact
+        widget: boolean
+        default: false
         required: false
       - widget: object
         collapsed: false
@@ -1599,6 +1633,79 @@ collections:
         name: empty_text
         widget: text
         required: false
+    - label: Pasiūlymo sąlygos
+      name: offer_terms
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Virš antraštės (mažos raidės)
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Antraštė
+        name: title
+        widget: string
+        default: Pasiūlymo sąlygos
+      - label: Rodyti galiojimo datas
+        name: show_validity
+        widget: boolean
+        default: true
+        required: false
+        hint: Pirmasis punktas automatiškai rodo pasiūlymo galiojimą.
+      - label: Sąlygos
+        name: items
+        widget: list
+        field:
+          label: Sąlyga
+          name: item
+          widget: string
+        hint: 'Paryškinimas: **tekstas**, nuoroda: [tekstas](/adresas). Punktai, prasidedantys „[PAVYZDYS“, pažymimi geltonai – juos būtina patvirtinti.'
+      - label: Pastaba po antrašte
+        name: note
+        widget: text
+        required: false
+    - label: DUK (klausimai ir atsakymai)
+      name: faq
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Virš antraštės (mažos raidės)
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Antraštė
+        name: title
+        widget: string
+        default: Klausimai ir atsakymai
+      - label: Klausimai
+        name: items
+        widget: list
+        summary: '{{fields.question}}'
+        hint: Patvirtinti atsakymai įtraukiami į Google FAQ struktūrinius duomenis. Atsakymai, prasidedantys „[PAVYZDYS“, neįtraukiami.
+        fields:
+        - label: Klausimas
+          name: question
+          widget: string
+        - label: Atsakymas
+          name: answer
+          widget: markdown
+          buttons:
+          - bold
+          - italic
+          - link
+          - bulleted-list
+          editor_components: []
+          minimal: true
 - name: specialistai
   label: Specialistai
   label_singular: Specialistas
@@ -1838,6 +1945,11 @@ collections:
     name: card_note
     widget: string
     required: false
+  - label: Registracijos raktas
+    name: registration_key
+    widget: string
+    required: false
+    hint: 'Jei registracijos nuorodoje yra ?pasiulymas=<raktas>, formoje rodoma „Registruojatės pasiūlymui: …“, o pasiūlymas nurodomas laiške.'
   - label: 'SEO: Meta title'
     name: meta_title
     widget: string
@@ -2988,6 +3100,22 @@ collections:
         name: empty_text
         widget: string
         hint: 'Nuorodos formatas: [tekstas](/adresas)'
+      - label: 'Stulpelio pavadinimas: paslauga'
+        name: col_service
+        widget: string
+        default: Paslauga
+      - label: 'Stulpelio pavadinimas: kategorija'
+        name: col_category
+        widget: string
+        default: Kategorija
+      - label: 'Stulpelio pavadinimas: kaina'
+        name: col_price
+        widget: string
+        default: Kaina, €
+      - label: Kur veda paspaudus eilutę
+        name: row_link
+        widget: string
+        default: /registracija
       - label: Kainų grupės
         name: groups
         widget: list
@@ -3009,6 +3137,7 @@ collections:
             label: Pastaba
             name: note
             widget: string
+          hint: Bendros grupės pastabos. Paslaugai skirtą pastabą rašykite tos paslaugos aprašyme.
         - label: Paslaugos
           name: rows
           widget: list
@@ -3017,6 +3146,11 @@ collections:
           - label: Paslauga
             name: service
             widget: string
+          - label: Aprašymas (po pavadinimu)
+            name: description
+            widget: text
+            required: false
+            hint: Rodomas mažesniu šriftu po paslaugos pavadinimu. Kiekviena eilutė – atskirai.
           - label: Kaina (€)
             name: price
             widget: string
@@ -3145,6 +3279,26 @@ collections:
           hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
         label: Mygtukas
         name: button
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Antras mygtukas (pvz. telefonas)
+        name: phone
+      - label: Rodyti „Liko X d.“
+        name: show_countdown
+        widget: boolean
+        default: true
+        required: false
     - label: Pasiūlymo kaina ir kas įeina
       name: offer_box
       summary: '{{fields.title}}'
@@ -3167,6 +3321,11 @@ collections:
       - label: Antraštė
         name: title
         widget: string
+      - label: Rodyti kainą
+        name: show_price
+        widget: boolean
+        default: true
+        required: false
       - label: Kaina
         name: price
         widget: string
@@ -3174,6 +3333,10 @@ collections:
         name: currency
         widget: string
         default: €
+      - label: Tekstas
+        name: text
+        widget: text
+        required: false
       - widget: object
         collapsed: false
         required: false
@@ -3222,6 +3385,11 @@ collections:
       - label: Virš antraštės (mažos raidės)
         name: eyebrow
         widget: string
+        required: false
+      - label: Trumpa versija (be išsilavinimo, tik pirma aprašymo pastraipa)
+        name: compact
+        widget: boolean
+        default: false
         required: false
       - widget: object
         collapsed: false
@@ -3276,6 +3444,79 @@ collections:
         name: empty_text
         widget: text
         required: false
+    - label: Pasiūlymo sąlygos
+      name: offer_terms
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Virš antraštės (mažos raidės)
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Antraštė
+        name: title
+        widget: string
+        default: Pasiūlymo sąlygos
+      - label: Rodyti galiojimo datas
+        name: show_validity
+        widget: boolean
+        default: true
+        required: false
+        hint: Pirmasis punktas automatiškai rodo pasiūlymo galiojimą.
+      - label: Sąlygos
+        name: items
+        widget: list
+        field:
+          label: Sąlyga
+          name: item
+          widget: string
+        hint: 'Paryškinimas: **tekstas**, nuoroda: [tekstas](/adresas). Punktai, prasidedantys „[PAVYZDYS“, pažymimi geltonai – juos būtina patvirtinti.'
+      - label: Pastaba po antrašte
+        name: note
+        widget: text
+        required: false
+    - label: DUK (klausimai ir atsakymai)
+      name: faq
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Virš antraštės (mažos raidės)
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Antraštė
+        name: title
+        widget: string
+        default: Klausimai ir atsakymai
+      - label: Klausimai
+        name: items
+        widget: list
+        summary: '{{fields.question}}'
+        hint: Patvirtinti atsakymai įtraukiami į Google FAQ struktūrinius duomenis. Atsakymai, prasidedantys „[PAVYZDYS“, neįtraukiami.
+        fields:
+        - label: Klausimas
+          name: question
+          widget: string
+        - label: Atsakymas
+          name: answer
+          widget: markdown
+          buttons:
+          - bold
+          - italic
+          - link
+          - bulleted-list
+          editor_components: []
+          minimal: true
   preview_path: /pasiulymai/{{slug}}
 - name: redirects
   label: Redirect'ai

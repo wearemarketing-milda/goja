@@ -29,23 +29,28 @@
       "box_title": "Nemokama konsultacija – be įsipareigojimo gydytis",
       "box_text": "Konsultacija nemokama nepriklausomai nuo Jūsų sprendimo. Net jei po konsultacijos nuspręsite nesigydyti GOJA klinikoje, už konsultaciją mokėti nereikės.",
       "button": {
-        "text": "Registruotis nemokamai konsultacijai",
+        "text": "Užsiregistruoti nemokamai konsultacijai",
         "url": "/registracija?paslauga=nemokama-implantacijos-konsultacija&pasiulymas=vieno-danties-1100"
       },
-      "hidden": false
+      "hidden": false,
+      "phone": {
+        "text": "+370 611 80077",
+        "url": "tel:+37061180077"
+      },
+      "show_countdown": true
     },
     {
       "type": "offer_box",
       "anchor": "specialus-pasiulymas",
       "eyebrow": "VIENO DANTIES ATKŪRIMAS",
-      "title": "Aiški pasiūlymo kaina",
+      "title": "Kas įeina į kainą",
       "price": "1 100",
       "currency": "€",
       "button": {
         "text": "Registruotis nemokamai konsultacijai",
         "url": "/registracija?paslauga=nemokama-implantacijos-konsultacija&pasiulymas=vieno-danties-1100"
       },
-      "inclusions_title": "Į kainą įeina:",
+      "inclusions_title": "",
       "inclusions": [
         "Panoraminė dantų nuotrauka",
         "Danties šalinimas, jei reikalingas",
@@ -53,7 +58,49 @@
         "Gijimo galvutė",
         "Danties vainikėlis"
       ],
-      "hidden": false
+      "hidden": false,
+      "show_price": false,
+      "text": "Viena kaina visam vieno danties atkūrimui – nuo nuotraukos iki vainikėlio."
+    },
+    {
+      "type": "offer_terms",
+      "hidden": false,
+      "eyebrow": "SVARBU ŽINOTI",
+      "title": "Pasiūlymo sąlygos",
+      "show_validity": true,
+      "items": [
+        "Pasiūlymas taikomas **vieno danties** atkūrimui implantu.",
+        "Konsultacija **nemokama** nepriklausomai nuo Jūsų sprendimo gydytis.",
+        "Tinkamumą implantacijai konsultacijos metu įvertina burnos chirurgas Tomas Janeliūnas.",
+        "Ne kiekvienu atveju implantą galima įsriegti iš karto po danties pašalinimo – tai įvertinama individualiai.",
+        "[PAVYZDYS – patvirtinti] Į kainą neįeina papildomos procedūros, pvz. kaulo priauginimas ar sinuso dugno pakėlimas, jei jų prireiktų. Jų kainos – [kainoraštyje](/kainos).",
+        "[PAVYZDYS – patvirtinti] Pasiūlymas nesumuojamas su kitomis nuolaidomis."
+      ],
+      "note": "Galutinė gydymo eiga ir kaina aptariamos konsultacijos metu."
+    },
+    {
+      "type": "steps",
+      "hidden": false,
+      "eyebrow": "KAIP TAI VYKSTA",
+      "title": "Nuo konsultacijos iki naujo danties.",
+      "steps": [
+        {
+          "title": "Nemokama konsultacija",
+          "text": "Įvertinama burnos būklė, atliekama panoraminė dantų nuotrauka."
+        },
+        {
+          "title": "Gydymo planas",
+          "text": "Aptariami gydymo etapai, terminai ir kaina."
+        },
+        {
+          "title": "Implantacija",
+          "text": "Jei reikia, danties šalinimas ir momentinė implantacija – implantas įsriegiamas iškart po šalinimo."
+        },
+        {
+          "title": "Danties vainikėlis",
+          "text": "Gijimo laikotarpiu – gijimo galvutė, vėliau – danties vainikėlis."
+        }
+      ]
     },
     {
       "type": "doctor",
@@ -63,11 +110,41 @@
         "text": "Registruotis nemokamai konsultacijai",
         "url": "/registracija?paslauga=nemokama-implantacijos-konsultacija&pasiulymas=vieno-danties-1100"
       },
-      "hidden": false
+      "hidden": false,
+      "compact": true
+    },
+    {
+      "type": "faq",
+      "hidden": false,
+      "eyebrow": "DAŽNIAUSI KLAUSIMAI",
+      "title": "Klausimai ir atsakymai",
+      "items": [
+        {
+          "question": "Kas, jei implantacija man netinka?",
+          "answer": "Konsultacijos metu aptariama implantacijos nauda, rizika ir alternatyvos, įskaitant tiltinius ar išimamus protezus. Konsultacija nemokama, net jei nuspręsite nesigydyti."
+        },
+        {
+          "question": "Kiek laiko trunka gydymas?",
+          "answer": "Gijimui reikia laiko, o gydymo etapai bei terminai gali skirtis. Tikslų planą su terminais gausite po konsultacijos."
+        },
+        {
+          "question": "Ar implantą galima įsriegti iškart po danties šalinimo?",
+          "answer": "Pasiūlyme numatyta momentinė implantacija – implantas įsriegiamas iškart po šalinimo. Tačiau ne kiekvienu atveju tai įmanoma: sprendimą priima gydytojas, įvertinęs Jūsų situaciją."
+        },
+        {
+          "question": "Ar procedūra skausminga?",
+          "answer": "[PAVYZDYS – patvirtinti] Procedūra atliekama taikant vietinį nuskausminimą. Apie pojūčius po procedūros ir priežiūrą gydytojas papasakos konsultacijos metu."
+        },
+        {
+          "question": "Ar galima mokėti dalimis?",
+          "answer": "[PAVYZDYS – patvirtinti] Mokėjimo sąlygas aptarsime konsultacijos metu."
+        }
+      ]
     },
     {
       "type": "global_contact",
       "hidden": false
     }
-  ]
+  ],
+  "registration_key": "vieno-danties-1100"
 }
