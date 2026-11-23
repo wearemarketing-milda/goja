@@ -410,3 +410,14 @@ header a.button.small{font-size:var(--btn-font);padding:var(--btn-pad-y) var(--b
 @media(max-width:760px){.price-catalog{--col-cat:0px}}
 .price-colhead{padding:14px 0}
 .price-colhead>span{padding:0 var(--cell-x)}
+/* ---------- Tipografikos skalė (vienoje vietoje) ----------
+   H1: 65 / 36 px (pradžios puslapio hero – atskirai), H2: 46 / 34 px, H3: 28 / 23 px.
+   Tekstas (p): 3 dydžiai – mažas (kickeriai, pastabos), pagrindinis, įžanga. */
+:root{--h1:65px;--h2:46px;--h3:28px;--p-small:14px;--p:18px;--p-lead:21px}
+@media(max-width:760px){:root{--h1:36px;--h2:34px;--h3:23px;--p-small:13px;--p:16px;--p-lead:18px}}
+main h1:not(.hero-full h1){font-size:var(--h1)!important}
+main h2:not(.free-consultation h2){font-size:var(--h2)!important}
+main h3{font-size:var(--h3)!important}
+main p:not(.implant-offer-price){font-size:var(--p)!important}
+main :is(.eyebrow,p.form-help,p.price-note,.team-grid p,p.offer-valid,p.price-info-mobile){font-size:var(--p-small)!important}
+main :is(p.page-lead,p.large-text,.hero-full p.intro){font-size:var(--p-lead)!important}
