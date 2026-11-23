@@ -886,6 +886,131 @@ collections:
           name: alt
           widget: string
           required: false
+    - label: Klinika ir kontaktai (erdvės, adresas, darbo laikas)
+      name: clinic_contact
+      summary: '{{fields.title}}'
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
+      - label: Inkaras (id)
+        name: anchor
+        widget: string
+        required: false
+        hint: 'Naudojama nuorodoms į sekciją, pvz. #specialus-pasiulymas. Nekeiskite, jei nežinote, kur naudojama.'
+      - label: Virš antraštės (mažos raidės)
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Antraštė
+        name: title
+        widget: string
+      - label: Tekstas
+        name: text
+        widget: text
+        required: false
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Mygtukas
+        name: button
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Telefonas
+        name: phone
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: El. paštas
+        name: email
+      - label: Adreso pavadinimas
+        name: address_label
+        widget: string
+        default: Adresas
+      - label: Adresas (kiekviena eilutė atskirai)
+        name: address_lines
+        widget: text
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Nuoroda „Kaip atvykti“
+        name: map_link
+      - label: Darbo laiko pavadinimas
+        name: hours_label
+        widget: string
+      - label: Darbo laikas
+        name: hours
+        widget: list
+        summary: '{{fields.day}}: {{fields.time}}'
+        fields:
+        - label: Dienos
+          name: day
+          widget: string
+        - label: Laikas
+          name: time
+          widget: string
+      - label: Kontaktų pavadinimas
+        name: contacts_label
+        widget: string
+        required: false
+        default: Kontaktai
+      - label: Erdvių nuotraukos
+        name: images
+        widget: list
+        summary: '{{fields.alt}}'
+        fields:
+        - label: Nuotrauka
+          name: src
+          widget: image
+          choose_url: true
+        - label: Alternatyvus tekstas (alt)
+          name: alt
+          widget: string
+          required: false
     - label: Kontaktai (adresas, darbo laikas)
       name: contact
       summary: '{{fields.title}}'

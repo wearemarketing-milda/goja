@@ -115,53 +115,37 @@
       }
     },
     {
-      "type": "clinic_intro",
-      "eyebrow": "MŪSŲ ERDVĖS",
-      "title": "Čia Jūsų laukiame.",
-      "text": "Mus rasite M. Daukšos gatvėje 19, Mažeikiuose.",
-      "link": {
-        "text": "Kaip atvykti",
-        "url": "/kontaktai"
-      },
-      "images": [
-        {
-          "src": "/assets/clinic-waiting-1440.webp",
-          "alt": "GOJA klinikos laukiamasis"
-        },
-        {
-          "src": "/assets/clinic-arrival-1440.webp",
-          "alt": "GOJA klinikos pastatas ir įėjimas"
-        }
-      ]
+      "type": "team",
+      "hidden": false,
+      "variant": "about",
+      "anchor": "komanda",
+      "title": "GOJA komanda",
+      "text": "Susipažinkite su GOJA klinikos specialistais.",
+      "specialists": []
     },
     {
-      "type": "contact",
+      "type": "clinic_contact",
+      "hidden": false,
       "anchor": "kontaktai",
-      "eyebrow": "REGISTRACIJA",
+      "eyebrow": "MŪSŲ ERDVĖS IR REGISTRACIJA",
       "title": "Susitarkime dėl Jūsų vizito.",
       "text": "Registruokitės arba paskambinkite – aptarsime Jums patogų laiką.",
       "button": {
         "text": "Registruotis vizitui",
         "url": "/registracija"
       },
-      "button_light": true,
       "phone": {
         "text": "+370 611 80077",
         "url": "tel:+37061180077"
       },
       "email": {
-        "text": "",
-        "url": ""
+        "text": "info@gojaklinika.lt",
+        "url": "mailto:info@gojaklinika.lt"
       },
-      "photo": {
-        "src": "",
-        "alt": ""
-      },
-      "address_label": "",
+      "address_label": "Adresas",
       "address_lines": "M. Daukšos g. 19\nMažeikiai",
-      "label_style": "heading",
       "map_link": {
-        "text": "Rodyti žemėlapyje",
+        "text": "Kaip atvykti",
         "url": "https://www.google.com/maps/search/?api=1&query=M.+Dauk%C5%A1os+19+Ma%C5%BEeikiai"
       },
       "hours_label": "Darbo laikas",
@@ -177,6 +161,17 @@
         {
           "day": "Šeštadienis",
           "time": "Pagal registraciją"
+        }
+      ],
+      "contacts_label": "Kontaktai",
+      "images": [
+        {
+          "src": "/assets/clinic-waiting-1440.webp",
+          "alt": "GOJA klinikos laukiamasis"
+        },
+        {
+          "src": "/assets/clinic-arrival-1440.webp",
+          "alt": "GOJA klinikos pastatas ir įėjimas"
         }
       ]
     }

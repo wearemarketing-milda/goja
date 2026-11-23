@@ -58,7 +58,7 @@ nav?.querySelectorAll('a:not(.nav-parent)').forEach(a => {
   ];
   const GROUPS = [
     '.home-service-catalog', '.team-grid', '.steps', '.guidance-columns', '.clinic-gallery-grid',
-    '.treatment-list', '.care-planning', '.visit-strip', '.prose', '.contact-details', '.implant-offer-inclusions ul',
+    '.treatment-list', '.care-planning', '.visit-strip', '.clinic-contact-head', '.clinic-contact-details', '.clinic-contact-media', '.prose', '.contact-details', '.implant-offer-inclusions ul',
   ];
   const vh = window.innerHeight;
   const inView = el => { const r = el.getBoundingClientRect(); return r.top < vh * 0.92 && r.bottom > 0; };
@@ -186,4 +186,16 @@ if (registrationForm) {
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(([e]) => { if (e.isIntersecting) video.play().catch(() => {}); else video.pause(); }).observe(video);
   }
+})();
+
+// Gydymo planavimas: kompiuteryje vienu metu atviras tik vienas punktas; telefone – kaip anksčiau.
+(() => {
+  const desktop = matchMedia('(min-width: 761px)');
+  document.querySelectorAll('.care-planning').forEach(group => {
+    const items = [...group.querySelectorAll(':scope > details')];
+    items.forEach(item => item.addEventListener('toggle', () => {
+      if (!item.open || !desktop.matches) return;
+      items.forEach(other => { if (other !== item && other.open) other.open = false; });
+    }));
+  });
 })();
