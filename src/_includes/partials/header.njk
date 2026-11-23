@@ -1,8 +1,11 @@
 <header><a class="logo" href="/" aria-label="{{ s.site_name }} — pradžia">{% image { src: s.logo, alt: s.logo_alt }, { lazy: false } %}</a><nav id="nav" aria-label="Pagrindinis meniu">
 {%- for item in cms.menu -%}
 {%- if item.children.length -%}
-<div class="nav-services"><a href="{{ item.page.url }}">{{ item.page.menuText }}</a><button class="submenu-toggle" aria-label="Rodyti paslaugų meniu" aria-expanded="false" aria-controls="services-menu">⌄</button><div id="services-menu" class="submenu">
-{%- for c in item.children %}<a href="{{ c.url }}">{{ c.menuText }}</a>{% endfor -%}
+<div class="nav-services"><a href="#" class="nav-parent" aria-haspopup="true" aria-controls="services-menu">{{ item.page.menuText }}</a><button class="submenu-toggle" aria-label="Rodyti paslaugų meniu" aria-expanded="false" aria-controls="services-menu"><svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4.25 6 8l4-3.75" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<div id="services-menu" class="submenu mega"><div class="mega-links">
+{%- for c in item.children %}<a class="mega-item" href="{{ c.url }}"><span class="mega-title"><strong>{{ c.menuText }}</strong><span class="mega-arrow" aria-hidden="true">→</span></span>{% if c.card_text %}<span class="mega-desc">{{ c.card_text }}</span>{% endif %}</a>{% endfor -%}
+</div>
+{%- if s.mega_cta and s.mega_cta.url %}<a class="mega-cta" href="{{ s.mega_cta.url }}">{% image { src: s.mega_cta.image, alt: "" }, { dims: false, lazy: false } %}<span class="mega-cta-text">{{ s.mega_cta.text }} <span class="mega-arrow" aria-hidden="true">→</span></span></a>{% endif -%}
 </div></div>
 {%- else -%}
 <a href="{{ item.page.url }}">{{ item.page.menuText }}</a>

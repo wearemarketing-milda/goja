@@ -20,12 +20,15 @@ menu?.addEventListener('click', () => {
   menu.textContent = open ? '×' : '☰';
   if (!open) closeSubmenu();
 });
-submenuButton?.addEventListener('click', () => {
+function toggleSubmenu() {
   const open = submenuButton.getAttribute('aria-expanded') !== 'true';
   submenuButton.setAttribute('aria-expanded', String(open));
   submenu.classList.toggle('open', open);
-});
-nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+}
+submenuButton?.addEventListener('click', toggleSubmenu);
+// „Paslaugos“ nėra nuoroda: kompiuteryje meniu atsidaro užvedus pelę, telefone – paspaudus.
+document.querySelector('.nav-parent')?.addEventListener('click', e => { e.preventDefault(); toggleSubmenu(); });
+nav?.querySelectorAll('a:not(.nav-parent)').forEach(a => a.addEventListener('click', closeMenu));
 document.addEventListener('click', e => {
   if (!e.target.closest('.nav-services')) closeSubmenu();
 });
@@ -36,7 +39,7 @@ document.addEventListener('keydown', e => {
   }
 });
 const currentPath = location.pathname.replace(/\/$/, '');
-nav?.querySelectorAll('a').forEach(a => {
+nav?.querySelectorAll('a:not(.nav-parent)').forEach(a => {
   const path = new URL(a.href).pathname.replace(/\/$/, '');
   if (path === currentPath) a.setAttribute('aria-current', 'page');
 });

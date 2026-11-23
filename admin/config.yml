@@ -124,6 +124,7 @@ collections:
     name: card_text
     widget: text
     required: false
+    hint: Rodomas paslaugų kortelėse ir „Paslaugos“ mega meniu po pavadinimu.
   - widget: object
     collapsed: false
     required: false
@@ -1557,3 +1558,19 @@ collections:
     - label: 'Mobilus: mygtukas registracijos puslapyje'
       name: mobile_register_form_text
       widget: string
+    - label: 'Mega meniu: CTA blokas'
+      name: mega_cta
+      widget: object
+      collapsed: false
+      hint: Trečias „Paslaugos“ mega meniu stulpelis. Visas blokas yra nuoroda.
+      fields:
+        - label: Tekstas
+          name: text
+          widget: string
+        - label: Nuoroda
+          name: url
+          widget: string
+        - label: Nuotrauka
+          name: image
+          widget: image
+          choose_url: true

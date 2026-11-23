@@ -17,21 +17,70 @@
   "instagram": "https://www.instagram.com/goja_klinika/",
   "facebook": "https://www.facebook.com/people/Goja-Klinika/61591470214313/",
   "opening_hours": [
-    { "days": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "08:00", "closes": "19:00" },
-    { "days": ["Friday"], "opens": "08:00", "closes": "18:00" }
+    {
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "opens": "08:00",
+      "closes": "19:00"
+    },
+    {
+      "days": [
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "18:00"
+    }
   ],
-  "header_button": { "text": "Registruotis", "url": "/registracija" },
+  "header_button": {
+    "text": "Registruotis",
+    "url": "/registracija"
+  },
+  "mega_cta": {
+    "text": "Nesate iki galo tikri? Pasikalbėkime.",
+    "url": "/kontaktai",
+    "image": "/assets/clinic-care-720.webp"
+  },
   "footer_links": [
-    { "text": "Paslaugos", "url": "/paslaugos", "new_tab": false },
-    { "text": "Apie kliniką", "url": "/apie-mus", "new_tab": false },
-    { "text": "Kontaktai", "url": "/kontaktai", "new_tab": false },
-    { "text": "Instagram", "url": "https://www.instagram.com/goja_klinika/", "new_tab": true },
-    { "text": "Facebook", "url": "https://www.facebook.com/people/Goja-Klinika/61591470214313/", "new_tab": true }
+    {
+      "text": "Paslaugos",
+      "url": "/paslaugos",
+      "new_tab": false
+    },
+    {
+      "text": "Apie kliniką",
+      "url": "/apie-mus",
+      "new_tab": false
+    },
+    {
+      "text": "Kontaktai",
+      "url": "/kontaktai",
+      "new_tab": false
+    },
+    {
+      "text": "Instagram",
+      "url": "https://www.instagram.com/goja_klinika/",
+      "new_tab": true
+    },
+    {
+      "text": "Facebook",
+      "url": "https://www.facebook.com/people/Goja-Klinika/61591470214313/",
+      "new_tab": true
+    }
   ],
   "copyright": "© 2026 GOJA klinika",
-  "privacy_link": { "text": "Privatumo politika", "url": "/privatumo-politika" },
+  "privacy_link": {
+    "text": "Privatumo politika",
+    "url": "/privatumo-politika"
+  },
   "back_to_top": "Į viršų ↑",
   "mobile_call_text": "Skambinti",
-  "mobile_register": { "text": "Registruotis", "url": "/registracija" },
+  "mobile_register": {
+    "text": "Registruotis",
+    "url": "/registracija"
+  },
   "mobile_register_form_text": "Pildyti formą"
 }
