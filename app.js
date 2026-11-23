@@ -118,7 +118,7 @@ if (registrationForm) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...payload, requestId: attempt.requestId }),
       });
-      const received = await response.json();
+      const received = await response.json().catch(() => ({}));
       if (!response.ok || received.ok !== true) throw new Error(received.message || 'Nepavyko išsiųsti užklausos. Bandykite dar kartą arba skambinkite +370 611 80077.');
       registrationForm.reset(); attempt = null;
       result.hidden = false; result.focus();
