@@ -44,6 +44,10 @@
       "type": "service_content",
       "eyebrow": "INDIVIDUALUS POŽIŪRIS",
       "title": "Prarastų ar pažeistų dantų atkūrimas",
+      "button": {
+        "text": "Paslaugų kainoraštis",
+        "url": "/kainos"
+      },
       "body": "Prieš gydymą sudaromas individualus planas: etapai, terminai, medžiagų pasirinkimas, garantijos ir kainos. Tai leidžia pacientui priimti sprendimą turint visą informaciją.\n\nProtezavimas leidžia atkurti prarastus ar stipriai pažeistus dantis ir grąžinti pilnavertę kramtymo funkciją. Klinikoje naudojame ilgaamžes medžiagas, įskaitant cirkonio oksido vainikėlius, kurie pasižymi natūralia išvaizda ir aukštu mechaniniu atsparumu.",
       "links_text": "Kai danties nėra, gydymo plane gali būti aptariama [dantų implantacija](/dantu-implantacija) ir protezavimas ant implantų. Vainikėlių bei kitų protezavimo darbų įkainiai pateikti [kainoraštyje](/kainos)."
     },
@@ -97,19 +101,6 @@
     {
       "type": "global_contact",
       "hidden": false
-    },
-    {
-      "type": "related_links",
-      "links": [
-        {
-          "text": "Visos odontologijos paslaugos",
-          "url": "/paslaugos"
-        },
-        {
-          "text": "Paslaugų kainoraštis",
-          "url": "/kainos"
-        }
-      ]
     }
   ]
 }

@@ -44,6 +44,10 @@
       "type": "service_content",
       "eyebrow": "INDIVIDUALUS POŽIŪRIS",
       "title": "Kada pasirenkamas estetinis plombavimas",
+      "button": {
+        "text": "Paslaugų kainoraštis",
+        "url": "/kainos"
+      },
       "body": "Estetinis plombavimas yra vienas paprastesnių būdų koreguoti dantų formą, spalvą ar smulkius defektus, neatliekant sudėtingesnių procedūrų. Tinka, kai reikia pataisyti nuskilusį kraštą, uždaryti tarpą tarp dantų ar pakeisti senas, pageltusias plombas.\n\nPrieš procedūrą aptariame paciento lūkesčius, įvertiname dantų būklę ir paruošiame šypsenos atkūrimo planą - kas pasiekiama vienu vizitu, o kuriais atvejais reikalingas kompleksinis sprendimas (laminatės, ortopedija ar ortodontinis nukreipimas).",
       "links_text": "Estetinio plombavimo įkainius peržiūrėkite [kainoraštyje](/kainos). Jeigu reikalingas platesnis dantų atkūrimas, konsultacijos metu aptariamos ir [protezavimo galimybės](/dantu-protezavimas)."
     },
@@ -96,19 +100,6 @@
     {
       "type": "global_contact",
       "hidden": false
-    },
-    {
-      "type": "related_links",
-      "links": [
-        {
-          "text": "Visos odontologijos paslaugos",
-          "url": "/paslaugos"
-        },
-        {
-          "text": "Paslaugų kainoraštis",
-          "url": "/kainos"
-        }
-      ]
     }
   ]
 }

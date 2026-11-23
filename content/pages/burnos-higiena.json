@@ -44,6 +44,10 @@
       "type": "service_content",
       "eyebrow": "INDIVIDUALUS POŽIŪRIS",
       "title": "Profesionali burnos higiena ir individuali priežiūra",
+      "button": {
+        "text": "Paslaugų kainoraštis",
+        "url": "/kainos"
+      },
       "body": "Burnos higiena yra profilaktikos pagrindas. Reguliariai atliekama, ji padeda ankstyvoje stadijoje sustabdyti dantenų ligas, sumažinti ėduonies riziką ir išvengti sudėtingesnio gydymo ateityje.\n\nProcedūros metu pašaliname minkštas ir kietas apnašas, dantų akmenis, pigmentines dėmes, įvertiname dantenų būklę ir parodome, kurios sritys reikalauja daugiau dėmesio kasdienėje priežiūroje. Po vizito gausite individualias rekomendacijas, o esant poreikiui - ilgalaikę higienos programą su aiškiu vizitų grafiku.",
       "links_text": "Burnos higienos ir kitų procedūrų kainas rasite [GOJA klinikos kainoraštyje](/kainos). Prireikus dantų gydymo, aptarsime [terapinės odontologijos](/terapine-odontologija) galimybes."
     },
@@ -107,19 +111,6 @@
     {
       "type": "global_contact",
       "hidden": false
-    },
-    {
-      "type": "related_links",
-      "links": [
-        {
-          "text": "Visos odontologijos paslaugos",
-          "url": "/paslaugos"
-        },
-        {
-          "text": "Paslaugų kainoraštis",
-          "url": "/kainos"
-        }
-      ]
     }
   ]
 }

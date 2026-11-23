@@ -44,6 +44,10 @@
       "type": "service_content",
       "eyebrow": "INDIVIDUALUS POŽIŪRIS",
       "title": "Ėduonies pažeistų dantų gydymas ir atkūrimas",
+      "button": {
+        "text": "Paslaugų kainoraštis",
+        "url": "/kainos"
+      },
       "body": "Terapinės odontologijos tikslas - išsaugoti natūralius dantis: sustabdyti ėduonies plitimą ir atkurti pažeisto danties funkciją bei išvaizdą. Plombavimo medžiagas parenkame pagal danties būklę, atkuriamos dalies dydį ir estetinius poreikius.\n\nPrieš gydymą atliekama išsami diagnostika ir paruošiamas aiškus gydymo planas: kokie dantys gydomi, kokia tvarka, per kiek vizitų ir kokia kaina. Pacientas visą laiką žino, kokiame etape yra ir kas vyks toliau.",
       "links_text": "Plombavimo ir kitų gydymo procedūrų įkainiai pateikti [odontologijos paslaugų kainoraštyje](/kainos). Jei svarbi ir dantų išvaizdos korekcija, konsultacijos metu galima aptarti [estetinį plombavimą](/estetinis-plombavimas)."
     },
@@ -84,19 +88,6 @@
     {
       "type": "global_contact",
       "hidden": false
-    },
-    {
-      "type": "related_links",
-      "links": [
-        {
-          "text": "Visos odontologijos paslaugos",
-          "url": "/paslaugos"
-        },
-        {
-          "text": "Paslaugų kainoraštis",
-          "url": "/kainos"
-        }
-      ]
     }
   ]
 }

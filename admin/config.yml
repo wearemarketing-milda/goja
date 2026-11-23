@@ -544,6 +544,21 @@ collections:
       - label: Antraštė
         name: title
         widget: string
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Mygtukas po antrašte
+        name: button
       - label: Tekstas
         name: body
         widget: markdown
@@ -1964,9 +1979,11 @@ collections:
         widget: boolean
         default: false
         required: false
+      hint: Šiuo metu poraštėje nerodoma (minimali poraštė).
     - label: Autorių teisės
       name: copyright
       widget: string
+      hint: Šiuo metu poraštėje nerodoma (minimali poraštė).
     - widget: object
       collapsed: false
       required: false
@@ -1982,9 +1999,11 @@ collections:
         hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
       label: Privatumo politikos nuoroda
       name: privacy_link
+      hint: Šiuo metu poraštėje nerodoma (minimali poraštė).
     - label: „Į viršų“ tekstas
       name: back_to_top
       widget: string
+      hint: Šiuo metu poraštėje nerodoma (minimali poraštė).
     - label: 'Mobilus: skambučio mygtukas'
       name: mobile_call_text
       widget: string

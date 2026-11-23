@@ -322,3 +322,11 @@ html.drawer-open{overflow:hidden}
 .slider-arrow:disabled{opacity:.35;cursor:default}
 @media(max-width:1050px){.services-slider-track{grid-auto-columns:calc((100% - 32px)/2)}}
 @media(max-width:760px){.related-services-head{flex-direction:column;align-items:flex-start;gap:22px}.services-slider-track{grid-auto-columns:82%;gap:18px}.services-slider-nav{margin-top:24px}}
+
+/* ---------- Mygtukas paslaugos aprašyme ---------- */
+.service-content-button{margin-top:32px}
+/* ---------- Minimali poraštė ---------- */
+footer.footer-minimal{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:44px var(--gutter)}
+footer.footer-minimal .footer-brand{width:170px;margin:0}
+footer.footer-minimal .footer-social{margin:0}
+@media(max-width:760px){footer.footer-minimal{padding:34px var(--gutter)}footer.footer-minimal .footer-brand{width:140px}}

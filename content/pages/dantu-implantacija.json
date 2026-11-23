@@ -73,6 +73,10 @@
       "type": "service_content",
       "eyebrow": "INDIVIDUALUS POŽIŪRIS",
       "title": "Prarastų dantų atkūrimas implantais",
+      "button": {
+        "text": "Paslaugų kainoraštis",
+        "url": "/kainos"
+      },
       "body": "Implantacija yra šiuolaikinis sprendimas atkurti prarastus dantis, kai svarbus tiek estetinis rezultatas, tiek ilgalaikis stabilumas. Klinikoje naudojame „Megagen“ dantų implantų sistemas. Jų tinkamumas ir gydymo eiga aptariami individualiai.\n\nPrieš implantaciją atliekama išsami diagnostika ir paruošiamas individualus gydymo planas, kuriame pacientas mato visus etapus: nuo konsultacijos ir chirurginės dalies iki galutinio protezavimo bei tolesnės priežiūros.",
       "links_text": "Po implantacijos gydymo planas tęsiamas [protezavimu ant implantų](/dantu-protezavimas). Atskirų procedūrų įkainius ir specialaus pasiūlymo apimtį palyginkite su [klinikoje taikomomis kainomis](/kainos)."
     },
@@ -118,19 +122,6 @@
     {
       "type": "global_contact",
       "hidden": false
-    },
-    {
-      "type": "related_links",
-      "links": [
-        {
-          "text": "Visos odontologijos paslaugos",
-          "url": "/paslaugos"
-        },
-        {
-          "text": "Paslaugų kainoraštis",
-          "url": "/kainos"
-        }
-      ]
     }
   ]
 }
