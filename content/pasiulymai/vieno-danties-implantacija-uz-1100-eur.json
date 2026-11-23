@@ -8,12 +8,12 @@
   "valid_from": "",
   "valid_until": "",
   "image_desktop": {
-    "src": "/assets/uploads/vieno-danties-implantacija-16x9.webp",
-    "alt": "GOJA klinikos odontologinė kėdė"
+    "src": "/assets/uploads/implantacija-rentgenas-16x9.webp",
+    "alt": "Panoraminė dantų rentgeno nuotrauka su implantu GOJA klinikos kabinete"
   },
   "image_mobile": {
-    "src": "/assets/uploads/vieno-danties-implantacija-1x1.webp",
-    "alt": "GOJA klinikos odontologinė kėdė"
+    "src": "/assets/uploads/implantacija-rentgenas-1x1.webp",
+    "alt": "Panoraminė dantų rentgeno nuotrauka su implantu GOJA klinikos kabinete"
   },
   "summary": "Konsultuoja ir implantacijas atlieka burnos chirurgas, gydytojas odontologas ortopedas Tomas Janeliūnas. Konsultacija nemokama.",
   "card_note": "Konsultacija nemokama – be įsipareigojimo gydytis",
