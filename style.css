@@ -517,3 +517,27 @@ details.is-draft summary{background:#fff4c2}
 .specialist-drawer .related-services-head .button{display:none}
 .specialist-drawer .services-slider-track{grid-auto-columns:78%;gap:18px}
 @media(max-width:760px){.specialist-drawer .specialist-offers,.specialist-drawer .related-services{padding:28px 24px 36px}}
+
+/* ---------- Specialisto puslapis: vienas pasiūlymas, glaustesni tarpai ---------- */
+.specialist-page.section{padding-bottom:64px}
+.specialist-offers.section,.specialist-services-slider.section{padding-top:64px;padding-bottom:64px}
+.specialist-offers .related-services-head,.specialist-services-slider .related-services-head{margin-bottom:28px}
+.specialist-offers .related-services-head h2{margin:0}
+.offer-feature{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);background:var(--cream);color:var(--blue);overflow:hidden}
+.offer-feature-media{display:block;overflow:hidden;min-height:100%}
+.offer-feature-media img{width:100%;height:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .6s ease}
+.offer-feature:hover .offer-feature-media img{transform:scale(1.03)}
+.offer-feature-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:18px;padding:44px 48px}
+.offer-feature-valid{font-size:var(--p-small);font-weight:500;color:var(--clay);line-height:1.4}
+.offer-feature-title{font-family:Marcellus,serif;font-size:30px;line-height:1.15;letter-spacing:-.03em}
+.offer-feature-price{display:block;font-size:56px;line-height:1.05;margin-top:6px}
+.offer-feature-note{display:flex;gap:12px;align-items:flex-start;font-size:var(--p-small);line-height:1.5;color:var(--muted)}
+.offer-feature-note .offer-free-icon{flex:0 0 22px;width:22px;height:22px;margin-top:0;background-size:13px}
+.offer-feature-cta{margin-top:8px;gap:28px!important}
+.offer-feature:hover .offer-feature-cta{background:var(--white);color:var(--blue)}
+.specialist-drawer .specialist-offers.section,.specialist-drawer .related-services.section{padding:32px 44px 36px}
+.specialist-drawer .offer-feature{grid-template-columns:1fr}
+.specialist-drawer .offer-feature-copy{padding:28px 28px 32px;gap:14px}
+.specialist-drawer .offer-feature-price{font-size:44px}
+@media(max-width:900px){.offer-feature{grid-template-columns:1fr}.offer-feature-copy{padding:30px 28px 34px}}
+@media(max-width:760px){.specialist-page.section{padding-bottom:44px}.specialist-offers.section,.specialist-services-slider.section{padding-top:44px;padding-bottom:44px}.specialist-offers .related-services-head,.specialist-services-slider .related-services-head{margin-bottom:22px;gap:18px}.offer-feature-copy{padding:24px 22px 28px;gap:14px}.offer-feature-title{font-size:24px}.offer-feature-price{font-size:44px}.specialist-drawer .specialist-offers.section,.specialist-drawer .related-services.section{padding:26px 24px 30px}}

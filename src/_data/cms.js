@@ -82,6 +82,8 @@ module.exports = () => {
   for (const sp of specialists) {
     sp.firstName = sp.name_cases && sp.name_cases.instrumental ? sp.name_cases.instrumental : sp.name;
     sp.offerList = offers.filter((o) => o.isActive && ((o.specialists || []).includes(sp.slug) || (o.blocks || []).some((b) => b.type === 'doctor' && !b.hidden && b.specialist === sp.slug)));
+    // Specialisto puslapyje rodomas tik naujausias pasiūlymas (pagal galiojimo pradžią, tada eilės tvarką).
+    sp.offer = sp.offerList.slice().sort((a, b) => (b.from || '').localeCompare(a.from || ''))[0] || null;
   }
   const activeOffers = offers.filter((o) => o.isActive);
   const offerKeys = Object.fromEntries(offers.filter((o) => o.registration_key && o.isActive).map((o) => [o.registration_key, [o.title, o.title_price].filter(Boolean).join(' ')]));
