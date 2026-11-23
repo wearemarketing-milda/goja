@@ -124,55 +124,8 @@
       "specialists": []
     },
     {
-      "type": "clinic_contact",
-      "hidden": false,
-      "anchor": "kontaktai",
-      "eyebrow": "",
-      "title": "Susitarkime dėl Jūsų vizito.",
-      "text": "Registruokitės arba paskambinkite – aptarsime Jums patogų laiką.",
-      "button": {
-        "text": "Registruotis vizitui",
-        "url": "/registracija"
-      },
-      "phone": {
-        "text": "+370 611 80077",
-        "url": "tel:+37061180077"
-      },
-      "email": {
-        "text": "info@gojaklinika.lt",
-        "url": "mailto:info@gojaklinika.lt"
-      },
-      "address_label": "Adresas",
-      "address_lines": "M. Daukšos g. 19\nMažeikiai",
-      "map_link": {
-        "text": "Kaip atvykti",
-        "url": "https://www.google.com/maps/search/?api=1&query=M.+Dauk%C5%A1os+19+Ma%C5%BEeikiai"
-      },
-      "hours_label": "Darbo laikas",
-      "hours": [
-        {
-          "day": "Pirmadienis–ketvirtadienis",
-          "time": "8:00–19:00"
-        },
-        {
-          "day": "Penktadienis",
-          "time": "8:00–18:00"
-        },
-        {
-          "day": "Šeštadienis",
-          "time": "Pagal registraciją"
-        }
-      ],
-      "images": [
-        {
-          "src": "/assets/clinic-waiting-1440.webp",
-          "alt": "GOJA klinikos laukiamasis"
-        },
-        {
-          "src": "/assets/clinic-arrival-1440.webp",
-          "alt": "GOJA klinikos pastatas ir įėjimas"
-        }
-      ]
+      "type": "global_contact",
+      "hidden": false
     }
   ]
 }

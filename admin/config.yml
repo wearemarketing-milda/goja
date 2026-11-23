@@ -155,6 +155,15 @@ collections:
     add_to_top: false
     hint: Puslapio sekcijos iš viršaus į apačią. Galima pridėti, perrikiuoti ir ištrinti.
     types:
+    - label: Kontaktų sekcija (bendra – redaguojama Nustatymuose)
+      name: global_contact
+      fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
     - label: Pradžios puslapio viršus (hero su video)
       name: hero
       summary: '{{fields.title}}'
@@ -964,6 +973,7 @@ collections:
       - label: Adresas (kiekviena eilutė atskirai)
         name: address_lines
         widget: text
+        hint: Rašykite vienoje eilutėje, pvz. „M. Daukšos g. 19, Mažeikiai“.
       - widget: object
         collapsed: false
         required: false
@@ -1896,3 +1906,120 @@ collections:
         name: image
         widget: image
         choose_url: true
+    - label: Kontaktų sekcija „Susitarkime dėl Jūsų vizito“
+      name: contact_section
+      widget: object
+      collapsed: true
+      hint: Rodoma puslapių apačioje (blokas „Kontaktų sekcija (bendra)“). Pakeitus čia – atsinaujina visuose puslapiuose.
+      fields:
+      - label: Inkaras (id)
+        name: anchor
+        widget: string
+        required: false
+        hint: 'Naudojama nuorodoms į sekciją, pvz. #specialus-pasiulymas. Nekeiskite, jei nežinote, kur naudojama.'
+      - label: Virš antraštės (mažos raidės)
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Antraštė
+        name: title
+        widget: string
+      - label: Tekstas
+        name: text
+        widget: text
+        required: false
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Mygtukas
+        name: button
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Telefonas (po mygtuku)
+        name: phone
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: El. paštas (po mygtuku)
+        name: email
+      - label: Adreso pavadinimas
+        name: address_label
+        widget: string
+        default: Adresas
+      - label: Adresas (kiekviena eilutė atskirai)
+        name: address_lines
+        widget: text
+        hint: Rašykite vienoje eilutėje, pvz. „M. Daukšos g. 19, Mažeikiai“.
+      - widget: object
+        collapsed: false
+        required: false
+        fields:
+        - label: Tekstas
+          name: text
+          widget: string
+          required: false
+        - label: Nuoroda
+          name: url
+          widget: string
+          required: false
+          hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
+        label: Nuoroda „Kaip atvykti“
+        name: map_link
+      - label: Darbo laiko pavadinimas
+        name: hours_label
+        widget: string
+      - label: Darbo laikas
+        name: hours
+        widget: list
+        summary: '{{fields.day}}: {{fields.time}}'
+        fields:
+        - label: Dienos
+          name: day
+          widget: string
+        - label: Laikas
+          name: time
+          widget: string
+      - label: Erdvių nuotraukos
+        name: images
+        widget: list
+        summary: '{{fields.alt}}'
+        fields:
+        - label: Nuotrauka
+          name: src
+          widget: image
+          choose_url: true
+        - label: Alternatyvus tekstas (alt)
+          name: alt
+          widget: string
+          required: false

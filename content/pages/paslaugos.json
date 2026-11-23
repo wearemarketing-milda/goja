@@ -43,16 +43,8 @@
       "card_link_text": "Plačiau apie paslaugą"
     },
     {
-      "type": "cta",
-      "title": "Registracija vizitui",
-      "button": {
-        "text": "Registruotis konsultacijai",
-        "url": "/registracija"
-      },
-      "phone": {
-        "text": "+370 611 80077",
-        "url": "tel:+37061180077"
-      }
+      "type": "global_contact",
+      "hidden": false
     }
   ]
 }

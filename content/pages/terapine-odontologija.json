@@ -70,16 +70,8 @@
       "specialists": []
     },
     {
-      "type": "cta",
-      "title": "Registracija vizitui",
-      "button": {
-        "text": "Registruotis konsultacijai",
-        "url": "/registracija?paslauga=terapine-odontologija"
-      },
-      "phone": {
-        "text": "+370 611 80077",
-        "url": "tel:+37061180077"
-      }
+      "type": "global_contact",
+      "hidden": false
     },
     {
       "type": "related_links",
