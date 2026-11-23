@@ -68,7 +68,7 @@ nav?.querySelectorAll('a:not(.nav-parent)').forEach(a => {
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
   const prepare = (el, delay) => {
-    if (el.closest('.hero, .page-top, .service-hero, .offer-page-hero') || el.classList.contains('reveal')) return;
+    if (el.closest('.hero, .hero-full, .page-top, .service-hero, .offer-page-hero') || el.classList.contains('reveal')) return;
     if (inView(el)) return;
     el.classList.add('reveal');
     if (delay) el.style.setProperty('--reveal-delay', `${delay}ms`);
@@ -164,3 +164,13 @@ if (registrationForm) {
     }
   });
 }
+
+// Hero video: nerodomas judesys, jei lankytojas to nepageidauja; sustabdomas, kai nematomas.
+(() => {
+  const video = document.querySelector('.hero-video');
+  if (!video) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { video.removeAttribute('autoplay'); video.pause(); return; }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([e]) => { if (e.isIntersecting) video.play().catch(() => {}); else video.pause(); }).observe(video);
+  }
+})();

@@ -43,6 +43,9 @@ module.exports = () => {
   const specialists = readDir('specialistai').filter(published).sort(byOrder('order'));
   const specialistsBySlug = Object.fromEntries(specialists.map((s) => [s.slug, s]));
   const offers = readDir('pasiulymai').filter(published).sort(byOrder('order'));
+  const offersBySlug = Object.fromEntries(offers.map((o) => [o.slug, o]));
+  const today = new Date().toISOString().slice(0, 10);
+  const activeOffers = offers.filter((o) => (!o.valid_from || String(o.valid_from).slice(0, 10) <= today) && (!o.valid_until || String(o.valid_until).slice(0, 10) >= today));
 
   // Blokų ryšiai: komandos blokas rodo pasirinktus (arba visus) specialistus, gydytojo blokas – vieną.
   for (const p of pages) {
@@ -52,6 +55,10 @@ module.exports = () => {
         b.members = picked.length ? picked : specialists.filter((x) => x.show_in_team !== false);
       }
       if (b.type === 'doctor') b.person = specialistsBySlug[b.specialist] || null;
+      if (b.type === 'hero') {
+        // Kortelė rodo pasirinktą pasiūlymą arba pirmą šiuo metu galiojantį.
+        b.offerItem = b.show_offer === false ? null : (b.offer ? offersBySlug[b.offer] : activeOffers[0]) || null;
+      }
     }
   }
 
@@ -86,5 +93,5 @@ module.exports = () => {
     p.schema = { '@context': 'https://schema.org', '@graph': graph };
   }
 
-  return { settings, base, pages, bySlug, menu, specialists, specialistsBySlug, offers };
+  return { settings, base, pages, bySlug, menu, specialists, specialistsBySlug, offers, activeOffers };
 };

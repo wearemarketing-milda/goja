@@ -155,10 +155,16 @@ collections:
     add_to_top: false
     hint: Puslapio sekcijos iš viršaus į apačią. Galima pridėti, perrikiuoti ir ištrinti.
     types:
-    - label: Pradžios puslapio viršus (hero)
+    - label: Pradžios puslapio viršus (hero su video)
       name: hero
       summary: '{{fields.title}}'
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - label: Virš antraštės (mažos raidės)
         name: eyebrow
         widget: string
@@ -198,8 +204,14 @@ collections:
           widget: string
           required: false
           hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
-        label: Telefono nuoroda
+        label: Antras mygtukas (pvz. telefonas)
         name: phone
+      - label: Fono video (MP4)
+        name: video
+        widget: file
+        required: false
+        choose_url: true
+        hint: 'Rekomenduojama: MP4 (H.264), 1920×1080, be garso, iki ~8 MB, 10–20 s. Jei tuščia – rodoma nuotrauka.'
       - widget: object
         collapsed: false
         required: false
@@ -214,11 +226,43 @@ collections:
           widget: string
           required: false
           hint: Trumpai aprašykite, kas nuotraukoje (svarbu SEO ir prieinamumui).
-        label: Nuotrauka
+        label: Nuotrauka (rodoma, kol kraunasi video, arba vietoj jo)
         name: image
+      - label: Rodyti pasiūlymo kortelę
+        name: show_offer
+        widget: boolean
+        default: true
+        required: false
+      - label: Pasiūlymas kortelėje
+        name: offer
+        widget: relation
+        collection: pasiulymai
+        value_field: slug
+        search_fields:
+        - title
+        display_fields:
+        - title
+        required: false
+        hint: Palikus tuščią, rodomas pirmas šiuo metu galiojantis pasiūlymas (pagal eilės numerį ir datas).
+      - label: Kortelės antraštė
+        name: offer_label
+        widget: string
+        default: Specialus pasiūlymas
+        required: false
+      - label: Kortelės nuoroda
+        name: offer_url
+        widget: string
+        default: /pasiulymai
+        required: false
     - label: Informacijos juosta (adresas, darbo laikas)
       name: visit_strip
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - label: Elementai
         name: items
         widget: list
@@ -238,6 +282,12 @@ collections:
       name: page_top
       summary: '{{fields.title}}'
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - label: Antraštė (H1)
         name: title
         widget: string
@@ -265,6 +315,12 @@ collections:
       name: service_hero
       summary: '{{fields.title}}'
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - label: Virš antraštės (mažos raidės)
         name: eyebrow
         widget: string
@@ -336,6 +392,12 @@ collections:
       name: service_cards
       summary: '{{fields.title}}'
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - label: Išdėstymas
         name: variant
         widget: select
@@ -391,6 +453,12 @@ collections:
       name: service_content
       summary: '{{fields.title}}'
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - label: Virš antraštės (mažos raidės)
         name: eyebrow
         widget: string
@@ -417,6 +485,12 @@ collections:
       name: guidance
       summary: '{{fields.title}}'
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - label: Antraštė
         name: title
         widget: string
@@ -442,6 +516,12 @@ collections:
       name: steps
       summary: '{{fields.title}}'
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - label: Virš antraštės (mažos raidės)
         name: eyebrow
         widget: string
@@ -464,6 +544,12 @@ collections:
       name: treatment_list
       summary: '{{fields.title}}'
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - label: Virš antraštės (mažos raidės)
         name: eyebrow
         widget: string
@@ -482,6 +568,12 @@ collections:
       name: team
       summary: '{{fields.title}}'
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - label: Išdėstymas
         name: variant
         widget: select
@@ -519,6 +611,12 @@ collections:
       name: cta
       summary: '{{fields.title}}'
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - label: Antraštė
         name: title
         widget: string
@@ -555,6 +653,12 @@ collections:
     - label: Susijusios nuorodos
       name: related_links
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - label: Nuorodos
         name: links
         widget: list
@@ -570,6 +674,12 @@ collections:
       name: approach
       summary: '{{fields.title}}'
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - label: Inkaras (id)
         name: anchor
         widget: string
@@ -612,6 +722,12 @@ collections:
       name: gallery
       summary: '{{fields.title}}'
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - label: Antraštė
         name: title
         widget: string
@@ -636,6 +752,12 @@ collections:
       name: planning
       summary: '{{fields.title}}'
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - widget: object
         collapsed: false
         required: false
@@ -698,6 +820,12 @@ collections:
       name: clinic_intro
       summary: '{{fields.title}}'
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - label: Virš antraštės (mažos raidės)
         name: eyebrow
         widget: string
@@ -741,6 +869,12 @@ collections:
       name: contact
       summary: '{{fields.title}}'
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - label: Inkaras (id)
         name: anchor
         widget: string
@@ -872,6 +1006,12 @@ collections:
       name: contact_photo
       summary: '{{fields.title}}'
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - widget: object
         collapsed: false
         required: false
@@ -913,6 +1053,12 @@ collections:
     - label: Kainoraštis
       name: price_catalog
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - label: Paieškos pavadinimas
         name: search_label
         widget: string
@@ -977,6 +1123,12 @@ collections:
       name: registration
       summary: '{{fields.title}}'
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - label: Virš antraštės (mažos raidės)
         name: eyebrow
         widget: string
@@ -1034,6 +1186,12 @@ collections:
       name: offer_hero
       summary: '{{fields.title}}'
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - label: Virš antraštės (mažos raidės)
         name: eyebrow
         widget: string
@@ -1076,6 +1234,12 @@ collections:
       name: offer_box
       summary: '{{fields.title}}'
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - label: Inkaras (id)
         name: anchor
         widget: string
@@ -1124,6 +1288,12 @@ collections:
       name: doctor
       summary: '{{fields.specialist}}'
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - label: Specialistas
         name: specialist
         widget: relation
@@ -1156,6 +1326,12 @@ collections:
     - label: HTML turinys (pvz. privatumo politika)
       name: html
       fields:
+      - label: Paslėpti bloką
+        name: hidden
+        widget: boolean
+        default: false
+        required: false
+        hint: Įjungus, blokas lieka išsaugotas, bet svetainėje nerodomas.
       - label: HTML
         name: html
         widget: code
@@ -1255,7 +1431,7 @@ collections:
 - name: pasiulymai
   label: Spec. pasiūlymai
   label_singular: Spec. pasiūlymas
-  description: Specialieji pasiūlymai. Atvaizdavimas svetainėje bus sukurtas, kai bus aišku, kaip jie turi būti rodomi.
+  description: Specialieji pasiūlymai. Galiojantis pasiūlymas rodomas pradžios puslapio hero kortelėje.
   folder: content/pasiulymai
   format: json
   extension: json
@@ -1300,6 +1476,11 @@ collections:
     name: summary
     widget: text
     required: false
+  - label: Trumpas tekstas kortelėje
+    name: card_note
+    widget: string
+    required: false
+    hint: Rodomas pradžios puslapio hero kortelės apačioje.
   - widget: object
     collapsed: false
     required: false
@@ -1564,13 +1745,13 @@ collections:
       collapsed: false
       hint: Trečias „Paslaugos“ mega meniu stulpelis. Visas blokas yra nuoroda.
       fields:
-        - label: Tekstas
-          name: text
-          widget: string
-        - label: Nuoroda
-          name: url
-          widget: string
-        - label: Nuotrauka
-          name: image
-          widget: image
-          choose_url: true
+      - label: Tekstas
+        name: text
+        widget: string
+      - label: Nuoroda
+        name: url
+        widget: string
+      - label: Nuotrauka
+        name: image
+        widget: image
+        choose_url: true

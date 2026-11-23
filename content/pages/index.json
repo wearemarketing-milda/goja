@@ -22,6 +22,7 @@
   "blocks": [
     {
       "type": "hero",
+      "hidden": false,
       "eyebrow": "ŠEIMOS ODONTOLOGIJA",
       "title": "Odontologijos klinika Mažeikiuose",
       "intro": "GOJA klinikoje rūpinamės vaikų ir suaugusiųjų dantų sveikata. Prieš gydymą aptariame jo eigą ir kainą.",
@@ -33,10 +34,15 @@
         "text": "+370 611 80077",
         "url": "tel:+37061180077"
       },
+      "video": "",
       "image": {
         "src": "/assets/clinic-exterior-1440.webp",
         "alt": "GOJA klinikos pastatas su originalia GOJA iškaba Mažeikiuose"
-      }
+      },
+      "show_offer": true,
+      "offer": "",
+      "offer_label": "Specialus pasiūlymas",
+      "offer_url": "/pasiulymai"
     },
     {
       "type": "visit_strip",
@@ -56,7 +62,8 @@
           "text": "Skambinkite +370 611 80077",
           "url": "tel:+37061180077"
         }
-      ]
+      ],
+      "hidden": true
     },
     {
       "type": "service_cards",

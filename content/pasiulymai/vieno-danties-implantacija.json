@@ -6,6 +6,7 @@
   "price": "1 100",
   "currency": "€",
   "summary": "Konsultuoja ir implantacijas atlieka burnos chirurgas, gydytojas odontologas ortopedas Tomas Janeliūnas. Konsultacija nemokama.",
+  "card_note": "Konsultacija nemokama – be įsipareigojimo gydytis",
   "image": {
     "src": "/assets/implant-structure.webp",
     "alt": "Danties implanto sandaros iliustracija"
