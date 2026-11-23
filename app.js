@@ -198,14 +198,34 @@ if (registrationForm) {
   }
 })();
 
-// Gydymo planavimas: kompiuteryje vienu metu atviras tik vienas punktas; telefone – kaip anksčiau.
+// Gydymo planavimas: punktai sklandžiai išsiskleidžia ir susitraukia; kompiuteryje vienu metu atviras tik vienas.
 (() => {
   const desktop = matchMedia('(min-width: 761px)');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  const closedHeight = d => {
+    const cs = getComputedStyle(d);
+    return d.querySelector('summary').offsetHeight + parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+  };
+  const setOpen = (d, open) => {
+    if (d._target === open && (d._anim || d.open === open)) return;
+    d._target = open;
+    if (reduce.matches) { d.open = open; return; }
+    const from = d.offsetHeight;
+    if (d._anim) d._anim.cancel();
+    if (open) d.open = true;
+    const to = open ? d.scrollHeight + parseFloat(getComputedStyle(d).borderBottomWidth) : closedHeight(d);
+    d.style.overflow = 'hidden';
+    const a = d.animate({ height: [from + 'px', to + 'px'] }, { duration: 420, easing: 'cubic-bezier(.33,0,.2,1)' });
+    d._anim = a;
+    a.onfinish = () => { d._anim = null; d.open = open; d.style.overflow = ''; };
+  };
   document.querySelectorAll('.care-planning').forEach(group => {
     const items = [...group.querySelectorAll(':scope > details')];
-    items.forEach(item => item.addEventListener('toggle', () => {
-      if (!item.open || !desktop.matches) return;
-      items.forEach(other => { if (other !== item && other.open) other.open = false; });
+    items.forEach(item => item.querySelector('summary').addEventListener('click', e => {
+      e.preventDefault();
+      const open = !(item._anim ? item._target : item.open);
+      setOpen(item, open);
+      if (open && desktop.matches) items.forEach(other => { if (other !== item && (other.open || other._anim)) setOpen(other, false); });
     }));
   });
 })();

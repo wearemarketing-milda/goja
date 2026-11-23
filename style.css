@@ -562,3 +562,10 @@ details.is-draft summary{background:#fff4c2}
 :is(.clinic-contact,.implant-offer,.offer-feature,.offer-box,.registration-note,.price-notes) .button:not(.outline){background:var(--clay);border-color:var(--clay);color:var(--white)}
 :is(.clinic-contact,.implant-offer,.offer-box,.registration-note,.price-notes) .button:not(.outline):hover,.offer-feature:hover .offer-feature-cta{background:var(--blue)!important;border-color:var(--blue)!important;color:var(--white)!important}
 :is(.clinic-contact,.implant-offer,.offer-box,.registration-note,.price-notes) .button.outline:hover{background:var(--clay)!important;border-color:var(--clay)!important}
+
+/* Pradžios paslaugų sekcija be nuotraukų */
+.home-service-catalog.no-photos{row-gap:44px}
+.home-service-catalog.no-photos .home-service-card{border-top:1px solid var(--line);border-bottom:0;padding-top:26px;padding-bottom:0}
+.home-service-catalog.no-photos .home-service-copy{padding-top:0}
+.care-planning details{will-change:height}
+.specialist-actions .text-link{gap:20px!important}.specialist-actions .text-link span{font-size:20px;line-height:1}
