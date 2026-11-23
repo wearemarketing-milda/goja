@@ -370,3 +370,43 @@ header a.button.small{font-size:var(--btn-font);padding:var(--btn-pad-y) var(--b
 @media(max-width:1250px){header a.button.small,a.button{font-size:var(--btn-font);padding:var(--btn-pad-y) var(--btn-pad-x)}}
 @media(max-width:1050px){header a.button.small,a.button{font-size:var(--btn-font);padding:var(--btn-pad-y) var(--btn-pad-x)}}
 @media(max-width:760px){a.button,button.button{font-size:var(--btn-font);padding:var(--btn-pad-y) var(--btn-pad-x);gap:22px}}
+/* ---------- Kainoraštis: sticky paieška ir stulpeliai, kategorijos chip'as ---------- */
+.price-catalog{--col-cat:250px;--col-price:180px;--cell-x:24px}
+.price-sticky{position:sticky;top:0;z-index:20;background:var(--white);padding-top:18px;margin-top:-18px}
+.price-sticky .price-tools{margin-bottom:22px}
+.price-colhead{display:grid;grid-template-columns:minmax(0,1fr) var(--col-cat) var(--col-price);padding:14px var(--cell-x);border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:15px;font-weight:500;color:var(--muted);margin-bottom:24px}
+.price-colhead .price-col-price{text-align:right}
+.price-group table col.col-cat{width:var(--col-cat)}
+.price-group table col.col-price{width:var(--col-price)}
+.price-row{position:relative;cursor:pointer}
+.price-row th,.price-row td{vertical-align:middle;padding-left:var(--cell-x);padding-right:var(--cell-x)}
+.price-link{display:block;color:inherit}
+.price-link:after{content:'';position:absolute;inset:0}
+.price-name{display:block;font-size:18px;color:var(--blue);transition:color .2s}
+.price-desc{display:block;margin-top:4px;font-size:15px;line-height:1.5;color:var(--muted)}
+.price-row:is(:hover,:focus-within) .price-name,.price-row:is(:hover,:focus-within) .price-value{color:var(--clay)}
+.price-row .price-value{transition:color .2s}
+.price-cat{text-align:left}
+.price-chip{display:inline-block;max-width:100%;padding:5px 12px;border:1px solid var(--line);border-radius:999px;background:var(--white);font-size:13px;line-height:1.4;color:var(--blue);white-space:normal}
+.price-row:hover .price-chip{border-color:var(--clay)}
+.price-link:focus-visible{outline:none}
+.price-row:focus-within{outline:2px solid var(--clay);outline-offset:-2px}
+@media(max-width:1050px){.price-catalog{--col-cat:200px;--col-price:150px}}
+@media(max-width:760px){
+  .price-catalog{--col-cat:0px;--col-price:110px;--cell-x:8px}
+  .price-colhead{grid-template-columns:minmax(0,1fr) var(--col-price);font-size:14px}
+  .price-colhead .price-cat,.price-row .price-cat{display:none}
+  .price-sticky{padding-top:12px;margin-top:-12px}
+  .price-sticky .price-tools p{display:none}
+  .price-name{font-size:16px}
+}
+.price-info-mobile{display:none}
+@media(max-width:760px){.price-info-mobile{display:block;font-size:15px;margin:0 0 22px}}
+.price-row td.price-cat{text-align:left}
+.price-chip{text-align:left}
+.price-catalog{--col-cat:320px}
+@media(max-width:1250px){.price-catalog{--col-cat:260px}}
+@media(max-width:1050px){.price-catalog{--col-cat:210px}}
+@media(max-width:760px){.price-catalog{--col-cat:0px}}
+.price-colhead{padding:14px 0}
+.price-colhead>span{padding:0 var(--cell-x)}

@@ -1289,6 +1289,22 @@ collections:
         name: empty_text
         widget: string
         hint: 'Nuorodos formatas: [tekstas](/adresas)'
+      - label: 'Stulpelio pavadinimas: paslauga'
+        name: col_service
+        widget: string
+        default: Paslauga
+      - label: 'Stulpelio pavadinimas: kategorija'
+        name: col_category
+        widget: string
+        default: Kategorija
+      - label: 'Stulpelio pavadinimas: kaina'
+        name: col_price
+        widget: string
+        default: Kaina, €
+      - label: Kur veda paspaudus eilutę
+        name: row_link
+        widget: string
+        default: /registracija
       - label: Kainų grupės
         name: groups
         widget: list
@@ -1310,6 +1326,7 @@ collections:
             label: Pastaba
             name: note
             widget: string
+          hint: Bendros grupės pastabos. Paslaugai skirtą pastabą rašykite tos paslaugos aprašyme.
         - label: Paslaugos
           name: rows
           widget: list
@@ -1318,6 +1335,11 @@ collections:
           - label: Paslauga
             name: service
             widget: string
+          - label: Aprašymas (po pavadinimu)
+            name: description
+            widget: text
+            required: false
+            hint: Rodomas mažesniu šriftu po paslaugos pavadinimu. Kiekviena eilutė – atskirai.
           - label: Kaina (€)
             name: price
             widget: string

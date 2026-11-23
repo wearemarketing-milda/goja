@@ -111,7 +111,6 @@ if (priceSearch) {
     });
     searching = Boolean(query);
     document.querySelector('#price-empty').hidden = visibleCount > 0;
-    document.querySelector('#price-count').textContent = query ? `Rasta paslaugų: ${visibleCount}` : `Kainoraštyje – ${visibleCount} paslaugų`;
   };
   priceSearch.addEventListener('input', filterPrices);
   filterPrices();

@@ -43,14 +43,17 @@
           "rows": [
             {
               "service": "Gydytojo odontologo konsultacija",
+              "description": "",
               "price": "20,00–30,00"
             },
             {
               "service": "Detalus gydymo plano sudarymas",
+              "description": "",
               "price": "30,00"
             },
             {
-              "service": "Detalizuota implantacijos konsultacija (detali klinikinės situacijos analizė, gydymo plano sudarymas raštu)",
+              "service": "Detalizuota implantacijos konsultacija",
+              "description": "Detali klinikinės situacijos analizė, gydymo plano sudarymas raštu",
               "price": "0,00"
             }
           ]
@@ -62,14 +65,17 @@
           "rows": [
             {
               "service": "Panoraminė dantų nuotrauka",
+              "description": "",
               "price": "20,00"
             },
             {
               "service": "Dentalinė skaitmeninė rentgeno nuotrauka",
+              "description": "",
               "price": "10,00"
             },
             {
               "service": "Rentgeno nuotraukos spausdinimas iš duomenų bazės",
+              "description": "",
               "price": "5,00"
             }
           ]
@@ -80,7 +86,8 @@
           "notes": [],
           "rows": [
             {
-              "service": "Intraveninė sedacija (medikamentų sukeltas sąmonės slopinimas)",
+              "service": "Intraveninė sedacija",
+              "description": "Medikamentų sukeltas sąmonės slopinimas",
               "price": "300,00"
             }
           ]
@@ -94,14 +101,17 @@
           "rows": [
             {
               "service": "Implantacija MegaGen Any Ridge implantais. Implanto įsriegimas",
+              "description": "",
               "price": "650,00"
             },
             {
               "service": "Dantenų formavimas",
+              "description": "",
               "price": "90,00"
             },
             {
               "service": "Vaistų ir burnos priežiūros paketas po implantacijos",
+              "description": "",
               "price": "35,00"
             }
           ]
@@ -109,29 +119,31 @@
         {
           "title": "Chirurgininis gydymas, susijęs su dantų implantacija",
           "open": true,
-          "notes": [
-            "\\*Kaina priklauso nuo kaulinio defekto bei naudojamo kaulo pakaitalo",
-            "\\*\\*Kaina priklauso nuo kaulinio defekto"
-          ],
+          "notes": [],
           "rows": [
             {
-              "service": "Kaulo priauginimas kaulo mišiniu*",
+              "service": "Kaulo priauginimas kaulo mišiniu",
+              "description": "Kaina priklauso nuo kaulinio defekto bei naudojamo kaulo pakaitalo",
               "price": "170,00–665,00"
             },
             {
               "service": "Kaulo priauginimas, naudojant titanines membranas",
+              "description": "",
               "price": "460,00"
             },
             {
-              "service": "Sinuso dugno pakėlimas uždaru būdu (1 implantui)",
+              "service": "Sinuso dugno pakėlimas uždaru būdu",
+              "description": "1 implantui",
               "price": "170,00"
             },
             {
-              "service": "Sinuso dugno pakėlimas atviru būdu (nepriklausomai nuo implantų skaičiaus)",
+              "service": "Sinuso dugno pakėlimas atviru būdu",
+              "description": "Nepriklausomai nuo implantų skaičiaus",
               "price": "900,00"
             },
             {
-              "service": "Kaulo priauginimas kaulo bloku**",
+              "service": "Kaulo priauginimas kaulo bloku",
+              "description": "Kaina priklauso nuo kaulinio defekto",
               "price": "950,00–1650,00"
             }
           ]
@@ -139,28 +151,31 @@
         {
           "title": "Dantų rovimas ir chirurgija",
           "open": true,
-          "notes": [
-            "\\*Kaina priklauso nuo situacijos sudėtingumo"
-          ],
+          "notes": [],
           "rows": [
             {
               "service": "Nesudėtingas danties rovimas",
+              "description": "",
               "price": "100,00–125,00"
             },
             {
-              "service": "Operacinis danties rovimas*",
+              "service": "Operacinis danties rovimas",
+              "description": "Kaina priklauso nuo situacijos sudėtingumo",
               "price": "150,00–300,00"
             },
             {
               "service": "Danties šaknies viršūnės rezekcija",
+              "description": "",
               "price": "200,00"
             },
             {
-              "service": "Kaulinio defekto užpildymas kaulo pakaitalu po danties rovimo (1 dantis)*",
+              "service": "Kaulinio defekto užpildymas kaulo pakaitalu po danties rovimo",
+              "description": "1 dantis\nKaina priklauso nuo situacijos sudėtingumo",
               "price": "170,00"
             },
             {
               "service": "Dantenų perkontūravimas ties vienu dantimi",
+              "description": "",
               "price": "115,00"
             }
           ]
@@ -168,108 +183,131 @@
         {
           "title": "Protezavimas",
           "open": true,
-          "notes": [
-            "\\*Kaina tikslinama konsultacijos metu"
-          ],
+          "notes": [],
           "rows": [
             {
-              "service": "Vaškavimas (dantų formos modeliavimas laboratorijoje (1 dantis))",
+              "service": "Vaškavimas",
+              "description": "Dantų formos modeliavimas laboratorijoje (1 dantis)",
               "price": "37,00–60,00"
             },
             {
-              "service": "Metalo keramikos vainikėlis*",
+              "service": "Metalo keramikos vainikėlis",
+              "description": "Kaina tikslinama konsultacijos metu",
               "price": "280,00–340,00"
             },
             {
               "service": "Metalinis įklotas vienašaknis",
+              "description": "",
               "price": "120,00"
             },
             {
               "service": "Metalinis įklotas daugiašaknis",
+              "description": "",
               "price": "160,00"
             },
             {
               "service": "E-max užklotas",
+              "description": "",
               "price": "450,00–490,00"
             },
             {
               "service": "E-max vainikėlis",
+              "description": "",
               "price": "450,00"
             },
             {
               "service": "Bemetalės keramikos vainikėlis",
+              "description": "",
               "price": "500,00"
             },
             {
-              "service": "Pilno kontūro cirkonio vainikėlis (Full contur)",
+              "service": "Pilno kontūro cirkonio vainikėlis",
+              "description": "Full contur",
               "price": "350,00"
             },
             {
               "service": "Metalo keramikos vainikėlis, protezuojant ant MegaGen AnyRidge implanto",
+              "description": "",
               "price": "500,00"
             },
             {
               "service": "Bemetalės keramikos vainikėlis cirkonio oksido pagrindu ant implanto",
+              "description": "",
               "price": "770,00"
             },
             {
               "service": "Laikinas vainikėlis ant implanto",
+              "description": "",
               "price": "160,00"
             },
             {
               "service": "Stiklo pluošto šaknies kaištis",
+              "description": "",
               "price": "120,00"
             },
             {
               "service": "Laikinas vainikėlis",
+              "description": "",
               "price": "120,00"
             },
             {
               "service": "Bemetalės keramikos vainikėlis cirkonio oksido pagrindu",
+              "description": "",
               "price": "550,00"
             },
             {
               "service": "Atspaudai individualiais šaukštais",
+              "description": "",
               "price": "50,00"
             },
             {
               "service": "Vainikėlio nuėmimas",
+              "description": "",
               "price": "50,00"
             },
             {
               "service": "Laikina plokštelė",
+              "description": "",
               "price": "100,00–300,00"
             },
             {
-              "service": "Elastinė plokštelė (1 danties)",
+              "service": "Elastinė plokštelė",
+              "description": "1 danties",
               "price": "210,00–290,00"
             },
             {
-              "service": "Elastinė plokštelė (2-3 dantys)",
+              "service": "Elastinė plokštelė",
+              "description": "2-3 dantys",
               "price": "330,00–400,00"
             },
             {
-              "service": "Elastinė plokštelė (4-6 dantys)",
+              "service": "Elastinė plokštelė",
+              "description": "4-6 dantys",
               "price": "320,00–600,00"
             },
             {
-              "service": "Plokštelinis protezas (nepriklausomai nuo dantų skaičiaus)",
+              "service": "Plokštelinis protezas",
+              "description": "Nepriklausomai nuo dantų skaičiaus",
               "price": "350,00–700,00"
             },
             {
               "service": "Vainikėlio cementavimas",
+              "description": "",
               "price": "50,00"
             },
             {
               "service": "Plokštelės perbazavimas, pataisa",
+              "description": "",
               "price": "120,00"
             },
             {
               "service": "Diagnostinis modelis",
+              "description": "",
               "price": "60,00"
             },
             {
-              "service": "Įvairių konstrukcijų plastikiniai protezai ant implantų (tiksli kaina nustatoma konsultacijos metu)",
+              "service": "Įvairių konstrukcijų plastikiniai protezai ant implantų",
+              "description": "Tiksli kaina nustatoma konsultacijos metu",
               "price": "Nuo 1600,00"
             }
           ]
@@ -277,32 +315,36 @@
         {
           "title": "Terapinis gydymas",
           "open": true,
-          "notes": [
-            "\\*Kaina priklauso nuo plombos dydžio"
-          ],
+          "notes": [],
           "rows": [
             {
               "service": "Nuskausminimas",
+              "description": "",
               "price": "15,00"
             },
             {
-              "service": "Danties plombavimas*",
+              "service": "Danties plombavimas",
+              "description": "Kaina priklauso nuo plombos dydžio",
               "price": "85,00–100,00"
             },
             {
-              "service": "Estetinis danties plombavimas (vienas dantis)*",
+              "service": "Estetinis danties plombavimas",
+              "description": "Vienas dantis\nKaina priklauso nuo plombos dydžio",
               "price": "200,00–250,00"
             },
             {
-              "service": "Estetinis danties poliravimas (vienas dantis)",
+              "service": "Estetinis danties poliravimas",
+              "description": "Vienas dantis",
               "price": "40,00"
             },
             {
               "service": "Individualus silikoninis gidas plombavimui",
+              "description": "",
               "price": "70,00"
             },
             {
-              "service": "Vienkartinių medžiagų komplektas (įskaitant koferdamą)",
+              "service": "Vienkartinių medžiagų komplektas",
+              "description": "Įskaitant koferdamą",
               "price": "25,00"
             }
           ]
@@ -314,38 +356,47 @@
           "rows": [
             {
               "service": "Pirmoji pagalba",
+              "description": "",
               "price": "45,00"
             },
             {
-              "service": "Chemomechaninis kanalo valymas (1 kanalas)",
+              "service": "Chemomechaninis kanalo valymas",
+              "description": "1 kanalas",
               "price": "55,00"
             },
             {
-              "service": "Kalcio pastos įvedimas į kanalą (1 kanalas)",
+              "service": "Kalcio pastos įvedimas į kanalą",
+              "description": "1 kanalas",
               "price": "40,00"
             },
             {
               "service": "Kanalo plombavimas",
+              "description": "",
               "price": "55,00"
             },
             {
               "service": "Kanalo pergydymas",
+              "description": "",
               "price": "85,00"
             },
             {
               "service": "Kultinio įkloto išėmimas",
+              "description": "",
               "price": "100,00"
             },
             {
               "service": "Laikinas užpildas",
+              "description": "",
               "price": "28,00–45,00"
             },
             {
               "service": "Devitalizuojančios medžiagos uždėjimas",
+              "description": "",
               "price": "28,00–40,00"
             },
             {
               "service": "MTA uždėjimas",
+              "description": "",
               "price": "35,00–60,00"
             }
           ]
@@ -357,38 +408,47 @@
           "rows": [
             {
               "service": "Profilaktinis tikrinimas ir apžiūra",
+              "description": "",
               "price": "30,00"
             },
             {
-              "service": "Silantas (1 dantis)",
+              "service": "Silantas",
+              "description": "1 dantis",
               "price": "20,00"
             },
             {
               "service": "Pieninio danties plombavimas",
+              "description": "",
               "price": "60,00"
             },
             {
               "service": "Vaistų uždėjimas",
+              "description": "",
               "price": "35,00"
             },
             {
               "service": "Pieninio danties rovimas",
+              "description": "",
               "price": "45,00"
             },
             {
               "service": "Pieninių dantų apnašų nuvalymas ir padengimas fluoro laku",
+              "description": "",
               "price": "30,00"
             },
             {
               "service": "Pieninio danties kanalo valymas",
+              "description": "",
               "price": "25,00"
             },
             {
               "service": "Pieninio danties kanalo plombavimas",
+              "description": "",
               "price": "25,00"
             },
             {
               "service": "Profesionali vaikų burnos higiena",
+              "description": "",
               "price": "45,00–60,00"
             }
           ]
@@ -400,26 +460,32 @@
           "rows": [
             {
               "service": "Ofisinis dantų balinimas",
+              "description": "",
               "price": "200,00–220,00"
             },
             {
-              "service": "Danties vainiko vidinis balinimas (vienkartinis kameros užpildymas)",
+              "service": "Danties vainiko vidinis balinimas",
+              "description": "Vienkartinis kameros užpildymas",
               "price": "55,00"
             },
             {
-              "service": "Icon sistema (1 dantis)",
+              "service": "Icon sistema",
+              "description": "1 dantis",
               "price": "55,00"
             },
             {
-              "service": "Namų balinimo sistema (2 kapos ir 2 balinimo švirkštai)",
+              "service": "Namų balinimo sistema",
+              "description": "2 kapos ir 2 balinimo švirkštai",
               "price": "280,00"
             },
             {
               "service": "Balinimo švirkštelis",
+              "description": "",
               "price": "35,00"
             },
             {
-              "service": "Balinimo/apsauginė kapa (1 kapa)",
+              "service": "Balinimo/apsauginė kapa",
+              "description": "1 kapa",
               "price": "110,00–170,00"
             }
           ]
@@ -427,29 +493,31 @@
         {
           "title": "Kitos paslaugos",
           "open": true,
-          "notes": [
-            "\\*Kaina priklauso nuo burnos ertmės būklės",
-            "\\*\\*Neatliekant procedūrų klinikoje"
-          ],
+          "notes": [],
           "rows": [
             {
-              "service": "Profesionali burnos higiena (ultragarsu ir sodapūte)",
+              "service": "Profesionali burnos higiena",
+              "description": "Ultragarsu ir sodapūte",
               "price": "70,00–100,00"
             },
             {
-              "service": "Pakartotinė profesionali burnos higiena*",
+              "service": "Pakartotinė profesionali burnos higiena",
+              "description": "Kaina priklauso nuo burnos ertmės būklės",
               "price": "45,00"
             },
             {
               "service": "Bruksizmo kapa",
+              "description": "",
               "price": "110,00"
             },
             {
-              "service": "Siūlų išėmimas**",
+              "service": "Siūlų išėmimas",
+              "description": "Neatliekant procedūrų klinikoje",
               "price": "15,00"
             },
             {
-              "service": "Fluoro lako aplikacija (1 dantis)",
+              "service": "Fluoro lako aplikacija",
+              "description": "1 dantis",
               "price": "25,00"
             }
           ]
@@ -461,7 +529,11 @@
         "Klinika be atskiro įspėjimo gali keisti paslaugų kainas, taikyti nuolaidas, teikti naujas paslaugas, naujo turinio paslaugas, neteikti tam tikrų paslaugų.",
         "Skubios privačios odontologinės paslaugos teikiamos su 30 proc. pabrangimu.",
         "Savaitgaliais ir švenčių dienomis odontologinės nemokamos paslaugos klinikoje neteikiamos."
-      ]
+      ],
+      "col_service": "Paslauga",
+      "col_category": "Kategorija",
+      "col_price": "Kaina, €",
+      "row_link": "/registracija"
     },
     {
       "type": "global_contact",
