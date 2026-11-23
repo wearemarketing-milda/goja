@@ -40,7 +40,7 @@ document.addEventListener('keydown', e => {
   }
 });
 const currentPath = location.pathname.replace(/\/$/, '');
-nav?.querySelectorAll('a:not(.nav-parent)').forEach(a => {
+nav?.querySelectorAll('a:not(.nav-parent):not(.mega-cta):not(.nav-mobile-button)').forEach(a => {
   if ((a.getAttribute('href') || '').startsWith('#')) return;
   const path = new URL(a.href).pathname.replace(/\/$/, '');
   if (path === currentPath) a.setAttribute('aria-current', 'page');
