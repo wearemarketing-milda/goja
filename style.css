@@ -585,3 +585,16 @@ details.is-draft summary{background:#fff4c2}
   .hero-offer{padding:20px;gap:10px}
 }
 @media print{.mobile-call{display:none!important}}
+
+/* Mobilus meniu: kompaktiškas CTA be nuotraukos, slenkamas meniu, registracijos mygtukas */
+.nav-mobile-button{display:none!important}
+@media(max-width:760px){
+  nav.open{max-height:calc(100svh - 92px);overflow-y:auto;overscroll-behavior:contain}
+  nav.open .nav-mobile-button{display:flex!important;justify-content:center;margin-top:12px}
+  .submenu .mega-cta{display:flex;min-height:0;padding:12px 18px 14px;margin:6px 0 0;background:transparent;color:var(--blue)}
+  .submenu .mega-cta img,.submenu .mega-cta:after{display:none}
+  .submenu .mega-cta-text{font-size:19px;align-items:center}
+  .submenu .mega-cta .mega-arrow{display:inline;font-size:20px;padding:0}
+  body:has(nav.open) .mobile-call{opacity:0;pointer-events:none}
+  html:has(nav.open){overflow:hidden}
+}
