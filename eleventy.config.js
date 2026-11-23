@@ -44,7 +44,7 @@ function imageTag(image, opts = {}) {
 }
 
 module.exports = function (eleventyConfig) {
-  ['assets', 'admin', 'style.css', 'app.js', 'robots.txt', 'favicon.png'].forEach((p) => {
+  ['assets', 'admin', 'style.css', 'app.js', 'robots.txt', 'favicon.png', 'favicon.ico', 'apple-touch-icon.png'].forEach((p) => {
     if (fs.existsSync(path.join(ROOT, p))) eleventyConfig.addPassthroughCopy(p);
   });
   eleventyConfig.addWatchTarget('content/');
