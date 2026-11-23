@@ -16,6 +16,7 @@ menu?.addEventListener('click', () => {
   const open = menu.getAttribute('aria-expanded') !== 'true';
   menu.setAttribute('aria-expanded', String(open));
   menu.setAttribute('aria-label', open ? 'Užverti meniu' : 'Atverti meniu');
+  if (open) { const h = nav.parentElement.offsetHeight + 'px'; nav.style.setProperty('--nav-top', h); nav.parentElement.style.setProperty('--nav-top', h); }
   nav.classList.toggle('open', open);
   menu.textContent = open ? '×' : '☰';
   if (!open) closeSubmenu();
@@ -238,7 +239,7 @@ document.querySelectorAll('a[href="#kontaktai"]').forEach(a => a.addEventListene
 (() => {
   document.querySelectorAll('[data-specialist]').forEach(a => a.addEventListener('click', e => {
     const d = document.getElementById(`specialistas-${a.dataset.specialist}`);
-    if (!d || typeof d.showModal !== 'function' || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    if (!d || typeof d.showModal !== 'function' || matchMedia('(max-width: 760px)').matches || e.metaKey || e.ctrlKey || e.shiftKey) return;
     e.preventDefault(); d.showModal(); document.documentElement.classList.add('drawer-open');
     requestAnimationFrame(() => dispatchEvent(new Event('resize')));
   }));

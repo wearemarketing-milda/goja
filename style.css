@@ -598,3 +598,12 @@ details.is-draft summary{background:#fff4c2}
   body:has(nav.open) .mobile-call{opacity:0;pointer-events:none}
   html:has(nav.open){overflow:hidden}
 }
+
+/* Mobilus meniu per visą ekraną, be paslaugų CTA */
+@media(max-width:760px){
+  nav.open{position:fixed;top:var(--nav-top,92px);left:0;right:0;bottom:0;max-height:none;border-bottom:0;padding-bottom:calc(32px + env(safe-area-inset-bottom,0px))}
+  nav.open .nav-mobile-button{margin-top:auto}
+  .submenu .mega-cta{display:none!important}
+}
+@media(max-width:760px){body>header:has(nav.open){position:fixed;top:0;left:0;right:0;z-index:60;background:var(--white)}}
+@media(max-width:760px){nav.open{top:0!important;padding-top:calc(var(--nav-top,92px) + 12px)!important;border-top:0!important;background:var(--white)}body>header:has(nav.open):after{content:"";position:fixed;left:0;right:0;top:var(--nav-top,92px);height:1px;background:var(--line);z-index:3}body>header:has(nav.open) :is(.logo,.menu){position:relative;z-index:4}}
