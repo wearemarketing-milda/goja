@@ -1,12 +1,12 @@
 {
   "title": "Specialūs pasiūlymai",
+  "nav_label": "Pasiūlymai",
   "slug": "pasiulymai",
   "published": true,
   "parent": "",
-  "nav_label": "Pasiūlymai",
-  "menu_label": "",
   "show_in_menu": true,
   "menu_order": 90,
+  "menu_label": "",
   "meta_title": "Specialūs pasiūlymai | GOJA klinika",
   "meta_description": "GOJA odontologijos klinikos Mažeikiuose specialūs pasiūlymai: aktualios akcijos, kainos ir galiojimo terminai.",
   "og_image": "",
@@ -23,19 +23,19 @@
     {
       "type": "page_top",
       "hidden": false,
-      "title": "Specialūs pasiūlymai",
-      "lead": "Aktualūs GOJA klinikos pasiūlymai ir jų galiojimo terminai.",
+      "title": "Specialūs pasiūlymai ir naujienos",
       "image": {
         "src": "",
         "alt": ""
-      }
+      },
+      "lead": "Aktualūs GOJA klinikos pasiūlymai ir naujienos."
     },
     {
       "type": "offers_archive",
       "hidden": false,
+      "empty_text": "Šiuo metu aktyvių pasiūlymų nėra. Sekite naujienas arba susisiekite su mumis.",
       "show_inactive": true,
-      "inactive_title": "Pasibaigę pasiūlymai",
-      "empty_text": "Šiuo metu aktyvių pasiūlymų nėra. Sekite naujienas arba susisiekite su mumis."
+      "inactive_title": "Pasibaigę pasiūlymai"
     },
     {
       "type": "global_contact",
