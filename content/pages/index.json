@@ -60,11 +60,11 @@
         },
         {
           "label": "Darbo laikas",
-          "text": "I–IV 8–19 val. · V 8–18 val.",
+          "text": "I–IV 9–18 val. · V 9–17 val.",
           "url": ""
         },
         {
-          "label": "Turite klausimų?",
+          "label": "Norite pasitarti?",
           "text": "Skambinkite +370 611 80077",
           "url": "tel:+37061180077"
         }
@@ -97,7 +97,7 @@
         {
           "text": "Išklausome Jūsų lūkesčius, įvertiname dantų būklę ir aptariame galimus gydymo sprendimus.",
           "title": "Konsultacija ir būklės įvertinimas",
-          "open": true
+          "open": false
         },
         {
           "text": "Paaiškiname numatomus gydymo etapus, terminus ir kainą, kad sprendimą galėtumėte priimti turėdami visą informaciją.",
