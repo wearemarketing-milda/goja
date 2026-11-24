@@ -678,3 +678,14 @@ details.is-draft summary{background:#fff4c2}
 /* Išskleidžiamieji laukai: vienodi tarpai aplink chevroną */
 select{-webkit-appearance:none;appearance:none;padding-right:48px!important;background:var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%232F3E51' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 20px center/12px 8px}
 @media(max-width:760px){.price-catalog,.price-catalog.has-toc{--col-price:132px}.price-row td.price-value{white-space:nowrap;font-size:15px}}
+
+/* Kainoraštis v3: grupių pasirinkimas šalia paieškos, pastaba prie „Paslauga“ */
+.price-catalog.price-catalog{display:block}
+.price-catalog .price-tools{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:end}
+.price-catalog .price-tools>div{max-width:none!important;width:auto}
+.price-catalog .price-tools label{display:block;margin-bottom:9px}
+.price-toc-select{display:block!important}
+.price-col-service{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+.price-col-note{font-style:normal;font-weight:400;font-size:13px;color:var(--muted)}
+@media(max-width:760px){.price-catalog .price-tools{grid-template-columns:1fr;gap:18px}.price-col-service{gap:4px 10px}.price-col-note{font-size:12px;line-height:1.4}}
+.page-cta .button:not(.outline){background:var(--clay);border-color:var(--clay);color:var(--white)}.page-cta .button:not(.outline):hover{background:var(--blue)!important;border-color:var(--blue)!important}

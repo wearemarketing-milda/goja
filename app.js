@@ -372,7 +372,7 @@ document.querySelectorAll('[data-slider]').forEach(slider => {
 
 // Kainoraštis: grupių turinys (kompiuteryje sąrašas, telefone pasirinkimas) – nuslenka iki grupės ir ją atidaro.
 (() => {
-  const catalog = document.querySelector('.price-catalog.has-toc');
+  const catalog = document.querySelector('.price-catalog');
   if (!catalog) return;
   const links = [...catalog.querySelectorAll('[data-price-toc]')];
   const select = catalog.querySelector('.price-toc-select');

@@ -1626,6 +1626,10 @@ collections:
           hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
         label: Mygtukas
         name: button
+      - name: text
+        label: Tekstas (jei tuščia – iš specialisto aprašymo)
+        widget: markdown
+        required: false
     - label: HTML turinys (pvz. privatumo politika)
       name: html
       fields:
@@ -3470,6 +3474,10 @@ collections:
           hint: Pvz. /kontaktai, /registracija?paslauga=burnos-higiena, tel:+37061180077, https://...
         label: Mygtukas
         name: button
+      - name: text
+        label: Tekstas (jei tuščia – iš specialisto aprašymo)
+        widget: markdown
+        required: false
     - label: HTML turinys (pvz. privatumo politika)
       name: html
       fields:
