@@ -8,12 +8,12 @@
   "valid_from": "",
   "valid_until": "",
   "image_desktop": {
-    "src": "/assets/uploads/pries-po-16x9.png",
-    "alt": "Dantu balinimas"
+    "src": "/assets/uploads/dantu balinimas 16x9.png",
+    "alt": "Dantu balinimas Mažeikiuose"
   },
   "image_mobile": {
-    "src": "/assets/uploads/pries-po-1x1.png",
-    "alt": "Dantu balinimas"
+    "src": "/assets/uploads/dantu balinimas 1x1.png",
+    "alt": "Dantu balinimas Mažeikiuose"
   },
   "summary": "Naujiena GOJA klinikoje Mažeikiuose – profesionalus dantų balinimas „Philips Zoom“ sistema. Balinimas klinikoje ir dviejų savaičių balinimo kursas namuose – už 400 €.",
   "card_note": "Balinimas klinikoje ir 2 savaičių kursas namuose.",
@@ -71,7 +71,7 @@
       "hidden": false,
       "title": "Kodėl verta rinktis „Philips Zoom“?",
       "image": {
-        "src": "/assets/uploads/dantu balinimas 1x1.png",
+        "src": "/assets/uploads/pries-po-1x1.png",
         "alt": "„Philips Zoom“ dantų balinimo sistema GOJA klinikoje Mažeikiuose"
       },
       "lead": "Profesionali dantų balinimo sistema, leidžianti pastebimai pašviesinti natūralių dantų atspalvį jau po vieno vizito klinikoje.",
