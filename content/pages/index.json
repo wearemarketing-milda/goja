@@ -1,12 +1,12 @@
 {
   "title": "Odontologijos klinika Mažeikiuose",
+  "nav_label": "Pradžia",
   "slug": "index",
   "published": true,
   "parent": "",
-  "nav_label": "Pradžia",
-  "menu_label": "",
   "show_in_menu": false,
   "menu_order": 100,
+  "menu_label": "",
   "meta_title": "Profesionali odontologijos klinika Mažeikiuose | GOJA klinika",
   "meta_description": "GOJA odontologijos klinika Mažeikiuose: burnos higiena, dantų gydymas, estetinis plombavimas, protezavimas ir implantacija. Registruokitės konsultacijai.",
   "og_image": "",
@@ -45,12 +45,13 @@
         "alt": "GOJA klinikos odontologinė kėdė"
       },
       "show_offer": true,
-      "offer": "",
+      "offer": "dantu-balinimas-philips-zoom",
       "offer_label": "Specialus pasiūlymas",
       "offer_url": "/pasiulymai"
     },
     {
       "type": "visit_strip",
+      "hidden": true,
       "items": [
         {
           "label": "Mus rasite",
@@ -67,48 +68,49 @@
           "text": "Skambinkite +370 611 80077",
           "url": "tel:+37061180077"
         }
-      ],
-      "hidden": true
+      ]
     },
     {
       "type": "service_cards",
-      "variant": "home",
-      "parent": "paslaugos",
+      "hidden": false,
       "eyebrow": "PASLAUGOS",
       "title": "Odontologijos paslaugos",
+      "variant": "home",
+      "parent": "paslaugos",
       "text": "Profilaktika, dantų gydymas ir atkūrimas vienoje klinikoje. Pasirinkite paslaugą ir sužinokite daugiau.",
+      "card_link_text": "Plačiau apie paslaugą",
       "link": {
         "text": "Peržiūrėti paslaugų kainas",
         "url": "/kainos"
-      },
-      "card_link_text": "Plačiau apie paslaugą"
+      }
     },
     {
       "type": "planning",
+      "hidden": false,
+      "eyebrow": "GYDYMO PLANAVIMAS",
+      "title": "Aišku nuo pirmos konsultacijos.",
       "image": {
         "src": "/assets/clinic-clinician-1440.webp",
         "alt": "GOJA klinikos specialistė darbo metu"
       },
-      "eyebrow": "GYDYMO PLANAVIMAS",
-      "title": "Aišku nuo pirmos konsultacijos.",
-      "lead": "Prieš pradėdami gydymą aptariame, ką ir kodėl siūlome.",
       "items": [
         {
-          "title": "Konsultacija ir būklės įvertinimas",
           "text": "Išklausome Jūsų lūkesčius, įvertiname dantų būklę ir aptariame galimus gydymo sprendimus.",
+          "title": "Konsultacija ir būklės įvertinimas",
           "open": true
         },
         {
-          "title": "Gydymo planas ir kaina",
           "text": "Paaiškiname numatomus gydymo etapus, terminus ir kainą, kad sprendimą galėtumėte priimti turėdami visą informaciją.",
+          "title": "Gydymo planas ir kaina",
           "open": false
         },
         {
-          "title": "Tolesnė priežiūra",
           "text": "Aptariame individualią burnos priežiūrą ir profilaktinius vizitus, padedančius palaikyti burnos sveikatą.",
+          "title": "Tolesnė priežiūra",
           "open": false
         }
       ],
+      "lead": "Prieš pradėdami gydymą aptariame, ką ir kodėl siūlome.",
       "link": {
         "text": "Registruotis konsultacijai",
         "url": "/registracija"
@@ -117,10 +119,10 @@
     {
       "type": "team",
       "hidden": false,
-      "variant": "about",
-      "anchor": "komanda",
       "title": "GOJA komanda",
+      "variant": "about",
       "text": "Susipažinkite su GOJA klinikos specialistais.",
+      "anchor": "komanda",
       "specialists": []
     },
     {
