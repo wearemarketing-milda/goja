@@ -25,7 +25,7 @@
       "hidden": false,
       "eyebrow": "ŠEIMOS ODONTOLOGIJA",
       "title": "Odontologijos klinika Mažeikiuose",
-      "intro": "GOJA klinikoje rūpinamės vaikų ir suaugusiųjų dantų sveikata. Prieš gydymą aptariame jo eigą ir kainą.",
+      "intro": "GOJA klinikoje rūpinamės vaikų ir suaugusiųjų dantų sveikata.",
       "button": {
         "text": "Registruotis vizitui",
         "url": "/registracija"
@@ -46,7 +46,7 @@
       },
       "show_offer": true,
       "offer": "dantu-balinimas-philips-zoom",
-      "offer_label": "Specialus pasiūlymas",
+      "offer_label": "Naujiena",
       "offer_url": "/pasiulymai"
     },
     {
