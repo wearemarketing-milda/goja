@@ -1,12 +1,12 @@
 {
   "title": "Odontologijos paslaugų kainos Mažeikiuose",
+  "nav_label": "Kainos",
   "slug": "kainos",
   "published": true,
   "parent": "",
-  "nav_label": "Kainos",
-  "menu_label": "",
   "show_in_menu": true,
   "menu_order": 100,
+  "menu_label": "",
   "meta_title": "Odontologijos paslaugų kainos Mažeikiuose | GOJA klinika",
   "meta_description": "GOJA klinikos kainoraštis: konsultacijos, burnos higiena, plombavimas, protezavimas, implantacija ir vaikų odontologija Mažeikiuose. Peržiūrėkite kainas.",
   "og_image": "",
@@ -22,19 +22,25 @@
   "blocks": [
     {
       "type": "page_top",
+      "hidden": false,
       "title": "Odontologijos paslaugų kainos Mažeikiuose",
-      "lead": "Peržiūrėkite GOJA klinikos odontologinių paslaugų kainoraštį.",
       "image": {
         "src": "/assets/clinic-instruments-1440.webp",
         "alt": "GOJA klinikos kabineto detalė"
-      }
+      },
+      "lead": "Peržiūrėkite GOJA klinikos odontologinių paslaugų kainoraštį."
     },
     {
       "type": "price_catalog",
+      "hidden": false,
       "search_label": "Ieškoti paslaugos",
       "search_placeholder": "Pvz., konsultacija, higiena…",
       "info": "Galutinė kaina tikslinama konsultacijos metu.",
       "empty_text": "Pagal šią paiešką paslaugų neradome. Pabandykite kitą žodį arba [susisiekite su mumis](#kontaktai).",
+      "col_service": "Paslauga",
+      "col_category": "Kategorija",
+      "col_price": "Kaina",
+      "row_link": "/registracija",
       "groups": [
         {
           "title": "Pirminės paslaugos",
@@ -81,18 +87,6 @@
           ]
         },
         {
-          "title": "Intraveninė sedacija",
-          "open": true,
-          "notes": [],
-          "rows": [
-            {
-              "service": "Intraveninė sedacija",
-              "description": "Medikamentų sukeltas sąmonės slopinimas",
-              "price": "300,00"
-            }
-          ]
-        },
-        {
           "title": "Dantų implantacija",
           "open": true,
           "notes": [
@@ -108,6 +102,11 @@
               "service": "Dantenų formavimas",
               "description": "",
               "price": "90,00"
+            },
+            {
+              "service": "Vaistų paketas po implantacijos",
+              "description": "",
+              "price": "20"
             },
             {
               "service": "Vaistų ir burnos priežiūros paketas po implantacijos",
@@ -529,11 +528,7 @@
         "Klinika be atskiro įspėjimo gali keisti paslaugų kainas, taikyti nuolaidas, teikti naujas paslaugas, naujo turinio paslaugas, neteikti tam tikrų paslaugų.",
         "Skubios privačios odontologinės paslaugos teikiamos su 30 proc. pabrangimu.",
         "Savaitgaliais ir švenčių dienomis odontologinės nemokamos paslaugos klinikoje neteikiamos."
-      ],
-      "col_service": "Paslauga",
-      "col_category": "Kategorija",
-      "col_price": "Kaina",
-      "row_link": "/registracija"
+      ]
     },
     {
       "type": "global_contact",
