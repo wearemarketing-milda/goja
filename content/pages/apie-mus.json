@@ -1,12 +1,12 @@
 {
   "title": "Apie GOJA odontologijos kliniką Mažeikiuose",
+  "nav_label": "Apie kliniką",
   "slug": "apie-mus",
   "published": true,
   "parent": "",
-  "nav_label": "Apie kliniką",
-  "menu_label": "",
   "show_in_menu": true,
   "menu_order": 10,
+  "menu_label": "",
   "meta_title": "Apie mus – odontologijos klinika Mažeikiuose | GOJA klinika",
   "meta_description": "Susipažinkite su GOJA odontologijos klinika Mažeikiuose, gydytojais ir specialistais. Išsami diagnostika, gydymo planavimas ir priežiūra visai šeimai.",
   "og_image": "",
@@ -22,34 +22,38 @@
   "blocks": [
     {
       "type": "page_top",
+      "hidden": false,
       "title": "Apie GOJA odontologijos kliniką Mažeikiuose",
-      "lead": "Šeimos odontologijos klinika Mažeikiuose. Aiškus gydymo planas, rami patirtis ir ilgalaikė priežiūra.",
       "image": {
         "src": "",
         "alt": ""
-      }
+      },
+      "lead": "Šeimos odontologijos klinika Mažeikiuose. Aiškus gydymo planas, rami patirtis ir ilgalaikė priežiūra."
     },
     {
       "type": "approach",
-      "anchor": "apie",
+      "hidden": false,
       "title": "Odontologinė priežiūra visai šeimai",
-      "lead": "Kiekvienas pacientas mums yra unikalus. Todėl pirmiausia išklausome, paaiškiname ir planuojame kartu.",
-      "body": "Didelį dėmesį skiriame išsamiai diagnostikai, aiškiam bendravimui ir individualiam gydymo planavimui. Prieš pradedant gydymą aptariame galimus sprendimus, etapus, terminus, kainas ir numatomus rezultatus.\n\nMūsų tikslas – ilgalaikė burnos sveikata, palaikoma reguliaria profilaktika ir aiškiu bendravimu tarp vizitų.",
       "image": {
         "src": "/assets/clinic-care-1440.webp",
         "alt": "GOJA klinikos specialistės gydymo metu"
-      }
+      },
+      "lead": "Kiekvienas pacientas mums yra unikalus. Todėl pirmiausia išklausome, paaiškiname ir planuojame kartu.",
+      "body": "Didelį dėmesį skiriame išsamiai diagnostikai, aiškiam bendravimui ir individualiam gydymo planavimui. Prieš pradedant gydymą aptariame galimus sprendimus, etapus, terminus, kainas ir numatomus rezultatus.\n\nMūsų tikslas – ilgalaikė burnos sveikata, palaikoma reguliaria profilaktika ir aiškiu bendravimu tarp vizitų.",
+      "anchor": "apie"
     },
     {
       "type": "team",
-      "variant": "about",
-      "anchor": "komanda",
+      "hidden": false,
       "title": "GOJA komanda",
+      "variant": "about",
       "text": "Susipažinkite su GOJA klinikos specialistais.",
+      "anchor": "komanda",
       "specialists": []
     },
     {
       "type": "gallery",
+      "hidden": false,
       "title": "GOJA klinikos erdvės",
       "text": "Susipažinkite su GOJA klinikos erdvėmis dar prieš pirmąjį vizitą.",
       "images": [
@@ -58,12 +62,12 @@
           "alt": "GOJA klinikos laukiamasis"
         },
         {
-          "src": "/assets/clinic-light-1440.webp",
-          "alt": "GOJA klinikos kabineto apšvietimo įranga"
+          "src": "/assets/uploads/klinika_kabinetas_1.png",
+          "alt": "GOJA klinikos kabinetas"
         },
         {
-          "src": "/assets/clinic-instruments-1440.webp",
-          "alt": "GOJA klinikos odontologijos įranga"
+          "src": "/assets/uploads/Gojax-2.jpg",
+          "alt": "GOJA klinikos išorė"
         }
       ]
     },
