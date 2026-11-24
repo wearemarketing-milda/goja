@@ -24,25 +24,27 @@
         "Wednesday",
         "Thursday"
       ],
-      "opens": "08:00",
-      "closes": "19:00"
+      "opens": "09:00",
+      "closes": "18:00"
     },
     {
       "days": [
         "Friday"
       ],
-      "opens": "08:00",
-      "closes": "18:00"
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
+  "menu_extra": [
+    {
+      "text": "Kontaktai",
+      "url": "#kontaktai",
+      "order": 110
     }
   ],
   "header_button": {
     "text": "Registruotis",
     "url": "/registracija"
-  },
-  "mega_cta": {
-    "text": "Nesate iki galo tikri? Pasikalbėkime.",
-    "url": "/registracija",
-    "image": "/assets/clinic-care-720.webp"
   },
   "footer_links": [
     {
@@ -73,6 +75,11 @@
     "url": "/registracija"
   },
   "mobile_register_form_text": "Pildyti formą",
+  "mega_cta": {
+    "text": "Nesate iki galo tikri? Pasikalbėkime.",
+    "url": "/registracija",
+    "image": "/assets/clinic-care-720.webp"
+  },
   "contact_section": {
     "anchor": "kontaktai",
     "eyebrow": "",
@@ -121,12 +128,5 @@
         "alt": "GOJA klinikos pastatas ir įėjimas"
       }
     ]
-  },
-  "menu_extra": [
-    {
-      "text": "Kontaktai",
-      "url": "#kontaktai",
-      "order": 110
-    }
-  ]
+  }
 }
