@@ -99,6 +99,10 @@
         "text": "+370 611 80077",
         "url": "tel:+37061180077"
       }
+    },
+    {
+      "type": "global_contact",
+      "hidden": false
     }
   ]
 }
