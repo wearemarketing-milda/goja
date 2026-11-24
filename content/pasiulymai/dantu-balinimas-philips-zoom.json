@@ -26,6 +26,25 @@
   "meta_description": "Profesionalus dantų balinimas „Philips Zoom“ GOJA klinikoje Mažeikiuose – 400 €. Į kainą įeina balinimas klinikoje, individualios kapos ir balinimas namuose.",
   "blocks": [
     {
+      "type": "offer_hero",
+      "hidden": false,
+      "eyebrow": "NAUJIENA",
+      "title": "",
+      "button": {
+        "text": "Registruotis dantų balinimui",
+        "url": "/registracija?pasiulymas=dantu-balinimas-philips-zoom"
+      },
+      "phone": {
+        "text": "+370 611 80077",
+        "url": "tel:+37061180077"
+      },
+      "lead": "Profesionalus dantų balinimas „Philips Zoom“ sistema padeda pašviesinti natūralių dantų atspalvį. Balinimas klinikoje derinamas su individualiu dviejų savaičių balinimo kursu namuose.",
+      "title_price": "",
+      "box_title": "Naujiena GOJA klinikoje Mažeikiuose – balinimas klinikoje ir namuose už 400 €",
+      "box_text": "",
+      "show_countdown": false
+    },
+    {
       "type": "offer_box",
       "hidden": false,
       "eyebrow": "",
@@ -60,10 +79,18 @@
       "anchor": ""
     },
     {
-      "type": "offer_hero",
+      "type": "doctor",
       "hidden": false,
-      "eyebrow": "NAUJIENA",
-      "title": "",
+      "eyebrow": "JŪSŲ ŠYPSENA RŪPINASI",
+      "button": null,
+      "text": "Profesionalų dantų balinimą „Philips Zoom“ sistema GOJA klinikoje atlieka burnos higienistė Karolina Kančauskaitė.\n\nProcedūros metu ypatingas dėmesys skiriamas individualioms dantų savybėms, paciento komfortui ir estetiškam rezultatui. Specialistė taip pat suteikia rekomendacijas dėl balinimo namuose ir pasiekto rezultato išsaugojimo.",
+      "specialist": "karolina-kancauskaite",
+      "compact": false
+    },
+    {
+      "type": "cta",
+      "hidden": false,
+      "title": "Atraskite šviesesnę šypseną su „Philips Zoom“ – balinimas klinikoje ir namuose už 400 €.",
       "button": {
         "text": "Registruotis dantų balinimui",
         "url": "/registracija?pasiulymas=dantu-balinimas-philips-zoom"
@@ -71,12 +98,7 @@
       "phone": {
         "text": "+370 611 80077",
         "url": "tel:+37061180077"
-      },
-      "lead": "Profesionalus dantų balinimas „Philips Zoom“ sistema padeda pašviesinti natūralių dantų atspalvį. Balinimas klinikoje derinamas su individualiu dviejų savaičių balinimo kursu namuose.",
-      "title_price": "",
-      "box_title": "Naujiena GOJA klinikoje Mažeikiuose – balinimas klinikoje ir namuose už 400 €",
-      "box_text": "",
-      "show_countdown": false
+      }
     }
   ]
 }
