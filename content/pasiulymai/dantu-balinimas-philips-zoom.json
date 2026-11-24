@@ -1,0 +1,63 @@
+{
+  "title": "Profesionalus dantų balinimas „Philips Zoom“",
+  "title_price": "400 €",
+  "card_title": "„Philips Zoom“ dantų balinimas",
+  "slug": "dantu-balinimas-philips-zoom",
+  "published": true,
+  "order": 100,
+  "valid_from": "",
+  "valid_until": "",
+  "image_desktop": {
+    "src": "/assets/uploads/pries-po-16x9.png",
+    "alt": "Dantu balinimas"
+  },
+  "image_mobile": {
+    "src": "/assets/uploads/pries-po-1x1.png",
+    "alt": "Dantu balinimas"
+  },
+  "summary": "Naujiena GOJA klinikoje Mažeikiuose – profesionalus dantų balinimas „Philips Zoom“ sistema. Balinimas klinikoje ir dviejų savaičių balinimo kursas namuose – už 400 €.",
+  "card_note": "Balinimas klinikoje ir 2 savaičių kursas namuose.",
+  "payment_note": "",
+  "registration_key": "dantu-balinimas-philips-zoom",
+  "specialists": [
+    "karolina-kancauskaite"
+  ],
+  "meta_title": "Dantų balinimas „Philips Zoom“ Mažeikiuose | GOJA klinika",
+  "meta_description": "Profesionalus dantų balinimas „Philips Zoom“ GOJA klinikoje Mažeikiuose – 400 €. Į kainą įeina balinimas klinikoje, individualios kapos ir balinimas namuose.",
+  "blocks": [
+    {
+      "type": "offer_box",
+      "hidden": false,
+      "eyebrow": "",
+      "title": "Šviesesnė šypsena, daugiau pasitikėjimo",
+      "button": {
+        "text": "Registruotis dantų balinimui",
+        "url": "/registracija?pasiulymas=dantu-balinimas-philips-zoom"
+      },
+      "text": "Laikui bėgant dėl mitybos įpročių, kavos, arbatos ar natūralių senėjimo procesų dantų atspalvis gali keistis.\n\nProfesionalus dantų balinimas „Philips Zoom“ sistema, derinamas su individualiu dviejų savaičių balinimo kursu namuose, padeda pasiekti šviesesnį dantų atspalvį ir ilgiau išlaikyti rezultatą.",
+      "anchor": "",
+      "show_price": false,
+      "price": "400",
+      "currency": "€",
+      "inclusions_title": "Į pasiūlymą įeina:",
+      "inclusions": [
+        "Specialisto konsultacija.",
+        "Dantų balinimas klinikoje su „Philips Zoom“ diodine lempa (be papildomos burnos higienos).",
+        "Individualūs dantų atspaudai ir balinimo kapos abiem žandikauliams.",
+        "Balinimo medžiaga namams (2 dantų balinimo švirkštai)."
+      ]
+    },
+    {
+      "type": "approach",
+      "hidden": false,
+      "title": "Kodėl verta rinktis „Philips Zoom“?",
+      "image": {
+        "src": "/assets/uploads/dantu balinimas 1x1.png",
+        "alt": "„Philips Zoom“ dantų balinimo sistema GOJA klinikoje Mažeikiuose"
+      },
+      "lead": "Profesionali dantų balinimo sistema, leidžianti pastebimai pašviesinti natūralių dantų atspalvį jau po vieno vizito klinikoje.",
+      "body": "„Philips Zoom“ dantų balinimas klinikoje derinamas su individualiu balinimo kursu namuose. Toks balinimo metodas padeda sustiprinti ir ilgiau išlaikyti pasiektą rezultatą.\n\nDantų balinimas taip pat gali būti svarbus pasiruošimo etapas prieš estetinį plombavimą ar dantų laminačių gamybą, nes restauracijų spalva balinimo metu nesikeičia.\n\nPrieš procedūrą specialistas įvertina dantų ir dantenų būklę, individualų jautrumą bei balinimo tinkamumą. Galutinis rezultatas priklauso nuo individualių dantų savybių.",
+      "anchor": ""
+    }
+  ]
+}
