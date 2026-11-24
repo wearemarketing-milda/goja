@@ -34,7 +34,7 @@
       "type": "price_catalog",
       "hidden": false,
       "search_label": "Ieškoti paslaugos",
-      "search_placeholder": "Pvz., konsultacija, higiena…",
+      "search_placeholder": "Rovimas, higiena...",
       "info": "Galutinė kaina tikslinama konsultacijos metu.",
       "empty_text": "Pagal šią paiešką paslaugų neradome. Pabandykite kitą žodį arba [susisiekite su mumis](#kontaktai).",
       "col_service": "Paslauga",
@@ -106,7 +106,7 @@
             {
               "service": "Vaistų paketas po implantacijos",
               "description": "",
-              "price": "20"
+              "price": "20,00"
             },
             {
               "service": "Vaistų ir burnos priežiūros paketas po implantacijos",
@@ -486,6 +486,11 @@
               "service": "Balinimo/apsauginė kapa",
               "description": "1 kapa",
               "price": "110,00–170,00"
+            },
+            {
+              "service": "Dantų balinimas Zoom \"Philips Zoom\"",
+              "description": "",
+              "price": "400,00"
             }
           ]
         },
@@ -497,7 +502,7 @@
             {
               "service": "Profesionali burnos higiena",
               "description": "Ultragarsu ir sodapūte",
-              "price": "70,00–100,00"
+              "price": "80,00–100,00"
             },
             {
               "service": "Pakartotinė profesionali burnos higiena",
