@@ -18,21 +18,18 @@
   "summary": "Profesionali burnos higiena padeda pašalinti dantų apnašas bei akmenis, palaikyti sveikas dantenas ir pasirūpinti gaiviu burnos pojūčiu.",
   "card_note": "Specialus pasiūlymas pirmiesiems 50 užsiregistravusiųjų",
   "payment_note": "",
+  "registration_key": "burnos-higiena-70",
   "specialists": [
     "karolina-kancauskaite"
   ],
   "meta_title": "Profesionali burnos higiena už 70 € | GOJA klinika",
-  "meta_description": "Profesionali burnos higiena už 70 € pirmiesiems 50 užsiregistravusiųjų. Procedūrą atlieka burnos higienistė Karolina Kančauskaitė. Registruokitės: +370 611 80077.",
-  "registration_key": "burnos-higiena-70",
+  "meta_description": "Profesionali burnos higiena Mažeikiuose už 70 € pirmiesiems 50 užsiregistravusiųjų. Procedūrą atlieka burnos higienistė Karolina Kančauskaitė. Registruokitės: +370 611 80077.",
   "blocks": [
     {
       "type": "offer_hero",
+      "hidden": false,
       "eyebrow": "GOJA KLINIKOS PASIŪLYMAI",
       "title": "",
-      "title_price": "",
-      "lead": "Profesionali burnos higiena padeda pašalinti dantų apnašas bei akmenis, palaikyti sveikas dantenas ir pasirūpinti gaiviu burnos pojūčiu.",
-      "box_title": "Specialus pasiūlymas pirmiesiems 50 užsiregistravusiųjų!",
-      "box_text": "",
       "button": {
         "text": "Registruotis burnos higienai",
         "url": "/registracija?paslauga=burnos-higiena&pasiulymas=burnos-higiena-70"
@@ -41,45 +38,49 @@
         "text": "+370 611 80077",
         "url": "tel:+37061180077"
       },
-      "show_countdown": true,
-      "hidden": false
+      "lead": "Profesionali burnos higiena padeda pašalinti dantų apnašas bei akmenis, palaikyti sveikas dantenas ir pasirūpinti gaiviu burnos pojūčiu.",
+      "title_price": "",
+      "box_title": "Specialus pasiūlymas pirmiesiems 50 užsiregistravusiųjų!",
+      "box_text": "",
+      "show_countdown": true
     },
     {
       "type": "offer_box",
-      "anchor": "kodel-verta",
+      "hidden": false,
       "eyebrow": "",
       "title": "Daugiau nei graži šypsena",
-      "price": "70",
-      "currency": "€",
-      "show_price": false,
-      "text": "Net ir kruopščiai valant dantis namuose, ne visada pavyksta pašalinti visas apnašas. Ilgainiui jos gali sukietėti ir virsti dantų akmenimis, kurių įprastu šepetėliu pašalinti nepavyks.",
       "button": {
         "text": "Registruotis burnos higienai",
         "url": "/registracija?paslauga=burnos-higiena&pasiulymas=burnos-higiena-70"
       },
+      "text": "Net ir kruopščiai valant dantis namuose, ne visada pavyksta pašalinti visas apnašas. Ilgainiui jos gali sukietėti ir virsti dantų akmenimis, kurių įprastu šepetėliu pašalinti nepavyks.",
+      "anchor": "kodel-verta",
+      "show_price": false,
+      "price": "70",
+      "currency": "€",
       "inclusions_title": "Profesionali burnos higiena:",
       "inclusions": [
         "Padeda pašalinti susikaupusias apnašas ir dantų akmenis.",
         "Padeda sumažinti dantenų uždegimo riziką.",
         "Padeda palaikyti gaivesnį burnos kvapą.",
         "Prisideda prie dantų ir dantenų sveikatos išsaugojimo."
-      ],
-      "hidden": false
+      ]
     },
     {
       "type": "doctor",
-      "specialist": "karolina-kancauskaite",
+      "hidden": false,
       "eyebrow": "JŪSŲ ŠYPSENA RŪPINASI",
-      "compact": true,
-      "text": "Profesionalią burnos higieną GOJA klinikoje atlieka burnos higienistė Karolina Kančauskaitė.\n\nProcedūros metu dėmesys skiriamas kruopščiam dantų apnašų bei akmenų pašalinimui ir individualiai burnos priežiūrai.",
       "button": {
         "text": "Registruotis burnos higienai",
         "url": "/registracija?paslauga=burnos-higiena&pasiulymas=burnos-higiena-70"
       },
-      "hidden": false
+      "text": "Profesionalią burnos higieną GOJA klinikoje atlieka burnos higienistė Karolina Kančauskaitė.\n\nProcedūros metu dėmesys skiriamas kruopščiam dantų apnašų bei akmenų pašalinimui ir individualiai burnos priežiūrai.",
+      "specialist": "karolina-kancauskaite",
+      "compact": true
     },
     {
       "type": "cta",
+      "hidden": false,
       "title": "Pasinaudokite specialiu 70 € pasiūlymu – vietų skaičius ribotas!",
       "button": {
         "text": "Registruotis burnos higienai",
@@ -88,8 +89,7 @@
       "phone": {
         "text": "",
         "url": ""
-      },
-      "hidden": false
+      }
     },
     {
       "type": "global_contact",
