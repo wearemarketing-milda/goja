@@ -263,17 +263,18 @@ collections:
         widget: boolean
         default: true
         required: false
-      - label: Pasiūlymas kortelėje
+      - label: Rodomas spec. pasiūlymas
         name: offer
         widget: relation
         collection: pasiulymai
         value_field: slug
         search_fields:
         - title
+        - card_title
         display_fields:
-        - title
+        - '{{title}} {{title_price}}'
         required: false
-        hint: Palikus tuščią, rodomas pirmas šiuo metu galiojantis pasiūlymas (pagal eilės numerį ir datas).
+        hint: Pasirinkite, kurį pasiūlymą rodyti hero dėžutėje. Jei nepasirinkta – rodomas pirmas galiojantis pagal eilės numerį. Pasibaigus pasirinktam pasiūlymui, automatiškai rodomas kitas galiojantis.
       - label: Kortelės antraštė
         name: offer_label
         widget: string
@@ -2137,17 +2138,18 @@ collections:
         widget: boolean
         default: true
         required: false
-      - label: Pasiūlymas kortelėje
+      - label: Rodomas spec. pasiūlymas
         name: offer
         widget: relation
         collection: pasiulymai
         value_field: slug
         search_fields:
         - title
+        - card_title
         display_fields:
-        - title
+        - '{{title}} {{title_price}}'
         required: false
-        hint: Palikus tuščią, rodomas pirmas šiuo metu galiojantis pasiūlymas (pagal eilės numerį ir datas).
+        hint: Pasirinkite, kurį pasiūlymą rodyti hero dėžutėje. Jei nepasirinkta – rodomas pirmas galiojantis pagal eilės numerį. Pasibaigus pasirinktam pasiūlymui, automatiškai rodomas kitas galiojantis.
       - label: Kortelės antraštė
         name: offer_label
         widget: string

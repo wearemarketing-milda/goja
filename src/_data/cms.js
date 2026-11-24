@@ -99,7 +99,8 @@ module.exports = () => {
       if (b.type === 'doctor') b.person = specialistsBySlug[b.specialist] || null;
       if (b.type === 'hero') {
         // Kortelė rodo pasirinktą pasiūlymą arba pirmą šiuo metu galiojantį.
-        b.offerItem = b.show_offer === false ? null : (b.offer ? offersBySlug[b.offer] : activeOffers[0]) || null;
+        const picked = b.offer ? offersBySlug[b.offer] : null;
+        b.offerItem = b.show_offer === false ? null : (picked && picked.isActive ? picked : activeOffers[0]) || null;
       }
     }
   }
