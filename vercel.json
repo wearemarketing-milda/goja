@@ -4,6 +4,11 @@
       "source": "/kontaktai",
       "destination": "/#kontaktai",
       "permanent": true
+    },
+    {
+      "source": "/kontaktai/",
+      "destination": "/#kontaktai",
+      "permanent": true
     }
   ]
 }
